@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Unity剧情编辑插件——Fungus | Yang&#39;s Blog</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Unity剧情编辑插件——Fungus介绍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity剧情编辑插件——Fungus">
+<meta property="og:url" content="https://icemiaomiao.github.io/2023/01/05/Unity/Unity%E5%89%A7%E6%83%85%E7%BC%96%E8%BE%91/index.html">
+<meta property="og:site_name" content="Yang&#39;s Blog">
+<meta property="og:description" content="Unity剧情编辑插件——Fungus介绍">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/791bbb31f61a7a64ab9c05e87a40089359545dee.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/eb860cbc56da2045aaa8a7802c5349a5bef805eb.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/5649316478bd0137f2bdc8c51159a5715278316e.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/10e7c2df00d497825ae7377787488160848c92dc.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/30a7c969d034db1909315524023b0dc3fc0a2269.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/937a08204c3b1fd8cd15a6ce9476cbc09f15b6fa.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/d74736b29cfafb838920751180e173b88e1f294c.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/26c0bf1dee2587505a2aa2a7197303d4db08100f.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/c9fa4ea6694fd172f00f9b416dc3a7813aaf0403.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/c9bf2481360c62d8edb63f87de9d65f5caa0df19.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/d0fa8cfe33e0f00cb153199ddc4edccb3a2bc8a8.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/cab3539ff28b1df3ec4c6b4e66d949487d75fea1.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/67e41edccf388274d8f3cd1dfeaf5a1ab3fe5226.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/6989e3931b951eb1bd299a47d3ffb3669a971fd2.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/5870c6ad61ec0e80ac4d84f71d92c24e1f83c406.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/d8c48b8a0263f107ddc22bde9c7f069061633562.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/2dccf807df450f1ceadf0e0a91132d585e75e317.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/2888d7c0ee7abbe556240cfa6ef096353fb581ac.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/929cdffb13a88e95317f022ae9a4aaa94b40c54a.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/32a211056f1ced2bd5212f6e6ec2cbac27ac0080.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/a054bc4ccba308bad790b2df554472a108e5e6b0.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/7bb9096eb231c79e14de8a9d15a894caf0f0f93e.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/bcc0e09018551779782b9c6222e526729b88c7ea.png">
+<meta property="article:published_time" content="2023-01-04T16:23:36.000Z">
+<meta property="article:modified_time" content="2023-01-04T16:41:51.686Z">
+<meta property="article:author" content="Guo Yangyang">
+<meta property="article:tag" content="Unity">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i0.hdslb.com/bfs/album/791bbb31f61a7a64ab9c05e87a40089359545dee.png">
+  
+    <link rel="alternative" href="/atom.xml" title="Yang&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">Guo Yangyang</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/archives">Home</a></li>
+				        
+							<li><a href="/">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/IceMiaoMiao?tab=repositories" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="https://space.bilibili.com/487294924" title="mail">mail</a>
+					        
+								<a class="weibo" target="_blank" href="https://space.bilibili.com/487294924" title="weibo">weibo</a>
+					        
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Unity/" style="font-size: 10px;">Unity</a> <a href="/tags/index/" style="font-size: 10px;">index</a> <a href="/tags/%E5%AE%9E%E7%94%A8%E7%B1%BB%E5%B0%8F%E6%8A%80%E5%B7%A7/" style="font-size: 20px;">实用类小技巧</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/avatar.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/archives">Home</a></li>
+		        
+					<li><a href="/">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/IceMiaoMiao?tab=repositories" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="https://space.bilibili.com/487294924" title="mail">mail</a>
+			        
+						<a class="weibo" target="_blank" href="https://space.bilibili.com/487294924" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Unity/Unity剧情编辑" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/01/05/Unity/Unity%E5%89%A7%E6%83%85%E7%BC%96%E8%BE%91/" class="article-date">
+  	<time datetime="2023-01-04T16:23:36.000Z" itemprop="datePublished">2023-01-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Unity剧情编辑插件——Fungus
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity/" rel="tag">Unity</a></li></ul>
+	</div>
+
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Unity剧情编辑插件——Fungus介绍"><a href="#Unity剧情编辑插件——Fungus介绍" class="headerlink" title="Unity剧情编辑插件——Fungus介绍"></a>Unity剧情编辑插件——Fungus介绍</h1><span id="more"></span>
+
+<h2 id="Fungus"><a href="#Fungus" class="headerlink" title="Fungus"></a>Fungus</h2><p>下载链接：<a target="_blank" rel="noopener" href="https://github.com/snozbot/fungus">https://github.com/snozbot/fungus</a></p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p><img src="https://i0.hdslb.com/bfs/album/791bbb31f61a7a64ab9c05e87a40089359545dee.png" alt="image-20220719184451199"></p>
+<p>先创建一个flowchart</p>
+<p><img src="https://i0.hdslb.com/bfs/album/eb860cbc56da2045aaa8a7802c5349a5bef805eb.png" alt="image-20220719184545618"></p>
+<p>选中节点之后，右边可以设置属性。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/5649316478bd0137f2bdc8c51159a5715278316e.png" alt="image-20220719184840709"></p>
+<p>勾选这个，可以选择颜色。</p>
+<p>用不同的颜色来区分不同的节点。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/10e7c2df00d497825ae7377787488160848c92dc.png" alt="image-20220719184957585"></p>
+<p>对话系统开始的时间</p>
+<p><img src="https://i0.hdslb.com/bfs/album/30a7c969d034db1909315524023b0dc3fc0a2269.png" alt="image-20220719185110868"></p>
+<p>点加号，添加一个事件。</p>
+<p>搜索say。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/937a08204c3b1fd8cd15a6ce9476cbc09f15b6fa.png" alt="image-20220719185147174"></p>
+<p>输入说的内容。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/d74736b29cfafb838920751180e173b88e1f294c.png" alt="image-20220719185257375"></p>
+<p>创建一个说话的角色。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/26c0bf1dee2587505a2aa2a7197303d4db08100f.png" alt="image-20220719185451819"></p>
+<p>可以添加说话的图像。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/c9fa4ea6694fd172f00f9b416dc3a7813aaf0403.png" alt="image-20220719185617862"></p>
+<p>在事件这里选说话的对象。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/c9bf2481360c62d8edb63f87de9d65f5caa0df19.png" alt="image-20220719185757710"></p>
+<p>可以给标签添加效果。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/d0fa8cfe33e0f00cb153199ddc4edccb3a2bc8a8.png" alt="image-20220719193049112"></p>
+<p>创建menu事件让玩家选择。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/cab3539ff28b1df3ec4c6b4e66d949487d75fea1.png" alt="image-20220719193505752"></p>
+<p>记得选对应的目标节点。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/67e41edccf388274d8f3cd1dfeaf5a1ab3fe5226.png" alt="image-20220719193757167"></p>
+<p>没有menu，想跳转节点的话，可以使用Scene&#x2F;Message Received</p>
+<p><img src="https://i0.hdslb.com/bfs/album/6989e3931b951eb1bd299a47d3ffb3669a971fd2.png" alt="image-20220719194007402"></p>
+<p>在上一个节点创建send message事件。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/5870c6ad61ec0e80ac4d84f71d92c24e1f83c406.png" alt="image-20220719194058810"></p>
+<p>message和刚才保持一至。</p>
+<h2 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h2><p><img src="https://i0.hdslb.com/bfs/album/d8c48b8a0263f107ddc22bde9c7f069061633562.png" alt="image-20220719194233716"></p>
+<p>可以创建自定义对话框。</p>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p><img src="https://i0.hdslb.com/bfs/album/2dccf807df450f1ceadf0e0a91132d585e75e317.png" alt="image-20220719194559170"></p>
+<p>新建空对象，加上Playable Director组件。</p>
+<p>创建几个timeline。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/2888d7c0ee7abbe556240cfa6ef096353fb581ac.png" alt="image-20220719194919697"></p>
+<p>把timeline拖过来。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/929cdffb13a88e95317f022ae9a4aaa94b40c54a.png" alt="image-20220719195020147"></p>
+<p>选中人物模型，拖拽到timeline上。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/32a211056f1ced2bd5212f6e6ec2cbac27ac0080.png" alt="image-20220719195206255"></p>
+<p>可以添加动画片段。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/a054bc4ccba308bad790b2df554472a108e5e6b0.png" alt="image-20220719200232384"></p>
+<p>不同的片段可以重合在一起，自动生成过渡效果。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/7bb9096eb231c79e14de8a9d15a894caf0f0f93e.png" alt="image-20220719200656766"></p>
+<p>可以添加变量控制动画。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/bcc0e09018551779782b9c6222e526729b88c7ea.png" alt="image-20220719200909750"></p>
+<p>然后在剧情控制这里设置变量。</p>
+<p>给动画控制器加个脚本：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">using System.Collections;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using Fungus;</span><br><span class="line">using UnityEngine;</span><br><span class="line">using UnityEngine.Playables;</span><br><span class="line">using UnityEngine.Timeline;</span><br><span class="line">public class Controller : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    public PlayableDirector animationController;</span><br><span class="line">    public TimelineAsset[] timelines;</span><br><span class="line">    public string[] timelineNames;</span><br><span class="line">    public Flowchart flowchart;</span><br><span class="line">    </span><br><span class="line">    void Update()</span><br><span class="line">    &#123;</span><br><span class="line">        for (int i = 0; i &lt; timelines.Length; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (flowchart.GetBooleanVariable(timelineNames[i]))</span><br><span class="line">            &#123;</span><br><span class="line">                animationController.Play(timelines[i]);</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">            flowchart.SetBooleanVariable(timelineNames[i],false);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/01/05/index/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">index</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2023 Guo Yangyang
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
