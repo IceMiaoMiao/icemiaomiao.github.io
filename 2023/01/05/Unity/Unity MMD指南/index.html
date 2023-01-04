@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Unity MMD指南 | Yang&#39;s Blog</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Unity MMD指南">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity MMD指南">
+<meta property="og:url" content="https://icemiaomiao.github.io/2023/01/05/Unity/Unity%20MMD%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:site_name" content="Yang&#39;s Blog">
+<meta property="og:description" content="Unity MMD指南">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/aca3e63ffa8eff1350ac8420551b89500fc08230.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/57b1cb95a1096f032dde9e426edd04f3ba895623.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/f67d389164ae115d0565d5cb3e818cdd6b0ada34.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/b050706f87286e3dfcfa9f44475112871730652e.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/87e486831c3dad93aac59ed161db63e202e48e04.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/6b8b997ad2ee450595d9bc2be6682f1d2ba15c18.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/7bdd47ceef79f09c5a4a70b8fbf4fbd81e1746bd.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/a5b8ae7263f90a1908380824a7780a6394beddac.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/823ad31dbbb2c0f029f4fad2967f6b2c723958d6.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/6babdb530fe95b0dced286c1a762a487d36cbda7.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/cc530cf7b7b33bdeea62752439eabd9e809081c9.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/98a4a81c2ed378d65789e956734c47fdc81b3911.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/51b067314ba968cb135f24d057e844ec0b227360.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/3b928fd4584d7ae03ac48cdf7fdaeeb7e05cc070.png">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/album/58abeaafca95493a88303b8bdf30a8acdbd52648.png">
+<meta property="article:published_time" content="2023-01-04T16:23:39.000Z">
+<meta property="article:modified_time" content="2023-01-04T16:54:24.560Z">
+<meta property="article:author" content="Guo Yangyang">
+<meta property="article:tag" content="Unity">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i0.hdslb.com/bfs/album/aca3e63ffa8eff1350ac8420551b89500fc08230.png">
+  
+    <link rel="alternative" href="/atom.xml" title="Yang&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">Guo Yangyang</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/archives">Home</a></li>
+				        
+							<li><a href="/">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/IceMiaoMiao?tab=repositories" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="https://space.bilibili.com/487294924" title="mail">mail</a>
+					        
+								<a class="weibo" target="_blank" href="https://space.bilibili.com/487294924" title="weibo">weibo</a>
+					        
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Unity/" style="font-size: 20px;">Unity</a> <a href="/tags/index/" style="font-size: 10px;">index</a> <a href="/tags/%E5%AE%9E%E7%94%A8%E7%B1%BB%E5%B0%8F%E6%8A%80%E5%B7%A7/" style="font-size: 10px;">实用类小技巧</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/avatar.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/archives">Home</a></li>
+		        
+					<li><a href="/">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/IceMiaoMiao?tab=repositories" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="https://space.bilibili.com/487294924" title="mail">mail</a>
+			        
+						<a class="weibo" target="_blank" href="https://space.bilibili.com/487294924" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Unity/Unity MMD指南" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/01/05/Unity/Unity%20MMD%E6%8C%87%E5%8D%97/" class="article-date">
+  	<time datetime="2023-01-04T16:23:39.000Z" itemprop="datePublished">2023-01-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Unity MMD指南
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity/" rel="tag">Unity</a></li></ul>
+	</div>
+
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Unity-MMD指南"><a href="#Unity-MMD指南" class="headerlink" title="Unity MMD指南"></a>Unity MMD指南</h1><span id="more"></span>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/IceMiaoMiao/Unity-MMD">https://github.com/IceMiaoMiao/Unity-MMD</a></p>
+<h2 id="模型获取："><a href="#模型获取：" class="headerlink" title="模型获取："></a>模型获取：</h2><p>首先是国内大名鼎鼎的模之屋：<a target="_blank" rel="noopener" href="https://www.aplaybox.com/%E3%80%81">https://www.aplaybox.com/、</a></p>
+<p>然后是日本选手bowroll：<a target="_blank" rel="noopener" href="https://bowlroll.net/">https://bowlroll.net/</a></p>
+<p>可以从里面下载模型和vmd动作文件。</p>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>来这个网站找pmx导入unity的插件：<a target="_blank" rel="noopener" href="http://stereoarts.jp/">http://stereoarts.jp/</a></p>
+<p><img src="https://i0.hdslb.com/bfs/album/aca3e63ffa8eff1350ac8420551b89500fc08230.png" alt="image-20220711212547390"></p>
+<p>插件在这里，下载这个就行。</p>
+<h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><p>先导入插件，然后把下载的pmx模型导入进unity。</p>
+<p>然后可以建个文件夹，导入模型。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/57b1cb95a1096f032dde9e426edd04f3ba895623.png" alt="image-20220712173037235"></p>
+<p>往unity导入模型的时候，只需要导入这两个：tex文件夹和pmx文件。</p>
+<p>如果刚才插件导入成功，当你导入pmx文件的时候，会发现自动生成了一个文件。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/f67d389164ae115d0565d5cb3e818cdd6b0ada34.png" alt="image-20220711231614746"></p>
+<p>同意一下条款，然后选好pmx文件和vmd文件。点process。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/b050706f87286e3dfcfa9f44475112871730652e.png" alt="image-20220711215752266"></p>
+<p>如果需要多个动画文件，这里就多导入几个vmd。一个萝卜一个坑，不能给其他动画了。</p>
+<p>它就会给我们生成动画文件和模型的fbx。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/87e486831c3dad93aac59ed161db63e202e48e04.png" alt="image-20220712164140267"></p>
+<p>报错的话，就点clear，清理一下bug（bushi（虽然无关紧要就是说）</p>
+<p><img src="https://i0.hdslb.com/bfs/album/6b8b997ad2ee450595d9bc2be6682f1d2ba15c18.png" alt="image-20220711215831910"></p>
+<p>rig设置为humanoid，然后再进行下一步，点rig旁边的animation，这个顺序不能错。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/7bdd47ceef79f09c5a4a70b8fbf4fbd81e1746bd.png" alt="image-20220711215911521"></p>
+<p>动画也可以随便设置一下。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/a5b8ae7263f90a1908380824a7780a6394beddac.png" alt="image-20220711215945180"></p>
+<p>顺便加个平滑的曲线。</p>
+<p>点安apply应用。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/823ad31dbbb2c0f029f4fad2967f6b2c723958d6.png" alt="image-20220712165156250"></p>
+<p>可以右下角播放看看效果。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/6babdb530fe95b0dced286c1a762a487d36cbda7.png" alt="image-20220711220118791"></p>
+<p>为了方便管理，也是为了修改动画文件。我们把动画文件ctrl+D。复制出来一个，可以单独放一个文件夹，无所谓了。</p>
+<p>然后把动画文件拖到角色上，会生成一个Animation Control。可以预览一下动画是否正常播放。</p>
+<p>材质的话，老办法</p>
+<p><img src="https://i0.hdslb.com/bfs/album/cc530cf7b7b33bdeea62752439eabd9e809081c9.png" alt="image-20220711232123412"></p>
+<p>对fbx文件这样设置，把材质导出来。</p>
+<p>不要管它生成的材质了，数量太多，有点杂，麻烦。</p>
+<p>直接在tex文件夹里面，根据tex数量建对应数量的material。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/98a4a81c2ed378d65789e956734c47fdc81b3911.png" alt="image-20220712170540471"></p>
+<p>然后右边简单调一下效果。</p>
+<p>我简单给一个Shader：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line">Shader &quot;Toon/Basic/MultiSteps&quot;</span><br><span class="line">&#123;</span><br><span class="line">    Properties</span><br><span class="line">    &#123;</span><br><span class="line">        // Colors</span><br><span class="line">        _Color (&quot;Color&quot;, Color) = (1, 1, 1, 1)</span><br><span class="line">        _HColor (&quot;Highlight Color&quot;, Color) = (0.8, 0.8, 0.8, 1.0)</span><br><span class="line">        _SColor (&quot;Shadow Color&quot;, Color) = (0.2, 0.2, 0.2, 1.0)</span><br><span class="line">        </span><br><span class="line">        // texture</span><br><span class="line">        _MainTex (&quot;Main Texture&quot;, 2D) = &quot;white&quot; &#123; &#125;</span><br><span class="line">        </span><br><span class="line">        // ramp</span><br><span class="line">        _ToonSteps (&quot;Steps of Toon&quot;, range(1, 9)) = 2</span><br><span class="line">        _RampThreshold (&quot;Ramp Threshold&quot;, Range(0.1, 1)) = 0.5</span><br><span class="line">        _RampSmooth (&quot;Ramp Smooth&quot;, Range(0, 1)) = 0.1</span><br><span class="line">        </span><br><span class="line">        // specular</span><br><span class="line">        _SpecColor (&quot;Specular Color&quot;, Color) = (0.5, 0.5, 0.5, 1)</span><br><span class="line">        _SpecSmooth (&quot;Specular Smooth&quot;, Range(0, 1)) = 0.1</span><br><span class="line">        _Shininess (&quot;Shininess&quot;, Range(0.001, 10)) = 0.2</span><br><span class="line">        </span><br><span class="line">        // rim light</span><br><span class="line">        _RimColor (&quot;Rim Color&quot;, Color) = (0.8, 0.8, 0.8, 0.6)</span><br><span class="line">        _RimThreshold (&quot;Rim Threshold&quot;, Range(0, 1)) = 0.5</span><br><span class="line">        _RimSmooth (&quot;Rim Smooth&quot;, Range(0, 1)) = 0.1</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    SubShader</span><br><span class="line">    &#123;</span><br><span class="line">        Tags &#123; &quot;RenderType&quot; = &quot;Opaque&quot; &#125;</span><br><span class="line">        </span><br><span class="line">        CGPROGRAM</span><br><span class="line">        </span><br><span class="line">        #pragma surface surf Toon addshadow fullforwardshadows exclude_path:deferred exclude_path:prepass</span><br><span class="line">        #pragma target 3.0</span><br><span class="line">        </span><br><span class="line">        fixed4 _Color;</span><br><span class="line">        fixed4 _HColor;</span><br><span class="line">        fixed4 _SColor;</span><br><span class="line">        </span><br><span class="line">        sampler2D _MainTex;</span><br><span class="line">        </span><br><span class="line">        float _RampThreshold;</span><br><span class="line">        float _RampSmooth;</span><br><span class="line">        float _ToonSteps;</span><br><span class="line">        </span><br><span class="line">        float _SpecSmooth;</span><br><span class="line">        fixed _Shininess;</span><br><span class="line">        </span><br><span class="line">        fixed4 _RimColor;</span><br><span class="line">        fixed _RimThreshold;</span><br><span class="line">        float _RimSmooth;</span><br><span class="line">        </span><br><span class="line">        struct Input</span><br><span class="line">        &#123;</span><br><span class="line">            float2 uv_MainTex;</span><br><span class="line">            float3 viewDir;</span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        float linearstep(float min, float max, float t)</span><br><span class="line">        &#123;</span><br><span class="line">            return saturate((t - min) / (max - min));</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        inline fixed4 LightingToon(SurfaceOutput s, half3 lightDir, half3 viewDir, half atten)</span><br><span class="line">        &#123;</span><br><span class="line">            half3 normalDir = normalize(s.Normal);</span><br><span class="line">            half3 halfDir = normalize(lightDir + viewDir);</span><br><span class="line">            </span><br><span class="line">            float ndl = max(0, dot(normalDir, lightDir));</span><br><span class="line">            float ndh = max(0, dot(normalDir, halfDir));</span><br><span class="line">            float ndv = max(0, dot(normalDir, viewDir));</span><br><span class="line">            </span><br><span class="line">            // multi steps</span><br><span class="line">            float diff = smoothstep(_RampThreshold - ndl, _RampThreshold + ndl, ndl);</span><br><span class="line">            float interval = 1 / _ToonSteps;</span><br><span class="line">            // float ramp = floor(diff * _ToonSteps) / _ToonSteps;</span><br><span class="line">            float level = round(diff * _ToonSteps) / _ToonSteps;</span><br><span class="line">            float ramp ;</span><br><span class="line">            if (_RampSmooth == 1)</span><br><span class="line">            &#123;</span><br><span class="line">                ramp = interval * linearstep(level - _RampSmooth * interval * 0.5, level + _RampSmooth * interval * 0.5, diff) + level - interval;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                ramp = interval * smoothstep(level - _RampSmooth * interval * 0.5, level + _RampSmooth * interval * 0.5, diff) + level - interval;</span><br><span class="line">            &#125;</span><br><span class="line">            ramp = max(0, ramp);</span><br><span class="line">            ramp *= atten;</span><br><span class="line">            </span><br><span class="line">            _SColor = lerp(_HColor, _SColor, _SColor.a);</span><br><span class="line">            float3 rampColor = lerp(_SColor.rgb, _HColor.rgb, ramp);</span><br><span class="line">            </span><br><span class="line">            // specular</span><br><span class="line">            float spec = pow(ndh, s.Specular * 128.0) * s.Gloss;</span><br><span class="line">            spec *= atten;</span><br><span class="line">            spec = smoothstep(0.5 - _SpecSmooth * 0.5, 0.5 + _SpecSmooth * 0.5, spec);</span><br><span class="line">            </span><br><span class="line">            // rim</span><br><span class="line">            float rim = (1.0 - ndv) * ndl;</span><br><span class="line">            rim *= atten;</span><br><span class="line">            rim = smoothstep(_RimThreshold - _RimSmooth * 0.5, _RimThreshold + _RimSmooth * 0.5, rim);</span><br><span class="line">            </span><br><span class="line">            fixed3 lightColor = _LightColor0.rgb;</span><br><span class="line">            </span><br><span class="line">            fixed4 color;</span><br><span class="line">            fixed3 diffuse = s.Albedo * lightColor * rampColor;</span><br><span class="line">            fixed3 specular = _SpecColor.rgb * lightColor * spec;</span><br><span class="line">            fixed3 rimColor = _RimColor.rgb * lightColor * _RimColor.a * rim;</span><br><span class="line">            </span><br><span class="line">            color.rgb = diffuse + specular + rimColor;</span><br><span class="line">            color.a = s.Alpha;</span><br><span class="line">            return color;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        void surf(Input IN, inout SurfaceOutput o)</span><br><span class="line">        &#123;</span><br><span class="line">            fixed4 mainTex = tex2D(_MainTex, IN.uv_MainTex);</span><br><span class="line">            o.Albedo = mainTex.rgb * _Color.rgb;</span><br><span class="line">            </span><br><span class="line">            o.Alpha = mainTex.a * _Color.a;</span><br><span class="line">            </span><br><span class="line">            o.Specular = _Shininess;</span><br><span class="line">            o.Gloss = mainTex.a;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        ENDCG</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    FallBack &quot;Diffuse&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>或者用这个卡通渲染的Shader：<a target="_blank" rel="noopener" href="https://github.com/Sorumi/UnityToonShader">https://github.com/Sorumi/UnityToonShader</a></p>
+<p>然后把材质拖到模型上的对应位置。仔细一点，不要漏了。</p>
+<p>效果图：</p>
+<p><img src="https://i0.hdslb.com/bfs/album/51b067314ba968cb135f24d057e844ec0b227360.png" alt="image-20220711233219802"></p>
+<p>看起来还不错。</p>
+<p>点击相机，ctrl+shift+F，把摄像机变换到我们当前的视角。</p>
+<p>点运行，模型动起来啦！</p>
+<h2 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h2><p>把模型和场景保存为预制体，然后用AssetBundle导出一下，做AR。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/3b928fd4584d7ae03ac48cdf7fdaeeb7e05cc070.png" alt="image-20220712172025178"></p>
+<p>华为河图需要build ios和安卓。</p>
+<h2 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h2><p>单独建一个工程，导入toolya插件，登录。</p>
+<p><img src="https://i0.hdslb.com/bfs/album/58abeaafca95493a88303b8bdf30a8acdbd52648.png" alt="image-20220712172244276"></p>
+<p>依次点资源模板，我的导入，上传。</p>
+<p>把刚刚的ab包上传一下就ok啦。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/01/05/Unity/Unity%20%E7%BD%91%E6%A0%BC%E7%B1%BB%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Unity 网格类开源项目
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/01/05/Unity/GitHub-For-Unity/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">GitHub-For-Unity</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2023 Guo Yangyang
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
