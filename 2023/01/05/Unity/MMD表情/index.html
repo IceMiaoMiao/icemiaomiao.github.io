@@ -50,7 +50,7 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 <body>
   <div id="container">
     <div id="particles-js"></div>
@@ -215,7 +215,12 @@
 <h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p><a target="_blank" rel="noopener" href="https://github.com/ShiinaManatsu/MMD4UnityTools/releases/tag/1.1.0.3">https://github.com/ShiinaManatsu/MMD4UnityTools/releases/tag/1.1.0.3</a></p>
 <p>改一下这几行代码：</p>
 <p><img src="https://i0.hdslb.com/bfs/album/574a1070b9833e9f4adc41b90f9b1a40feb13435.png" alt="image-20220713194636016"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var curve = new AnimationCurve(package.ToArray());</span><br><span class="line"></span><br><span class="line">varchara = GameObject.Find(&quot;U_Char_2&quot;);</span><br><span class="line">var gameObjectName = chara.name;</span><br><span class="line">var parentName = chara.transform.parent.name;</span><br><span class="line">var mesh = chara.GetComponent&lt;SkinnedMeshRenderer&gt;().sharedMesh;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">var curve &#x3D; new AnimationCurve(package.ToArray());
+
+varchara &#x3D; GameObject.Find(&quot;U_Char_2&quot;);
+var gameObjectName &#x3D; chara.name;
+var parentName &#x3D; chara.transform.parent.name;
+var mesh &#x3D; chara.GetComponent&lt;SkinnedMeshRenderer&gt;().sharedMesh;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>剩下的就简单了，找到vmd文件：</p>
 <p><img src="https://i0.hdslb.com/bfs/album/2417d548f90de6a2aef7819605d3ddb28ab306b2.png" alt="image-20220713195310304"></p>

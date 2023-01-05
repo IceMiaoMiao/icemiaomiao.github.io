@@ -59,7 +59,7 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 <body>
   <div id="container">
     <div id="particles-js"></div>
@@ -260,7 +260,139 @@
 <p><img src="https://i0.hdslb.com/bfs/album/98a4a81c2ed378d65789e956734c47fdc81b3911.png" alt="image-20220712170540471"></p>
 <p>然后右边简单调一下效果。</p>
 <p>我简单给一个Shader：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line">Shader &quot;Toon/Basic/MultiSteps&quot;</span><br><span class="line">&#123;</span><br><span class="line">    Properties</span><br><span class="line">    &#123;</span><br><span class="line">        // Colors</span><br><span class="line">        _Color (&quot;Color&quot;, Color) = (1, 1, 1, 1)</span><br><span class="line">        _HColor (&quot;Highlight Color&quot;, Color) = (0.8, 0.8, 0.8, 1.0)</span><br><span class="line">        _SColor (&quot;Shadow Color&quot;, Color) = (0.2, 0.2, 0.2, 1.0)</span><br><span class="line">        </span><br><span class="line">        // texture</span><br><span class="line">        _MainTex (&quot;Main Texture&quot;, 2D) = &quot;white&quot; &#123; &#125;</span><br><span class="line">        </span><br><span class="line">        // ramp</span><br><span class="line">        _ToonSteps (&quot;Steps of Toon&quot;, range(1, 9)) = 2</span><br><span class="line">        _RampThreshold (&quot;Ramp Threshold&quot;, Range(0.1, 1)) = 0.5</span><br><span class="line">        _RampSmooth (&quot;Ramp Smooth&quot;, Range(0, 1)) = 0.1</span><br><span class="line">        </span><br><span class="line">        // specular</span><br><span class="line">        _SpecColor (&quot;Specular Color&quot;, Color) = (0.5, 0.5, 0.5, 1)</span><br><span class="line">        _SpecSmooth (&quot;Specular Smooth&quot;, Range(0, 1)) = 0.1</span><br><span class="line">        _Shininess (&quot;Shininess&quot;, Range(0.001, 10)) = 0.2</span><br><span class="line">        </span><br><span class="line">        // rim light</span><br><span class="line">        _RimColor (&quot;Rim Color&quot;, Color) = (0.8, 0.8, 0.8, 0.6)</span><br><span class="line">        _RimThreshold (&quot;Rim Threshold&quot;, Range(0, 1)) = 0.5</span><br><span class="line">        _RimSmooth (&quot;Rim Smooth&quot;, Range(0, 1)) = 0.1</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    SubShader</span><br><span class="line">    &#123;</span><br><span class="line">        Tags &#123; &quot;RenderType&quot; = &quot;Opaque&quot; &#125;</span><br><span class="line">        </span><br><span class="line">        CGPROGRAM</span><br><span class="line">        </span><br><span class="line">        #pragma surface surf Toon addshadow fullforwardshadows exclude_path:deferred exclude_path:prepass</span><br><span class="line">        #pragma target 3.0</span><br><span class="line">        </span><br><span class="line">        fixed4 _Color;</span><br><span class="line">        fixed4 _HColor;</span><br><span class="line">        fixed4 _SColor;</span><br><span class="line">        </span><br><span class="line">        sampler2D _MainTex;</span><br><span class="line">        </span><br><span class="line">        float _RampThreshold;</span><br><span class="line">        float _RampSmooth;</span><br><span class="line">        float _ToonSteps;</span><br><span class="line">        </span><br><span class="line">        float _SpecSmooth;</span><br><span class="line">        fixed _Shininess;</span><br><span class="line">        </span><br><span class="line">        fixed4 _RimColor;</span><br><span class="line">        fixed _RimThreshold;</span><br><span class="line">        float _RimSmooth;</span><br><span class="line">        </span><br><span class="line">        struct Input</span><br><span class="line">        &#123;</span><br><span class="line">            float2 uv_MainTex;</span><br><span class="line">            float3 viewDir;</span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        float linearstep(float min, float max, float t)</span><br><span class="line">        &#123;</span><br><span class="line">            return saturate((t - min) / (max - min));</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        inline fixed4 LightingToon(SurfaceOutput s, half3 lightDir, half3 viewDir, half atten)</span><br><span class="line">        &#123;</span><br><span class="line">            half3 normalDir = normalize(s.Normal);</span><br><span class="line">            half3 halfDir = normalize(lightDir + viewDir);</span><br><span class="line">            </span><br><span class="line">            float ndl = max(0, dot(normalDir, lightDir));</span><br><span class="line">            float ndh = max(0, dot(normalDir, halfDir));</span><br><span class="line">            float ndv = max(0, dot(normalDir, viewDir));</span><br><span class="line">            </span><br><span class="line">            // multi steps</span><br><span class="line">            float diff = smoothstep(_RampThreshold - ndl, _RampThreshold + ndl, ndl);</span><br><span class="line">            float interval = 1 / _ToonSteps;</span><br><span class="line">            // float ramp = floor(diff * _ToonSteps) / _ToonSteps;</span><br><span class="line">            float level = round(diff * _ToonSteps) / _ToonSteps;</span><br><span class="line">            float ramp ;</span><br><span class="line">            if (_RampSmooth == 1)</span><br><span class="line">            &#123;</span><br><span class="line">                ramp = interval * linearstep(level - _RampSmooth * interval * 0.5, level + _RampSmooth * interval * 0.5, diff) + level - interval;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                ramp = interval * smoothstep(level - _RampSmooth * interval * 0.5, level + _RampSmooth * interval * 0.5, diff) + level - interval;</span><br><span class="line">            &#125;</span><br><span class="line">            ramp = max(0, ramp);</span><br><span class="line">            ramp *= atten;</span><br><span class="line">            </span><br><span class="line">            _SColor = lerp(_HColor, _SColor, _SColor.a);</span><br><span class="line">            float3 rampColor = lerp(_SColor.rgb, _HColor.rgb, ramp);</span><br><span class="line">            </span><br><span class="line">            // specular</span><br><span class="line">            float spec = pow(ndh, s.Specular * 128.0) * s.Gloss;</span><br><span class="line">            spec *= atten;</span><br><span class="line">            spec = smoothstep(0.5 - _SpecSmooth * 0.5, 0.5 + _SpecSmooth * 0.5, spec);</span><br><span class="line">            </span><br><span class="line">            // rim</span><br><span class="line">            float rim = (1.0 - ndv) * ndl;</span><br><span class="line">            rim *= atten;</span><br><span class="line">            rim = smoothstep(_RimThreshold - _RimSmooth * 0.5, _RimThreshold + _RimSmooth * 0.5, rim);</span><br><span class="line">            </span><br><span class="line">            fixed3 lightColor = _LightColor0.rgb;</span><br><span class="line">            </span><br><span class="line">            fixed4 color;</span><br><span class="line">            fixed3 diffuse = s.Albedo * lightColor * rampColor;</span><br><span class="line">            fixed3 specular = _SpecColor.rgb * lightColor * spec;</span><br><span class="line">            fixed3 rimColor = _RimColor.rgb * lightColor * _RimColor.a * rim;</span><br><span class="line">            </span><br><span class="line">            color.rgb = diffuse + specular + rimColor;</span><br><span class="line">            color.a = s.Alpha;</span><br><span class="line">            return color;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        void surf(Input IN, inout SurfaceOutput o)</span><br><span class="line">        &#123;</span><br><span class="line">            fixed4 mainTex = tex2D(_MainTex, IN.uv_MainTex);</span><br><span class="line">            o.Albedo = mainTex.rgb * _Color.rgb;</span><br><span class="line">            </span><br><span class="line">            o.Alpha = mainTex.a * _Color.a;</span><br><span class="line">            </span><br><span class="line">            o.Specular = _Shininess;</span><br><span class="line">            o.Gloss = mainTex.a;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        ENDCG</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    FallBack &quot;Diffuse&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">Shader &quot;Toon&#x2F;Basic&#x2F;MultiSteps&quot;
+&#123;
+    Properties
+    &#123;
+        &#x2F;&#x2F; Colors
+        _Color (&quot;Color&quot;, Color) &#x3D; (1, 1, 1, 1)
+        _HColor (&quot;Highlight Color&quot;, Color) &#x3D; (0.8, 0.8, 0.8, 1.0)
+        _SColor (&quot;Shadow Color&quot;, Color) &#x3D; (0.2, 0.2, 0.2, 1.0)
+        
+        &#x2F;&#x2F; texture
+        _MainTex (&quot;Main Texture&quot;, 2D) &#x3D; &quot;white&quot; &#123; &#125;
+        
+        &#x2F;&#x2F; ramp
+        _ToonSteps (&quot;Steps of Toon&quot;, range(1, 9)) &#x3D; 2
+        _RampThreshold (&quot;Ramp Threshold&quot;, Range(0.1, 1)) &#x3D; 0.5
+        _RampSmooth (&quot;Ramp Smooth&quot;, Range(0, 1)) &#x3D; 0.1
+        
+        &#x2F;&#x2F; specular
+        _SpecColor (&quot;Specular Color&quot;, Color) &#x3D; (0.5, 0.5, 0.5, 1)
+        _SpecSmooth (&quot;Specular Smooth&quot;, Range(0, 1)) &#x3D; 0.1
+        _Shininess (&quot;Shininess&quot;, Range(0.001, 10)) &#x3D; 0.2
+        
+        &#x2F;&#x2F; rim light
+        _RimColor (&quot;Rim Color&quot;, Color) &#x3D; (0.8, 0.8, 0.8, 0.6)
+        _RimThreshold (&quot;Rim Threshold&quot;, Range(0, 1)) &#x3D; 0.5
+        _RimSmooth (&quot;Rim Smooth&quot;, Range(0, 1)) &#x3D; 0.1
+    &#125;
+    
+    SubShader
+    &#123;
+        Tags &#123; &quot;RenderType&quot; &#x3D; &quot;Opaque&quot; &#125;
+        
+        CGPROGRAM
+        
+        #pragma surface surf Toon addshadow fullforwardshadows exclude_path:deferred exclude_path:prepass
+        #pragma target 3.0
+        
+        fixed4 _Color;
+        fixed4 _HColor;
+        fixed4 _SColor;
+        
+        sampler2D _MainTex;
+        
+        float _RampThreshold;
+        float _RampSmooth;
+        float _ToonSteps;
+        
+        float _SpecSmooth;
+        fixed _Shininess;
+        
+        fixed4 _RimColor;
+        fixed _RimThreshold;
+        float _RimSmooth;
+        
+        struct Input
+        &#123;
+            float2 uv_MainTex;
+            float3 viewDir;
+        &#125;;
+        
+        float linearstep(float min, float max, float t)
+        &#123;
+            return saturate((t - min) &#x2F; (max - min));
+        &#125;
+        
+        inline fixed4 LightingToon(SurfaceOutput s, half3 lightDir, half3 viewDir, half atten)
+        &#123;
+            half3 normalDir &#x3D; normalize(s.Normal);
+            half3 halfDir &#x3D; normalize(lightDir + viewDir);
+            
+            float ndl &#x3D; max(0, dot(normalDir, lightDir));
+            float ndh &#x3D; max(0, dot(normalDir, halfDir));
+            float ndv &#x3D; max(0, dot(normalDir, viewDir));
+            
+            &#x2F;&#x2F; multi steps
+            float diff &#x3D; smoothstep(_RampThreshold - ndl, _RampThreshold + ndl, ndl);
+            float interval &#x3D; 1 &#x2F; _ToonSteps;
+            &#x2F;&#x2F; float ramp &#x3D; floor(diff * _ToonSteps) &#x2F; _ToonSteps;
+            float level &#x3D; round(diff * _ToonSteps) &#x2F; _ToonSteps;
+            float ramp ;
+            if (_RampSmooth &#x3D;&#x3D; 1)
+            &#123;
+                ramp &#x3D; interval * linearstep(level - _RampSmooth * interval * 0.5, level + _RampSmooth * interval * 0.5, diff) + level - interval;
+            &#125;
+            else
+            &#123;
+                ramp &#x3D; interval * smoothstep(level - _RampSmooth * interval * 0.5, level + _RampSmooth * interval * 0.5, diff) + level - interval;
+            &#125;
+            ramp &#x3D; max(0, ramp);
+            ramp *&#x3D; atten;
+            
+            _SColor &#x3D; lerp(_HColor, _SColor, _SColor.a);
+            float3 rampColor &#x3D; lerp(_SColor.rgb, _HColor.rgb, ramp);
+            
+            &#x2F;&#x2F; specular
+            float spec &#x3D; pow(ndh, s.Specular * 128.0) * s.Gloss;
+            spec *&#x3D; atten;
+            spec &#x3D; smoothstep(0.5 - _SpecSmooth * 0.5, 0.5 + _SpecSmooth * 0.5, spec);
+            
+            &#x2F;&#x2F; rim
+            float rim &#x3D; (1.0 - ndv) * ndl;
+            rim *&#x3D; atten;
+            rim &#x3D; smoothstep(_RimThreshold - _RimSmooth * 0.5, _RimThreshold + _RimSmooth * 0.5, rim);
+            
+            fixed3 lightColor &#x3D; _LightColor0.rgb;
+            
+            fixed4 color;
+            fixed3 diffuse &#x3D; s.Albedo * lightColor * rampColor;
+            fixed3 specular &#x3D; _SpecColor.rgb * lightColor * spec;
+            fixed3 rimColor &#x3D; _RimColor.rgb * lightColor * _RimColor.a * rim;
+            
+            color.rgb &#x3D; diffuse + specular + rimColor;
+            color.a &#x3D; s.Alpha;
+            return color;
+        &#125;
+        
+        void surf(Input IN, inout SurfaceOutput o)
+        &#123;
+            fixed4 mainTex &#x3D; tex2D(_MainTex, IN.uv_MainTex);
+            o.Albedo &#x3D; mainTex.rgb * _Color.rgb;
+            
+            o.Alpha &#x3D; mainTex.a * _Color.a;
+            
+            o.Specular &#x3D; _Shininess;
+            o.Gloss &#x3D; mainTex.a;
+        &#125;
+        
+        ENDCG
+        
+    &#125;
+    FallBack &quot;Diffuse&quot;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>或者用这个卡通渲染的Shader：<a target="_blank" rel="noopener" href="https://github.com/Sorumi/UnityToonShader">https://github.com/Sorumi/UnityToonShader</a></p>
 <p>然后把材质拖到模型上的对应位置。仔细一点，不要漏了。</p>

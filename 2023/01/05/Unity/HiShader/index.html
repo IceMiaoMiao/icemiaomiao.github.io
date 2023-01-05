@@ -120,7 +120,7 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 <body>
   <div id="container">
     <div id="particles-js"></div>
@@ -367,12 +367,196 @@
 <p>GLSL与HLSL分别是基于OpenGL和Direct3D的接口，两者不能混用。而CG则是为了使图形硬件的编程变得和 C语言编程一样方便自由，它本身基于C语言。如果你之前使用过C系语言其中的任意一个，那CG的语法也是比较容易掌握的。但其实由于Microsoft和NVIDIA的相互协作，他们在标准硬件光照语言的语法和语义上达成了一致，所以HLSL和Cg其实可以看为是同一种语言。</p>
 <p>而<strong>ShaderLab</strong>则是Unity在HLSL和CG的基础之上封装的只属于Unity的着色器语言，它的灵活性更高，而且不再需要将 Shader 的配置 硬写在引擎代码中，本质是在底层着色语言的基础上，额外提供了声明信息，以数据驱动的方式使我们在渲染管线内自由发挥。</p>
 <p>-—————————————————————————-</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br></pre></td><td class="code"><pre><span class="line">// Shader 的路径名称  默认为文件名,也可以与文件名不同</span><br><span class="line">Shader &quot;Unlit/HiShader&quot;</span><br><span class="line">&#123;</span><br><span class="line">    // 属性 </span><br><span class="line">    // Material Inspector显示的所有参数都在需要在这里进行声明</span><br><span class="line">    Properties</span><br><span class="line">    &#123;</span><br><span class="line">        // 通常所有属性名都以下划线字符开头 _MainTex</span><br><span class="line">        _MainTex (&quot;Texture&quot;, 2D) = &quot;white&quot; &#123;&#125;</span><br><span class="line">        </span><br><span class="line">        // 比较常见的属性类型</span><br><span class="line">        // ————————————————————————————————————————————————</span><br><span class="line">        //_Integer (&quot;整数(新版)&quot;, Integer) = 1</span><br><span class="line">        _Int (&quot;整数(旧版)&quot;, Int) = 1</span><br><span class="line">        _Float (&quot;浮点数&quot;, Float) = 0.5</span><br><span class="line">        _FloatRange (&quot;浮点数滑动条&quot;, Range(0.0, 1.0)) = 0.5</span><br><span class="line">        // Unity包含以下内置纹理, 可以直接填充</span><br><span class="line">        // “white”（RGBA：1,1,1,1）</span><br><span class="line">        // “black”（RGBA：0,0,0,1）</span><br><span class="line">        // “gray”（RGBA：0.5,0.5,0.5,1）</span><br><span class="line">        // “bump”（RGBA：0.5,0.5,1,0.5）</span><br><span class="line">        // “red”（RGBA：1,0,0,1）</span><br><span class="line">        _Texture2D (&quot;2D纹理贴图&quot;, 2D) = &quot;red&quot; &#123;&#125;</span><br><span class="line">        // 字符串留空或输入无效值，则它默认为 “gray”</span><br><span class="line">        _DefaultTexture2D (&quot;2D纹理贴图&quot;, 2D) = &quot;&quot; &#123;&#125;</span><br><span class="line">        // 默认值为 “gray”（RGBA：0.5,0.5,0.5,1）</span><br><span class="line">        _Texture3D (&quot;3D纹理贴图&quot;, 3D) = &quot;&quot; &#123;&#125;</span><br><span class="line">        _Cubemap (&quot;立方体贴图&quot;, Cube) = &quot;&quot; &#123;&#125;</span><br><span class="line">        // Inspector会显示四个单独的浮点数字段</span><br><span class="line">        _Vector (&quot;Example vector&quot;, Vector) = (0.25, 0.5, 0.5, 1)</span><br><span class="line">        // Inspector会显示拾色器拾取色彩RGBA值</span><br><span class="line">        _Color(&quot;色彩&quot;, Color) = (0.25, 0.5, 0.5, 1)</span><br><span class="line">        // ————————————————————————————————————————————————</span><br><span class="line">        </span><br><span class="line">        // 除此之外 属性声明还可以具有一个可选特性 用来告知Unity如何处理它们</span><br><span class="line">        // HDR可以使色彩亮度的值超过1</span><br><span class="line">        [HDR]_HDRColor(&quot;HDR色彩&quot;, Color) = (1,1,1,1)</span><br><span class="line">        // Inspector隐藏此属性</span><br><span class="line">        [HideInInspector]_Hide(&quot;看不见我~&quot;, Color) = (1,1,1,1)</span><br><span class="line">        // Inspector隐藏此纹理属性的Scale Offset字段</span><br><span class="line">        [NoScaleOffset]_HideScaleOffset(&quot;隐藏ScaleOffset&quot;, 2D) = &quot;&quot; &#123;&#125;</span><br><span class="line">        // 指示纹理属性为法线贴图，如果分配了不兼容的纹理，编辑器则会显示警告。</span><br><span class="line">        [Normal]_Normal(&quot;法线贴图&quot;, 2D) = &quot;&quot; &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    // 子着色器 </span><br><span class="line">    // 一个Shader至少有一个或者多个子着色器SubShader，这些子着色器互不干扰，且只有一个会运行</span><br><span class="line">    // 在加载shader时Unity会遍历所有SubShader列表，并最终选择用户机器支持的第一个</span><br><span class="line">    SubShader</span><br><span class="line">    &#123;</span><br><span class="line">        // 可以通过Tags来向子着色器分配标签</span><br><span class="line">        // 只可以写在SubShader语块内,不可写在Pass内</span><br><span class="line">        /* 以键值对的形式存在,可以出现多个键值对</span><br><span class="line">        Tags &#123; </span><br><span class="line">            &quot;TagName1&quot; = &quot;Value1&quot;</span><br><span class="line">            &quot;TagName2&quot; = &quot;Value2&quot;</span><br><span class="line">            &quot;TagName3&quot; = &quot;Value3&quot;</span><br><span class="line">            ...</span><br><span class="line">            &#125;</span><br><span class="line">        */</span><br><span class="line">        </span><br><span class="line">        // RenderPipeline: 声明子着色器是否与通用渲染管线 (URP) 或高清渲染管线 (HDRP) 兼容</span><br><span class="line">        // 仅与 URP 兼容</span><br><span class="line">        // Tags &#123; &quot;RenderPipeline&quot;=&quot;UniversalRenderPipeline&quot; &#125;</span><br><span class="line">        // 仅与 HDRP 兼容</span><br><span class="line">        // Tags &#123; &quot;RenderPipeline&quot;=&quot;HighDefinitionRenderPipeline&quot; &#125;</span><br><span class="line">        // RenderPipeline不声明或任何其他值表示与 URP 和 HDRP 不兼容</span><br><span class="line">        // ————————————————————————————————————————————————</span><br><span class="line">        </span><br><span class="line">        // Queue: 声明渲染队列</span><br><span class="line">        // Tags &#123; &quot;Queue&quot;=&quot;Background&quot; &#125; // 最早被调用的渲染，用来渲染天空盒或者背景</span><br><span class="line">        // Tags &#123; &quot;Queue&quot;=&quot;Geometry&quot; &#125;   // 这是默认值，用来渲染非透明物体（普通情况下，场景中的绝大多数物体应该是非透明的）</span><br><span class="line">        // Tags &#123; &quot;Queue&quot;=&quot;AlphaTest&quot; &#125;  // 用来渲染经过Alpha Test的像素，单独为AlphaTest设定一个Queue是出于对效率的考虑</span><br><span class="line">        // Tags &#123; &quot;Queue&quot;=&quot;Transparent&quot; &#125;// 以从后往前的顺序渲染透明物体</span><br><span class="line">        // Tags &#123; &quot;Queue&quot;=&quot;Overlay&quot; &#125;    // 用来渲染叠加的效果，是渲染的最后阶段（比如镜头光晕等特效）</span><br><span class="line">        // ————————————————————————————————————————————————</span><br><span class="line">        </span><br><span class="line">        // RenderType: 用来区别这个Shader要渲染的对象是属于什么类别的。</span><br><span class="line">        // 设置渲染类型 用一种称为着色器替换的技术在运行时交换子着色器,用来区别这个Shader要渲染的对象是属于什么类别的</span><br><span class="line">        // 这里表示非透明物体渲染</span><br><span class="line">        Tags &#123; &quot;RenderType&quot;=&quot;Opaque&quot; &#125;</span><br><span class="line">        // 更多详细内容可参考官网文档 https://docs.unity.cn/cn/2021.3/Manual/SL-SubShaderTags.html</span><br><span class="line">        </span><br><span class="line">        // LOD (Level of Detail)</span><br><span class="line">        LOD 100</span><br><span class="line"></span><br><span class="line">        // 每个子着色器由多个通道组成，许多简单的着色器只使用一个通道，但想要一些更复杂的效果，着色器可能需要更多通道</span><br><span class="line">        // 一个Pass就是一次绘制，可以看成是一个Draw Call而Pass的意义在于多次渲染，</span><br><span class="line">        // 如果你有一个Pass，那么着色器只会被调用一次，如果你有多个Pass的话，</span><br><span class="line">        // 那么就相当于执行多次SubShader了，这就叫双通道或者多通道。</span><br><span class="line">        </span><br><span class="line">        // Draw Call：其实就是CPU调用图像编程接口的渲染命令，CPU每次调用DrawCall，都需要向GPU发送许多数据啊、渲染状态等等，</span><br><span class="line">        // 一旦CPU执行完应用阶段，GPU就会开始执行这次的渲染流程。而GPU渲染的速度比CPU提交命令的速度要快的多，</span><br><span class="line">        // 所以如果DrawCall数量过多的情况下，CPU需要进行大量的计算，进而就会导致CPU过载，影响游戏的运行效率。</span><br><span class="line">        Pass</span><br><span class="line">        &#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line">            // 声明顶点着色器</span><br><span class="line">            #pragma vertex vert</span><br><span class="line">            // 声明像素着色器</span><br><span class="line">            #pragma fragment frag</span><br><span class="line">            // 使雾生效</span><br><span class="line">            #pragma multi_compile_fog</span><br><span class="line"></span><br><span class="line">            // 引用CG的核心代码库</span><br><span class="line">            #include &quot;UnityCG.cginc&quot;</span><br><span class="line"></span><br><span class="line">            // 应用程序阶段结构体</span><br><span class="line">            struct appdata</span><br><span class="line">            &#123;</span><br><span class="line">                // 参考：https://docs.microsoft.com/zh-cn/windows/win32/direct3dhlsl/dx-graphics-hlsl-semantics</span><br><span class="line">                // POSITION 着色器语言的语义，用来限定着色器的输入输出值的类型</span><br><span class="line">                // 模型空间的顶点坐标</span><br><span class="line">                float4 vertex : POSITION;</span><br><span class="line">                // 模型的第一套UV坐标</span><br><span class="line">                float2 uv : TEXCOORD0;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            struct v2f</span><br><span class="line">            &#123;</span><br><span class="line">                // UV</span><br><span class="line">                float2 uv : TEXCOORD0;</span><br><span class="line">                UNITY_FOG_COORDS(1)</span><br><span class="line">                // SV_POSITION 当这个值需要作为输出值输出给系统用的时候 前面需要加SV_前缀</span><br><span class="line">                // 当然因为有向下兼容的机制 不加也没啥太大问题</span><br><span class="line">                float4 vertex : SV_POSITION;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            // 在Properties中声明的参数要在这里相对应的定义后才可以使用</span><br><span class="line">            sampler2D _MainTex;</span><br><span class="line">            float4 _MainTex_ST;</span><br><span class="line"></span><br><span class="line">            // 定义顶点着色器函数 函数名要与声明顶点着色器名称相同</span><br><span class="line">            v2f vert (appdata v)</span><br><span class="line">            &#123;</span><br><span class="line">                v2f o;</span><br><span class="line">                // 将顶点坐标从模型空间变换到裁剪空间</span><br><span class="line">                o.vertex = UnityObjectToClipPos(v.vertex);</span><br><span class="line">                // Transforms 2D UV by scale/bias property</span><br><span class="line">                // #define TRANSFORM_TEX(tex,name) (tex.xy * name##_ST.xy + name##_ST.zw)</span><br><span class="line">                // 等价于v.uv.xy * _MainTex_ST.xy + _MainTex_ST.zw;</span><br><span class="line">                // 简单来说，TRANSFORM_TEX主要作用是拿顶点的uv去和材质球的tiling和offset作运算，</span><br><span class="line">                // 确保材质球里的缩放和偏移设置是正确的</span><br><span class="line">                o.uv = TRANSFORM_TEX(v.uv, _MainTex);</span><br><span class="line">                UNITY_TRANSFER_FOG(o,o.vertex);</span><br><span class="line">                return o;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            // SV_Target可以视为COLOR ，虽说他也是作为输出值输出给系统的</span><br><span class="line">            // 但它其实是告诉系统把输出的颜色值存储到RenderTarget中</span><br><span class="line">            // 所以这里我们用SV_Target</span><br><span class="line">            fixed4 frag (v2f i) : SV_Target</span><br><span class="line">            &#123;</span><br><span class="line">                // 采样2D纹理贴图</span><br><span class="line">                fixed4 col = tex2D(_MainTex, i.uv);</span><br><span class="line">                // 应用雾</span><br><span class="line">                UNITY_APPLY_FOG(i.fogCoord, col);</span><br><span class="line">                // 返回经过处理后的最终色彩</span><br><span class="line">                return col;</span><br><span class="line">            &#125;</span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; Shader 的路径名称  默认为文件名,也可以与文件名不同
+Shader &quot;Unlit&#x2F;HiShader&quot;
+&#123;
+    &#x2F;&#x2F; 属性 
+    &#x2F;&#x2F; Material Inspector显示的所有参数都在需要在这里进行声明
+    Properties
+    &#123;
+        &#x2F;&#x2F; 通常所有属性名都以下划线字符开头 _MainTex
+        _MainTex (&quot;Texture&quot;, 2D) &#x3D; &quot;white&quot; &#123;&#125;
+        
+        &#x2F;&#x2F; 比较常见的属性类型
+        &#x2F;&#x2F; ————————————————————————————————————————————————
+        &#x2F;&#x2F;_Integer (&quot;整数(新版)&quot;, Integer) &#x3D; 1
+        _Int (&quot;整数(旧版)&quot;, Int) &#x3D; 1
+        _Float (&quot;浮点数&quot;, Float) &#x3D; 0.5
+        _FloatRange (&quot;浮点数滑动条&quot;, Range(0.0, 1.0)) &#x3D; 0.5
+        &#x2F;&#x2F; Unity包含以下内置纹理, 可以直接填充
+        &#x2F;&#x2F; “white”（RGBA：1,1,1,1）
+        &#x2F;&#x2F; “black”（RGBA：0,0,0,1）
+        &#x2F;&#x2F; “gray”（RGBA：0.5,0.5,0.5,1）
+        &#x2F;&#x2F; “bump”（RGBA：0.5,0.5,1,0.5）
+        &#x2F;&#x2F; “red”（RGBA：1,0,0,1）
+        _Texture2D (&quot;2D纹理贴图&quot;, 2D) &#x3D; &quot;red&quot; &#123;&#125;
+        &#x2F;&#x2F; 字符串留空或输入无效值，则它默认为 “gray”
+        _DefaultTexture2D (&quot;2D纹理贴图&quot;, 2D) &#x3D; &quot;&quot; &#123;&#125;
+        &#x2F;&#x2F; 默认值为 “gray”（RGBA：0.5,0.5,0.5,1）
+        _Texture3D (&quot;3D纹理贴图&quot;, 3D) &#x3D; &quot;&quot; &#123;&#125;
+        _Cubemap (&quot;立方体贴图&quot;, Cube) &#x3D; &quot;&quot; &#123;&#125;
+        &#x2F;&#x2F; Inspector会显示四个单独的浮点数字段
+        _Vector (&quot;Example vector&quot;, Vector) &#x3D; (0.25, 0.5, 0.5, 1)
+        &#x2F;&#x2F; Inspector会显示拾色器拾取色彩RGBA值
+        _Color(&quot;色彩&quot;, Color) &#x3D; (0.25, 0.5, 0.5, 1)
+        &#x2F;&#x2F; ————————————————————————————————————————————————
+        
+        &#x2F;&#x2F; 除此之外 属性声明还可以具有一个可选特性 用来告知Unity如何处理它们
+        &#x2F;&#x2F; HDR可以使色彩亮度的值超过1
+        [HDR]_HDRColor(&quot;HDR色彩&quot;, Color) &#x3D; (1,1,1,1)
+        &#x2F;&#x2F; Inspector隐藏此属性
+        [HideInInspector]_Hide(&quot;看不见我~&quot;, Color) &#x3D; (1,1,1,1)
+        &#x2F;&#x2F; Inspector隐藏此纹理属性的Scale Offset字段
+        [NoScaleOffset]_HideScaleOffset(&quot;隐藏ScaleOffset&quot;, 2D) &#x3D; &quot;&quot; &#123;&#125;
+        &#x2F;&#x2F; 指示纹理属性为法线贴图，如果分配了不兼容的纹理，编辑器则会显示警告。
+        [Normal]_Normal(&quot;法线贴图&quot;, 2D) &#x3D; &quot;&quot; &#123;&#125;
+    &#125;
+    
+    &#x2F;&#x2F; 子着色器 
+    &#x2F;&#x2F; 一个Shader至少有一个或者多个子着色器SubShader，这些子着色器互不干扰，且只有一个会运行
+    &#x2F;&#x2F; 在加载shader时Unity会遍历所有SubShader列表，并最终选择用户机器支持的第一个
+    SubShader
+    &#123;
+        &#x2F;&#x2F; 可以通过Tags来向子着色器分配标签
+        &#x2F;&#x2F; 只可以写在SubShader语块内,不可写在Pass内
+        &#x2F;* 以键值对的形式存在,可以出现多个键值对
+        Tags &#123; 
+            &quot;TagName1&quot; &#x3D; &quot;Value1&quot;
+            &quot;TagName2&quot; &#x3D; &quot;Value2&quot;
+            &quot;TagName3&quot; &#x3D; &quot;Value3&quot;
+            ...
+            &#125;
+        *&#x2F;
+        
+        &#x2F;&#x2F; RenderPipeline: 声明子着色器是否与通用渲染管线 (URP) 或高清渲染管线 (HDRP) 兼容
+        &#x2F;&#x2F; 仅与 URP 兼容
+        &#x2F;&#x2F; Tags &#123; &quot;RenderPipeline&quot;&#x3D;&quot;UniversalRenderPipeline&quot; &#125;
+        &#x2F;&#x2F; 仅与 HDRP 兼容
+        &#x2F;&#x2F; Tags &#123; &quot;RenderPipeline&quot;&#x3D;&quot;HighDefinitionRenderPipeline&quot; &#125;
+        &#x2F;&#x2F; RenderPipeline不声明或任何其他值表示与 URP 和 HDRP 不兼容
+        &#x2F;&#x2F; ————————————————————————————————————————————————
+        
+        &#x2F;&#x2F; Queue: 声明渲染队列
+        &#x2F;&#x2F; Tags &#123; &quot;Queue&quot;&#x3D;&quot;Background&quot; &#125; &#x2F;&#x2F; 最早被调用的渲染，用来渲染天空盒或者背景
+        &#x2F;&#x2F; Tags &#123; &quot;Queue&quot;&#x3D;&quot;Geometry&quot; &#125;   &#x2F;&#x2F; 这是默认值，用来渲染非透明物体（普通情况下，场景中的绝大多数物体应该是非透明的）
+        &#x2F;&#x2F; Tags &#123; &quot;Queue&quot;&#x3D;&quot;AlphaTest&quot; &#125;  &#x2F;&#x2F; 用来渲染经过Alpha Test的像素，单独为AlphaTest设定一个Queue是出于对效率的考虑
+        &#x2F;&#x2F; Tags &#123; &quot;Queue&quot;&#x3D;&quot;Transparent&quot; &#125;&#x2F;&#x2F; 以从后往前的顺序渲染透明物体
+        &#x2F;&#x2F; Tags &#123; &quot;Queue&quot;&#x3D;&quot;Overlay&quot; &#125;    &#x2F;&#x2F; 用来渲染叠加的效果，是渲染的最后阶段（比如镜头光晕等特效）
+        &#x2F;&#x2F; ————————————————————————————————————————————————
+        
+        &#x2F;&#x2F; RenderType: 用来区别这个Shader要渲染的对象是属于什么类别的。
+        &#x2F;&#x2F; 设置渲染类型 用一种称为着色器替换的技术在运行时交换子着色器,用来区别这个Shader要渲染的对象是属于什么类别的
+        &#x2F;&#x2F; 这里表示非透明物体渲染
+        Tags &#123; &quot;RenderType&quot;&#x3D;&quot;Opaque&quot; &#125;
+        &#x2F;&#x2F; 更多详细内容可参考官网文档 https:&#x2F;&#x2F;docs.unity.cn&#x2F;cn&#x2F;2021.3&#x2F;Manual&#x2F;SL-SubShaderTags.html
+        
+        &#x2F;&#x2F; LOD (Level of Detail)
+        LOD 100
+
+        &#x2F;&#x2F; 每个子着色器由多个通道组成，许多简单的着色器只使用一个通道，但想要一些更复杂的效果，着色器可能需要更多通道
+        &#x2F;&#x2F; 一个Pass就是一次绘制，可以看成是一个Draw Call而Pass的意义在于多次渲染，
+        &#x2F;&#x2F; 如果你有一个Pass，那么着色器只会被调用一次，如果你有多个Pass的话，
+        &#x2F;&#x2F; 那么就相当于执行多次SubShader了，这就叫双通道或者多通道。
+        
+        &#x2F;&#x2F; Draw Call：其实就是CPU调用图像编程接口的渲染命令，CPU每次调用DrawCall，都需要向GPU发送许多数据啊、渲染状态等等，
+        &#x2F;&#x2F; 一旦CPU执行完应用阶段，GPU就会开始执行这次的渲染流程。而GPU渲染的速度比CPU提交命令的速度要快的多，
+        &#x2F;&#x2F; 所以如果DrawCall数量过多的情况下，CPU需要进行大量的计算，进而就会导致CPU过载，影响游戏的运行效率。
+        Pass
+        &#123;
+            CGPROGRAM
+            &#x2F;&#x2F; 声明顶点着色器
+            #pragma vertex vert
+            &#x2F;&#x2F; 声明像素着色器
+            #pragma fragment frag
+            &#x2F;&#x2F; 使雾生效
+            #pragma multi_compile_fog
+
+            &#x2F;&#x2F; 引用CG的核心代码库
+            #include &quot;UnityCG.cginc&quot;
+
+            &#x2F;&#x2F; 应用程序阶段结构体
+            struct appdata
+            &#123;
+                &#x2F;&#x2F; 参考：https:&#x2F;&#x2F;docs.microsoft.com&#x2F;zh-cn&#x2F;windows&#x2F;win32&#x2F;direct3dhlsl&#x2F;dx-graphics-hlsl-semantics
+                &#x2F;&#x2F; POSITION 着色器语言的语义，用来限定着色器的输入输出值的类型
+                &#x2F;&#x2F; 模型空间的顶点坐标
+                float4 vertex : POSITION;
+                &#x2F;&#x2F; 模型的第一套UV坐标
+                float2 uv : TEXCOORD0;
+            &#125;;
+
+            struct v2f
+            &#123;
+                &#x2F;&#x2F; UV
+                float2 uv : TEXCOORD0;
+                UNITY_FOG_COORDS(1)
+                &#x2F;&#x2F; SV_POSITION 当这个值需要作为输出值输出给系统用的时候 前面需要加SV_前缀
+                &#x2F;&#x2F; 当然因为有向下兼容的机制 不加也没啥太大问题
+                float4 vertex : SV_POSITION;
+            &#125;;
+
+            &#x2F;&#x2F; 在Properties中声明的参数要在这里相对应的定义后才可以使用
+            sampler2D _MainTex;
+            float4 _MainTex_ST;
+
+            &#x2F;&#x2F; 定义顶点着色器函数 函数名要与声明顶点着色器名称相同
+            v2f vert (appdata v)
+            &#123;
+                v2f o;
+                &#x2F;&#x2F; 将顶点坐标从模型空间变换到裁剪空间
+                o.vertex &#x3D; UnityObjectToClipPos(v.vertex);
+                &#x2F;&#x2F; Transforms 2D UV by scale&#x2F;bias property
+                &#x2F;&#x2F; #define TRANSFORM_TEX(tex,name) (tex.xy * name##_ST.xy + name##_ST.zw)
+                &#x2F;&#x2F; 等价于v.uv.xy * _MainTex_ST.xy + _MainTex_ST.zw;
+                &#x2F;&#x2F; 简单来说，TRANSFORM_TEX主要作用是拿顶点的uv去和材质球的tiling和offset作运算，
+                &#x2F;&#x2F; 确保材质球里的缩放和偏移设置是正确的
+                o.uv &#x3D; TRANSFORM_TEX(v.uv, _MainTex);
+                UNITY_TRANSFER_FOG(o,o.vertex);
+                return o;
+            &#125;
+
+            &#x2F;&#x2F; SV_Target可以视为COLOR ，虽说他也是作为输出值输出给系统的
+            &#x2F;&#x2F; 但它其实是告诉系统把输出的颜色值存储到RenderTarget中
+            &#x2F;&#x2F; 所以这里我们用SV_Target
+            fixed4 frag (v2f i) : SV_Target
+            &#123;
+                &#x2F;&#x2F; 采样2D纹理贴图
+                fixed4 col &#x3D; tex2D(_MainTex, i.uv);
+                &#x2F;&#x2F; 应用雾
+                UNITY_APPLY_FOG(i.fogCoord, col);
+                &#x2F;&#x2F; 返回经过处理后的最终色彩
+                return col;
+            &#125;
+            ENDCG
+        &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="案例-1"><a href="#案例-1" class="headerlink" title="案例"></a>案例</h3><h4 id="VertexShader"><a href="#VertexShader" class="headerlink" title="VertexShader"></a><strong>VertexShader</strong></h4><p>找到 VertexShader，这里将通过调整顶点的 Y 轴位置实现一个简单的压扁效果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">v2f vert (appdata v)</span><br><span class="line">&#123;</span><br><span class="line">         v2f o;</span><br><span class="line">         o.uv = TRANSFORM_TEX(v.uv, _MainTex);</span><br><span class="line">         // 模型空间转到世界空间</span><br><span class="line">         float3 worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;</span><br><span class="line">         // 压Y轴位置 这里把世界空间下顶点的y减去最低部y的值乘上一个系数</span><br><span class="line">         // 然后再用y去减去这个值，就可以通过这个系数来控制兔子被压扁的程度</span><br><span class="line">         float y = worldPos.y - (worldPos.y - _Bottom) * _Value;</span><br><span class="line">         // 最终世界空间位置</span><br><span class="line">         float3 tempWorld = float3(worldPos.x,y,worldPos.z);</span><br><span class="line">         // 世界空间转裁剪空间</span><br><span class="line">         o.vertex = UnityWorldToClipPos(tempWorld);</span><br><span class="line">         return o;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">v2f vert (appdata v)
+&#123;
+         v2f o;
+         o.uv &#x3D; TRANSFORM_TEX(v.uv, _MainTex);
+         &#x2F;&#x2F; 模型空间转到世界空间
+         float3 worldPos &#x3D; mul(unity_ObjectToWorld, v.vertex).xyz;
+         &#x2F;&#x2F; 压Y轴位置 这里把世界空间下顶点的y减去最低部y的值乘上一个系数
+         &#x2F;&#x2F; 然后再用y去减去这个值，就可以通过这个系数来控制兔子被压扁的程度
+         float y &#x3D; worldPos.y - (worldPos.y - _Bottom) * _Value;
+         &#x2F;&#x2F; 最终世界空间位置
+         float3 tempWorld &#x3D; float3(worldPos.x,y,worldPos.z);
+         &#x2F;&#x2F; 世界空间转裁剪空间
+         o.vertex &#x3D; UnityWorldToClipPos(tempWorld);
+         return o;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Properties</span><br><span class="line">&#123;</span><br><span class="line">    _Value (&quot;压扁系数&quot;,Range(0, 1)) = 0</span><br><span class="line">    _Bottom (&quot;底部&quot;, float) = 0</span><br><span class="line">&#125;</span><br><span class="line">                                        </span><br><span class="line">    float _Value;</span><br><span class="line">    float _Bottom;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">Properties
+&#123;
+    _Value (&quot;压扁系数&quot;,Range(0, 1)) &#x3D; 0
+    _Bottom (&quot;底部&quot;, float) &#x3D; 0
+&#125;
+                                        
+    float _Value;
+    float _Bottom;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>最后拖拽压扁系数条就可以看到效果啦~</p>
 <p><img src="https://i0.hdslb.com/bfs/album/32ec164f24a28bf21e8e9e37d1e8b71f3bbbdedf.png" alt="img"></p>
@@ -384,13 +568,46 @@
 <p>比较常见的光照模型有漫反射的 Half Lambert 模型 ，以及镜面反射的 Blinn-Phong 模型。 Half Lambert 能够较好地表现粗糙表面上的光照现象，像如石灰墙，纸张等等，但是在渲染金属材质制成的物体时，则会显得呆板，表现不出光泽。主要原因是其没有考虑到镜面反射效果，所以 Blinn-Phong 对其进行了很好的补充。</p>
 <p><img src="https://i0.hdslb.com/bfs/album/ba37e767152d5056072e8609c29f5b59575b8bc9.png" alt="img"></p>
 <p>这里我们将通过Pixel Shader实现最简单的 Half Lambert ，首先拿到计算光照需要的模型法线和世界坐标，在v2f的结构体里将它们进行定义，</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">struct v2f</span><br><span class="line">&#123;</span><br><span class="line">     float2 uv : TEXCOORD0;</span><br><span class="line">                                                </span><br><span class="line">     // 计算光照需要用到法线和世界位置</span><br><span class="line">     // 通常使用TEXCOORDn语义来修饰float2, float3, float4类型</span><br><span class="line">     float3 worldNormal: TEXCOORD1;</span><br><span class="line">     float3 worldPos:TEXCOORD2;</span><br><span class="line">                                                </span><br><span class="line">     UNITY_FOG_COORDS(1)</span><br><span class="line">     float4 vertex : SV_POSITION;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">struct v2f
+&#123;
+     float2 uv : TEXCOORD0;
+                                                
+     &#x2F;&#x2F; 计算光照需要用到法线和世界位置
+     &#x2F;&#x2F; 通常使用TEXCOORDn语义来修饰float2, float3, float4类型
+     float3 worldNormal: TEXCOORD1;
+     float3 worldPos:TEXCOORD2;
+                                                
+     UNITY_FOG_COORDS(1)
+     float4 vertex : SV_POSITION;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>在顶点着色器中将世界坐标和法线进行处理，传递给接下来的像素着色器</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">v2f vert (appdata v)</span><br><span class="line">&#123;</span><br><span class="line">    v2f o;</span><br><span class="line">    o.vertex = UnityObjectToClipPos(v.vertex);</span><br><span class="line">    // 模型空间转到世界空间</span><br><span class="line">    o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;</span><br><span class="line">    // 法线向量归一化</span><br><span class="line">    o.worldNormal = normalize(UnityObjectToWorldNormal(v.normal));</span><br><span class="line">    return o;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">v2f vert (appdata v)
+&#123;
+    v2f o;
+    o.vertex &#x3D; UnityObjectToClipPos(v.vertex);
+    &#x2F;&#x2F; 模型空间转到世界空间
+    o.worldPos &#x3D; mul(unity_ObjectToWorld, v.vertex).xyz;
+    &#x2F;&#x2F; 法线向量归一化
+    o.worldNormal &#x3D; normalize(UnityObjectToWorldNormal(v.normal));
+    return o;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>在像素着色器中，首先通过世界坐标拿到光照的方向，也就是所谓的入射光，用法线点乘入射光，就可以得到入射光与模型表面的夹角，由于当入射光和法线夹角的余弦值为负数的时候，所得到的结果始终都是零，就会导致照不到的地方一片漆黑，所以这里需要乘0.5再加0.5 ，这样就可以把原本-1到1的取值范围变为0-1的取值范围。最后把求出来的光照亮度叠加到最终的像素色彩值就可以啦</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">fixed4 frag (v2f i) : SV_Target</span><br><span class="line">&#123;</span><br><span class="line">     // sample the texture</span><br><span class="line">     fixed4 col = tex2D(_MainTex, i.uv);</span><br><span class="line">     // 得到光照方向</span><br><span class="line">     float3 worldLightDir = UnityWorldSpaceLightDir(i.worldPos);</span><br><span class="line">     // NoL代表表面接受的能量大小</span><br><span class="line">     float NoL = dot(i.worldNormal, worldLightDir);</span><br><span class="line">     // 计算half-lambert亮度值</span><br><span class="line">     float halfLambert = NoL * 0.5 + 0.5;</span><br><span class="line">     // apply fog</span><br><span class="line">     UNITY_APPLY_FOG(i.fogCoord, col);</span><br><span class="line">     return col * halfLambert;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">fixed4 frag (v2f i) : SV_Target
+&#123;
+     &#x2F;&#x2F; sample the texture
+     fixed4 col &#x3D; tex2D(_MainTex, i.uv);
+     &#x2F;&#x2F; 得到光照方向
+     float3 worldLightDir &#x3D; UnityWorldSpaceLightDir(i.worldPos);
+     &#x2F;&#x2F; NoL代表表面接受的能量大小
+     float NoL &#x3D; dot(i.worldNormal, worldLightDir);
+     &#x2F;&#x2F; 计算half-lambert亮度值
+     float halfLambert &#x3D; NoL * 0.5 + 0.5;
+     &#x2F;&#x2F; apply fog
+     UNITY_APPLY_FOG(i.fogCoord, col);
+     return col * halfLambert;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>这样最终的效果就会更符合我们的视觉观感。</p>
 <p><img src="https://i0.hdslb.com/bfs/album/1f32d59025b3c2739b58c9dedec1fc4a524a5fd2.png" alt="img"></p>
@@ -400,34 +617,369 @@
 <p><img src="https://i0.hdslb.com/bfs/album/9722f2aa43133b2a6047bdb9fb3ff8e5e4732d7a.png" alt="img"></p>
 <p> 渲染轮廓线的方式有很多种, 在这里带大家熟悉其中最简单的一种, 对物体做两次渲染， 第二次渲染时开启正面剔除，将顶点沿法线向外延深一段距离，（放大物体），实现轮廓线，这里就用到我们之前提到的多Pass渲染。</p>
 <p>打开ToonShader，首先在Properties语块中声明轮廓线相关的两个属性，方便我们进行之后的调整：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Properties</span><br><span class="line">&#123;</span><br><span class="line">	_MainTex(&quot;Texture&quot;,2D) = &quot;white&quot; &#123;&#125;</span><br><span class="line"></span><br><span class="line">	_OutlineWidth (&quot;Outline Width&quot;, Range(0.01, 1)) = 0.01</span><br><span class="line">	_OutLineColor (&quot;OutLine Color&quot;, Color) = (0.5,0.5,0.5,1)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">Properties
+&#123;
+	_MainTex(&quot;Texture&quot;,2D) &#x3D; &quot;white&quot; &#123;&#125;
+
+	_OutlineWidth (&quot;Outline Width&quot;, Range(0.01, 1)) &#x3D; 0.01
+	_OutLineColor (&quot;OutLine Color&quot;, Color) &#x3D; (0.5,0.5,0.5,1)
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>原本的pass我们暂时先不用动，直接新增一个Pass来做轮廓线的渲染，这里记得定义一下我们刚刚声明的宽度和颜色</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line">Shader &quot;Unlit/ToonShader&quot;</span><br><span class="line">&#123;</span><br><span class="line">    Properties</span><br><span class="line">    &#123;</span><br><span class="line">        _MainTex (&quot;Texture&quot;, 2D) = &quot;white&quot; &#123;&#125;</span><br><span class="line">        _OutlineWidth (&quot;Outline Width&quot;, Range(0.01, 1)) = 0.01</span><br><span class="line">   _OutLineColor (&quot;OutLine Color&quot;, Color) = (0.5,0.5,0.5,1)</span><br><span class="line">    &#125;</span><br><span class="line">    SubShader</span><br><span class="line">    &#123;</span><br><span class="line">        Tags &#123; &quot;RenderType&quot;=&quot;Opaque&quot; &#125;</span><br><span class="line">        LOD 100</span><br><span class="line"></span><br><span class="line">        Pass</span><br><span class="line">        &#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line">            #pragma vertex vert</span><br><span class="line">            #pragma fragment frag</span><br><span class="line">            // make fog work</span><br><span class="line">            #pragma multi_compile_fog</span><br><span class="line"></span><br><span class="line">            #include &quot;UnityCG.cginc&quot;</span><br><span class="line"></span><br><span class="line">            struct appdata</span><br><span class="line">            &#123;</span><br><span class="line">                float4 vertex : POSITION;</span><br><span class="line">                float2 uv : TEXCOORD0;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            struct v2f</span><br><span class="line">            &#123;</span><br><span class="line">                float2 uv : TEXCOORD0;</span><br><span class="line">                UNITY_FOG_COORDS(1)</span><br><span class="line">                float4 vertex : SV_POSITION;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            sampler2D _MainTex;</span><br><span class="line">            float4 _MainTex_ST;</span><br><span class="line"></span><br><span class="line">            v2f vert (appdata v)</span><br><span class="line">            &#123;</span><br><span class="line">                v2f o;</span><br><span class="line">                o.vertex = UnityObjectToClipPos(v.vertex);</span><br><span class="line">                o.uv = TRANSFORM_TEX(v.uv, _MainTex);</span><br><span class="line">                UNITY_TRANSFER_FOG(o,o.vertex);</span><br><span class="line">                return o;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            fixed4 frag (v2f i) : SV_Target</span><br><span class="line">            &#123;</span><br><span class="line">                // sample the texture</span><br><span class="line">                fixed4 col = tex2D(_MainTex, i.uv);</span><br><span class="line">                // apply fog</span><br><span class="line">                UNITY_APPLY_FOG(i.fogCoord, col);</span><br><span class="line">                return col;</span><br><span class="line">            &#125;</span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        Pass</span><br><span class="line">        &#123;  </span><br><span class="line">       // 开启前向剔除 表示剔除前面 只显示背面</span><br><span class="line">            Cull Front</span><br><span class="line">            </span><br><span class="line">            CGPROGRAM</span><br><span class="line">            #pragma vertex vert</span><br><span class="line">            #pragma fragment frag</span><br><span class="line">            </span><br><span class="line">            // 线条宽度</span><br><span class="line">            float _OutlineWidth;</span><br><span class="line">            // 线条颜色</span><br><span class="line">            float4 _OutLineColor;</span><br><span class="line"></span><br><span class="line">            struct appdata </span><br><span class="line">            &#123;</span><br><span class="line">                float4 vertex : POSITION;</span><br><span class="line">                float2 uv : TEXCOORD0;</span><br><span class="line">                // 法线</span><br><span class="line">                float3 normal : NORMAL;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            struct v2f</span><br><span class="line">            &#123;</span><br><span class="line">      float2 uv : TEXCOORD0;</span><br><span class="line">                float4 vertex : SV_POSITION;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            v2f vert (appdata v) </span><br><span class="line">            &#123;</span><br><span class="line">                v2f o;</span><br><span class="line">      // 顶点沿着法线方向外扩(放大模型)</span><br><span class="line">      float4 newVertex = float4(v.vertex.xyz + v.normal * _OutlineWidth * 0.01 ,1);</span><br><span class="line">      // UnityObjectToClipPos(v.vertex) 将模型空间下的顶点转换到齐次裁剪空间</span><br><span class="line">                o.vertex = UnityObjectToClipPos(newVertex);</span><br><span class="line">                return o;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            half4 frag(v2f i) : SV_TARGET </span><br><span class="line">            &#123;</span><br><span class="line">           // 返回线条色彩</span><br><span class="line">                return _OutLineColor;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">Shader &quot;Unlit&#x2F;ToonShader&quot;
+&#123;
+    Properties
+    &#123;
+        _MainTex (&quot;Texture&quot;, 2D) &#x3D; &quot;white&quot; &#123;&#125;
+        _OutlineWidth (&quot;Outline Width&quot;, Range(0.01, 1)) &#x3D; 0.01
+   _OutLineColor (&quot;OutLine Color&quot;, Color) &#x3D; (0.5,0.5,0.5,1)
+    &#125;
+    SubShader
+    &#123;
+        Tags &#123; &quot;RenderType&quot;&#x3D;&quot;Opaque&quot; &#125;
+        LOD 100
+
+        Pass
+        &#123;
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            &#x2F;&#x2F; make fog work
+            #pragma multi_compile_fog
+
+            #include &quot;UnityCG.cginc&quot;
+
+            struct appdata
+            &#123;
+                float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
+            &#125;;
+
+            struct v2f
+            &#123;
+                float2 uv : TEXCOORD0;
+                UNITY_FOG_COORDS(1)
+                float4 vertex : SV_POSITION;
+            &#125;;
+
+            sampler2D _MainTex;
+            float4 _MainTex_ST;
+
+            v2f vert (appdata v)
+            &#123;
+                v2f o;
+                o.vertex &#x3D; UnityObjectToClipPos(v.vertex);
+                o.uv &#x3D; TRANSFORM_TEX(v.uv, _MainTex);
+                UNITY_TRANSFER_FOG(o,o.vertex);
+                return o;
+            &#125;
+
+            fixed4 frag (v2f i) : SV_Target
+            &#123;
+                &#x2F;&#x2F; sample the texture
+                fixed4 col &#x3D; tex2D(_MainTex, i.uv);
+                &#x2F;&#x2F; apply fog
+                UNITY_APPLY_FOG(i.fogCoord, col);
+                return col;
+            &#125;
+            ENDCG
+        &#125;
+        
+        Pass
+        &#123;  
+       &#x2F;&#x2F; 开启前向剔除 表示剔除前面 只显示背面
+            Cull Front
+            
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            
+            &#x2F;&#x2F; 线条宽度
+            float _OutlineWidth;
+            &#x2F;&#x2F; 线条颜色
+            float4 _OutLineColor;
+
+            struct appdata 
+            &#123;
+                float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
+                &#x2F;&#x2F; 法线
+                float3 normal : NORMAL;
+            &#125;;
+
+            struct v2f
+            &#123;
+      float2 uv : TEXCOORD0;
+                float4 vertex : SV_POSITION;
+            &#125;;
+
+            v2f vert (appdata v) 
+            &#123;
+                v2f o;
+      &#x2F;&#x2F; 顶点沿着法线方向外扩(放大模型)
+      float4 newVertex &#x3D; float4(v.vertex.xyz + v.normal * _OutlineWidth * 0.01 ,1);
+      &#x2F;&#x2F; UnityObjectToClipPos(v.vertex) 将模型空间下的顶点转换到齐次裁剪空间
+                o.vertex &#x3D; UnityObjectToClipPos(newVertex);
+                return o;
+            &#125;
+
+            half4 frag(v2f i) : SV_TARGET 
+            &#123;
+           &#x2F;&#x2F; 返回线条色彩
+                return _OutLineColor;
+            &#125;
+            
+            ENDCG
+        &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>至此我们的第一步轮廓描边就做好了 </p>
 <p> -———————————————————————————————————— </p>
 <p><strong>色阶</strong></p>
 <p><img src="https://i0.hdslb.com/bfs/album/c3299217e20dddade61d8644f6c6f328b365e717.png" alt="img"></p>
 <p>通常来说都是由它来决定画面色彩的丰富度饱满度精细度，而大部分卡通渲染习惯降低色阶，用简单的明暗关系来描述世界，使画面扁平又不失层次感，这里还是用上节讲的half Lambert光照模型，不过这看起来一点都不卡通，我们需要让它明暗分明一点</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// 得到顶点法线</span><br><span class="line">float3 normal = normalize(i.worldNormal);</span><br><span class="line">// 得到光照方向</span><br><span class="line">float3 worldLightDir = UnityWorldSpaceLightDir(i.worldPos);</span><br><span class="line">// NoL代表表面接受的能量大小</span><br><span class="line">float NoL = dot(i.worldNormal, worldLightDir);</span><br><span class="line">// 计算half-lambert亮度值</span><br><span class="line">float halfLambert = NoL * 0.5 + 0.5;</span><br><span class="line"></span><br><span class="line">// 通过亮度值计算线性ramp</span><br><span class="line">float ramp = linearstep(_RampStart, _RampStart + _RampSize, halfLambert);</span><br><span class="line">float step = ramp * _RampStep;  // 使每个色阶大小为1, 方便计算</span><br><span class="line">float gridStep = floor(step);   // 得到当前所处的色阶</span><br><span class="line">float smoothStep = smoothstep(gridStep, gridStep + _RampSmooth, step) + gridStep;</span><br><span class="line">ramp = smoothStep / _RampStep;  // 回到原来的空间</span><br><span class="line">// 得到最终的ramp色彩</span><br><span class="line">float3 rampColor = lerp(_DarkColor, _LightColor, ramp);</span><br><span class="line">rampColor *= col;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 得到顶点法线
+float3 normal &#x3D; normalize(i.worldNormal);
+&#x2F;&#x2F; 得到光照方向
+float3 worldLightDir &#x3D; UnityWorldSpaceLightDir(i.worldPos);
+&#x2F;&#x2F; NoL代表表面接受的能量大小
+float NoL &#x3D; dot(i.worldNormal, worldLightDir);
+&#x2F;&#x2F; 计算half-lambert亮度值
+float halfLambert &#x3D; NoL * 0.5 + 0.5;
+
+&#x2F;&#x2F; 通过亮度值计算线性ramp
+float ramp &#x3D; linearstep(_RampStart, _RampStart + _RampSize, halfLambert);
+float step &#x3D; ramp * _RampStep;  &#x2F;&#x2F; 使每个色阶大小为1, 方便计算
+float gridStep &#x3D; floor(step);   &#x2F;&#x2F; 得到当前所处的色阶
+float smoothStep &#x3D; smoothstep(gridStep, gridStep + _RampSmooth, step) + gridStep;
+ramp &#x3D; smoothStep &#x2F; _RampStep;  &#x2F;&#x2F; 回到原来的空间
+&#x2F;&#x2F; 得到最终的ramp色彩
+float3 rampColor &#x3D; lerp(_DarkColor, _LightColor, ramp);
+rampColor *&#x3D; col;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>高光</strong></p>
 <p><img src="https://i0.hdslb.com/bfs/album/1bdc2e7030f240036a6e380882e2a52ac1b0c6f7.png" alt="img"></p>
 <p>那上节讲过half lambert  它是漫反射，而漫反射是没有考虑高光的，所以这里我们需要用blinnphone来做镜面反射。</p>
 <p>用相机的位置减去世界位置得到视向量，也就是当前物体表面指向摄像机的方向，由于反射不太好算，所以这里通过 视向量 和 光照方向 得到角平分线，也就是半程向量。通过 法线方向 点乘 半程向量 就可以得到 法线 和 半程向量 的 夹角，由此就 可以推断出 视向量 和 反射向量 的 接近程度，用 noh 来 计算高光 的 亮度值，而这个参数 SpecPow 则是 控制高光的 光泽度，也就是 高光 亮斑的 范围，和色阶同样，用smoothStep来做个柔边的效果再把高光颜色和强度值加上，最后我们把漫反射和高光混合，就可以来调试效果啦。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 得到视向量</span><br><span class="line">float3 viewDir = normalize(_WorldSpaceCameraPos.xyz - i.worldPos.xyz);</span><br><span class="line">// 计算half向量, 使用Blinn-phone计算高光</span><br><span class="line">float3 halfDir = normalize(viewDir + worldLightDir);</span><br><span class="line">// 计算NoH用于计算高光</span><br><span class="line">float NoH = dot(normal, halfDir);</span><br><span class="line">// 计算高光亮度值</span><br><span class="line">float blinnPhone = pow(max(0, NoH), _SpecPow * 128.0);</span><br><span class="line">// 计算高光色彩</span><br><span class="line">float3 specularColor = smoothstep(0.7 - _SpecSmooth / 2, 0.7 + _SpecSmooth / 2, blinnPhone) </span><br><span class="line">                                             * _SpecularColor * _SpecIntensity;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 得到视向量
+float3 viewDir &#x3D; normalize(_WorldSpaceCameraPos.xyz - i.worldPos.xyz);
+&#x2F;&#x2F; 计算half向量, 使用Blinn-phone计算高光
+float3 halfDir &#x3D; normalize(viewDir + worldLightDir);
+&#x2F;&#x2F; 计算NoH用于计算高光
+float NoH &#x3D; dot(normal, halfDir);
+&#x2F;&#x2F; 计算高光亮度值
+float blinnPhone &#x3D; pow(max(0, NoH), _SpecPow * 128.0);
+&#x2F;&#x2F; 计算高光色彩
+float3 specularColor &#x3D; smoothstep(0.7 - _SpecSmooth &#x2F; 2, 0.7 + _SpecSmooth &#x2F; 2, blinnPhone) 
+                                             * _SpecularColor * _SpecIntensity;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>边缘光</strong></p>
 <p><img src="https://i0.hdslb.com/bfs/album/811189c19dcdb594ca48c5f4f41b0770d6a777c9.png" alt="img"></p>
 <p>首先我们需要得知哪里是我们看到的边缘，当我们的视向量和法线向量的夹角越接近直角时它就越靠近边缘，先拿到视向量和法向量的夹角，就可以看到，越是接近边缘的地方越暗，但边缘光一般都是越接近边缘越亮，所以给 1- 反转一下，但正常来说阴影部分是不应该有边缘光的，所以要把漫反射加一下，那到至此边缘光就正确啦~</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 计算NoV用于计算边缘光</span><br><span class="line">float NoV = dot(i.worldNormal, viewDir);</span><br><span class="line">// 计算边缘光亮度值</span><br><span class="line">float rim = (1 - max(0, NoV)) * NoL;</span><br><span class="line">// 计算边缘光颜色</span><br><span class="line">float3 rimColor = smoothstep(_RimThreshold - _RimSmooth / 2, _RimThreshold + _RimSmooth / 2, rim) * _RimColor;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 计算NoV用于计算边缘光
+float NoV &#x3D; dot(i.worldNormal, viewDir);
+&#x2F;&#x2F; 计算边缘光亮度值
+float rim &#x3D; (1 - max(0, NoV)) * NoL;
+&#x2F;&#x2F; 计算边缘光颜色
+float3 rimColor &#x3D; smoothstep(_RimThreshold - _RimSmooth &#x2F; 2, _RimThreshold + _RimSmooth &#x2F; 2, rim) * _RimColor;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>最后把各项颜色混合就大功告成啦~</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 混合颜色</span><br><span class="line">float3 finalColor = saturate(rampColor + specularColor + rimColor);</span><br><span class="line">return float4(finalColor,1);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 混合颜色
+float3 finalColor &#x3D; saturate(rampColor + specularColor + rimColor);
+return float4(finalColor,1);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://i0.hdslb.com/bfs/album/0027e4cb3bdccdd2c29f24b92ffb9daa0f2829f1.png" alt="img"></p>
-<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br></pre></td><td class="code"><pre><span class="line">Shader &quot;Custom/ToonShader&quot;</span><br><span class="line">&#123;</span><br><span class="line">    Properties</span><br><span class="line">    &#123;</span><br><span class="line">        _MainTex (&quot;Texture&quot;, 2D) = &quot;white&quot; &#123;&#125;</span><br><span class="line">        </span><br><span class="line">        _OutlineWidth (&quot;Outline Width&quot;, Range(0.01, 1)) = 0.01</span><br><span class="line">      _OutLineColor (&quot;OutLine Color&quot;, Color) = (0.5,0.5,0.5,1)</span><br><span class="line">        </span><br><span class="line">        _RampStart (&quot;交界起始 RampStart&quot;, Range(0.1, 1)) = 0.3</span><br><span class="line">        _RampSize (&quot;交界大小 RampSize&quot;, Range(0, 1)) = 0.1</span><br><span class="line">        [IntRange] _RampStep(&quot;交界段数 RampStep&quot;, Range(1,10)) = 1</span><br><span class="line">        _RampSmooth (&quot;交界柔和度 RampSmooth&quot;, Range(0.01, 1)) = 0.1</span><br><span class="line">        _DarkColor (&quot;暗面 DarkColor&quot;, Color) = (0.4, 0.4, 0.4, 1)</span><br><span class="line">        _LightColor (&quot;亮面 LightColor&quot;, Color) = (0.8, 0.8, 0.8, 1)</span><br><span class="line">        </span><br><span class="line">        _SpecPow(&quot;SpecPow 光泽度&quot;, Range(0, 1)) = 0.1</span><br><span class="line">        _SpecularColor (&quot;SpecularColor 高光&quot;, Color) = (1.0, 1.0, 1.0, 1)</span><br><span class="line">        _SpecIntensity(&quot;SpecIntensity 高光强度&quot;, Range(0, 1)) = 0</span><br><span class="line">        _SpecSmooth(&quot;SpecSmooth 高光柔和度&quot;, Range(0, 0.5)) = 0.1</span><br><span class="line">        </span><br><span class="line">        _RimColor (&quot;RimColor 边缘光&quot;, Color) = (1.0, 1.0, 1.0, 1)</span><br><span class="line">        _RimThreshold(&quot;RimThreshold 边缘光阈值&quot;, Range(0, 1)) = 0.45</span><br><span class="line">        _RimSmooth(&quot;RimSmooth 边缘光柔和度&quot;, Range(0, 0.5)) = 0.1</span><br><span class="line">    &#125;</span><br><span class="line">    SubShader</span><br><span class="line">    &#123;</span><br><span class="line">        Tags &#123; &quot;RenderType&quot;=&quot;Opaque&quot; &#125;</span><br><span class="line">        LOD 100</span><br><span class="line"></span><br><span class="line">        Pass</span><br><span class="line">        &#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line">            #pragma vertex vert</span><br><span class="line">            #pragma fragment frag</span><br><span class="line"></span><br><span class="line">            #include &quot;UnityCG.cginc&quot;</span><br><span class="line"></span><br><span class="line">            struct appdata</span><br><span class="line">            &#123;</span><br><span class="line">                float4 vertex : POSITION;</span><br><span class="line">                float2 uv : TEXCOORD0;</span><br><span class="line">                float3 normal: NORMAL;  // 计算光照需要用到模型法线</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            struct v2f</span><br><span class="line">            &#123;</span><br><span class="line">                float2 uv : TEXCOORD0;</span><br><span class="line">                float4 vertex : SV_POSITION;</span><br><span class="line">                // 计算光照需要用到法线和世界位置</span><br><span class="line">                float3 worldNormal: TEXCOORD1;</span><br><span class="line">                float3 worldPos:TEXCOORD2;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            sampler2D _MainTex;</span><br><span class="line">            float4 _MainTex_ST;</span><br><span class="line">            float _RampStart;</span><br><span class="line">            float _RampSize;</span><br><span class="line">            float _RampStep;</span><br><span class="line">            float _RampSmooth;</span><br><span class="line">            float3 _DarkColor;</span><br><span class="line">            float3 _LightColor;</span><br><span class="line"></span><br><span class="line">            float _SpecPow;</span><br><span class="line">            float3 _SpecularColor;</span><br><span class="line">            float _SpecIntensity;</span><br><span class="line">            float _SpecSmooth;</span><br><span class="line"></span><br><span class="line">            float3 _RimColor;</span><br><span class="line">            float _RimThreshold;</span><br><span class="line">            float _RimSmooth;</span><br><span class="line"></span><br><span class="line">            float linearstep (float min, float max, float t)</span><br><span class="line">            &#123;</span><br><span class="line">                return saturate((t - min) / (max - min));</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            v2f vert (appdata v)</span><br><span class="line">            &#123;</span><br><span class="line">                v2f o;</span><br><span class="line">                o.vertex = UnityObjectToClipPos(v.vertex);</span><br><span class="line">                o.uv = TRANSFORM_TEX(v.uv, _MainTex);</span><br><span class="line">                // 向下传输这些数据</span><br><span class="line">                o.worldNormal = normalize(UnityObjectToWorldNormal(v.normal));</span><br><span class="line">                o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;</span><br><span class="line">                return o;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            fixed4 frag (v2f i) : SV_Target</span><br><span class="line">            &#123;</span><br><span class="line">                // sample the texture</span><br><span class="line">                fixed4 col = tex2D(_MainTex, i.uv);</span><br><span class="line">                </span><br><span class="line">                //------------------------ 漫反射 ------------------------</span><br><span class="line">                // 得到顶点法线</span><br><span class="line">                float3 normal = normalize(i.worldNormal);</span><br><span class="line">                // 得到光照方向</span><br><span class="line">                float3 worldLightDir = UnityWorldSpaceLightDir(i.worldPos);</span><br><span class="line">                // NoL代表表面接受的能量大小</span><br><span class="line">                float NoL = dot(i.worldNormal, worldLightDir);</span><br><span class="line">                // 计算half-lambert亮度值</span><br><span class="line">                float halfLambert = NoL * 0.5 + 0.5;</span><br><span class="line"></span><br><span class="line">                //------------------------ 高光 ------------------------</span><br><span class="line">                // 得到视向量</span><br><span class="line">                float3 viewDir = normalize(_WorldSpaceCameraPos.xyz - i.worldPos.xyz);</span><br><span class="line">                // 计算half向量, 使用Blinn-phone计算高光</span><br><span class="line">                float3 halfDir = normalize(viewDir + worldLightDir);</span><br><span class="line">                // 计算NoH用于计算高光</span><br><span class="line">                float NoH = dot(normal, halfDir);</span><br><span class="line">                // 计算高光亮度值</span><br><span class="line">                float blinnPhone = pow(max(0, NoH), _SpecPow * 128.0);</span><br><span class="line">                // 计算高光色彩</span><br><span class="line">                float3 specularColor = smoothstep(0.7 - _SpecSmooth / 2, 0.7 + _SpecSmooth / 2, blinnPhone)</span><br><span class="line">                                        * _SpecularColor * _SpecIntensity;</span><br><span class="line"></span><br><span class="line">                //------------------------ 边缘光 ------------------------</span><br><span class="line">                // 计算NoV用于计算边缘光</span><br><span class="line">                float NoV = dot(i.worldNormal, viewDir);</span><br><span class="line">                // 计算边缘光亮度值</span><br><span class="line">                float rim = (1 - max(0, NoV)) * NoL;</span><br><span class="line">                // 计算边缘光颜色</span><br><span class="line">                float3 rimColor = smoothstep(_RimThreshold - _RimSmooth / 2, _RimThreshold + _RimSmooth / 2, rim) * _RimColor;</span><br><span class="line"></span><br><span class="line">                //------------------------ 色阶 ------------------------</span><br><span class="line">                // 通过亮度值计算线性ramp</span><br><span class="line">                float ramp = linearstep(_RampStart, _RampStart + _RampSize, halfLambert);</span><br><span class="line">                float step = ramp * _RampStep;  // 使每个色阶大小为1, 方便计算</span><br><span class="line">                float gridStep = floor(step);   // 得到当前所处的色阶</span><br><span class="line">                float smoothStep = smoothstep(gridStep, gridStep + _RampSmooth, step) + gridStep;</span><br><span class="line">                ramp = smoothStep / _RampStep;  // 回到原来的空间</span><br><span class="line">                // 得到最终的ramp色彩</span><br><span class="line">                float3 rampColor = lerp(_DarkColor, _LightColor, ramp);</span><br><span class="line">                rampColor *= col;</span><br><span class="line">                </span><br><span class="line">                // 混合颜色</span><br><span class="line">                float3 finalColor = saturate(rampColor + specularColor + rimColor);</span><br><span class="line">                return float4(finalColor,1);</span><br><span class="line">            &#125;</span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        Pass</span><br><span class="line">        &#123;</span><br><span class="line">            Cull Front</span><br><span class="line">            CGPROGRAM</span><br><span class="line">            #pragma vertex vert</span><br><span class="line">            #pragma fragment frag</span><br><span class="line"></span><br><span class="line">            #include &quot;UnityCG.cginc&quot;</span><br><span class="line"></span><br><span class="line">            struct appdata</span><br><span class="line">            &#123;</span><br><span class="line">                float4 vertex : POSITION;</span><br><span class="line">                float2 uv : TEXCOORD0;</span><br><span class="line">                // 法线</span><br><span class="line">                float3 normal : NORMAL;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            struct v2f</span><br><span class="line">            &#123;</span><br><span class="line">                float2 uv : TEXCOORD0;</span><br><span class="line">                float4 vertex : SV_POSITION;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            sampler2D _MainTex;</span><br><span class="line">            float4 _MainTex_ST;</span><br><span class="line"></span><br><span class="line">            // 线条宽度</span><br><span class="line">            float _OutlineWidth;</span><br><span class="line">            // 线条颜色</span><br><span class="line">            float4 _OutLineColor;</span><br><span class="line"></span><br><span class="line">            v2f vert (appdata v)</span><br><span class="line">            &#123;</span><br><span class="line">                v2f o;</span><br><span class="line">                float4 newVertex = float4(v.vertex.xyz +  normalize(v.normal) * _OutlineWidth * 0.05,1);</span><br><span class="line">                o.vertex = UnityObjectToClipPos(newVertex);</span><br><span class="line">                return o;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            fixed4 frag (v2f i) : SV_Target</span><br><span class="line">            &#123;</span><br><span class="line">                return _OutLineColor;</span><br><span class="line">            &#125;</span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    fallback&quot;Diffuse&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><pre class="line-numbers language-none"><code class="language-none">Shader &quot;Custom&#x2F;ToonShader&quot;
+&#123;
+    Properties
+    &#123;
+        _MainTex (&quot;Texture&quot;, 2D) &#x3D; &quot;white&quot; &#123;&#125;
+        
+        _OutlineWidth (&quot;Outline Width&quot;, Range(0.01, 1)) &#x3D; 0.01
+      _OutLineColor (&quot;OutLine Color&quot;, Color) &#x3D; (0.5,0.5,0.5,1)
+        
+        _RampStart (&quot;交界起始 RampStart&quot;, Range(0.1, 1)) &#x3D; 0.3
+        _RampSize (&quot;交界大小 RampSize&quot;, Range(0, 1)) &#x3D; 0.1
+        [IntRange] _RampStep(&quot;交界段数 RampStep&quot;, Range(1,10)) &#x3D; 1
+        _RampSmooth (&quot;交界柔和度 RampSmooth&quot;, Range(0.01, 1)) &#x3D; 0.1
+        _DarkColor (&quot;暗面 DarkColor&quot;, Color) &#x3D; (0.4, 0.4, 0.4, 1)
+        _LightColor (&quot;亮面 LightColor&quot;, Color) &#x3D; (0.8, 0.8, 0.8, 1)
+        
+        _SpecPow(&quot;SpecPow 光泽度&quot;, Range(0, 1)) &#x3D; 0.1
+        _SpecularColor (&quot;SpecularColor 高光&quot;, Color) &#x3D; (1.0, 1.0, 1.0, 1)
+        _SpecIntensity(&quot;SpecIntensity 高光强度&quot;, Range(0, 1)) &#x3D; 0
+        _SpecSmooth(&quot;SpecSmooth 高光柔和度&quot;, Range(0, 0.5)) &#x3D; 0.1
+        
+        _RimColor (&quot;RimColor 边缘光&quot;, Color) &#x3D; (1.0, 1.0, 1.0, 1)
+        _RimThreshold(&quot;RimThreshold 边缘光阈值&quot;, Range(0, 1)) &#x3D; 0.45
+        _RimSmooth(&quot;RimSmooth 边缘光柔和度&quot;, Range(0, 0.5)) &#x3D; 0.1
+    &#125;
+    SubShader
+    &#123;
+        Tags &#123; &quot;RenderType&quot;&#x3D;&quot;Opaque&quot; &#125;
+        LOD 100
+
+        Pass
+        &#123;
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+
+            #include &quot;UnityCG.cginc&quot;
+
+            struct appdata
+            &#123;
+                float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
+                float3 normal: NORMAL;  &#x2F;&#x2F; 计算光照需要用到模型法线
+            &#125;;
+
+            struct v2f
+            &#123;
+                float2 uv : TEXCOORD0;
+                float4 vertex : SV_POSITION;
+                &#x2F;&#x2F; 计算光照需要用到法线和世界位置
+                float3 worldNormal: TEXCOORD1;
+                float3 worldPos:TEXCOORD2;
+            &#125;;
+
+            sampler2D _MainTex;
+            float4 _MainTex_ST;
+            float _RampStart;
+            float _RampSize;
+            float _RampStep;
+            float _RampSmooth;
+            float3 _DarkColor;
+            float3 _LightColor;
+
+            float _SpecPow;
+            float3 _SpecularColor;
+            float _SpecIntensity;
+            float _SpecSmooth;
+
+            float3 _RimColor;
+            float _RimThreshold;
+            float _RimSmooth;
+
+            float linearstep (float min, float max, float t)
+            &#123;
+                return saturate((t - min) &#x2F; (max - min));
+            &#125;
+
+            v2f vert (appdata v)
+            &#123;
+                v2f o;
+                o.vertex &#x3D; UnityObjectToClipPos(v.vertex);
+                o.uv &#x3D; TRANSFORM_TEX(v.uv, _MainTex);
+                &#x2F;&#x2F; 向下传输这些数据
+                o.worldNormal &#x3D; normalize(UnityObjectToWorldNormal(v.normal));
+                o.worldPos &#x3D; mul(unity_ObjectToWorld, v.vertex).xyz;
+                return o;
+            &#125;
+
+            fixed4 frag (v2f i) : SV_Target
+            &#123;
+                &#x2F;&#x2F; sample the texture
+                fixed4 col &#x3D; tex2D(_MainTex, i.uv);
+                
+                &#x2F;&#x2F;------------------------ 漫反射 ------------------------
+                &#x2F;&#x2F; 得到顶点法线
+                float3 normal &#x3D; normalize(i.worldNormal);
+                &#x2F;&#x2F; 得到光照方向
+                float3 worldLightDir &#x3D; UnityWorldSpaceLightDir(i.worldPos);
+                &#x2F;&#x2F; NoL代表表面接受的能量大小
+                float NoL &#x3D; dot(i.worldNormal, worldLightDir);
+                &#x2F;&#x2F; 计算half-lambert亮度值
+                float halfLambert &#x3D; NoL * 0.5 + 0.5;
+
+                &#x2F;&#x2F;------------------------ 高光 ------------------------
+                &#x2F;&#x2F; 得到视向量
+                float3 viewDir &#x3D; normalize(_WorldSpaceCameraPos.xyz - i.worldPos.xyz);
+                &#x2F;&#x2F; 计算half向量, 使用Blinn-phone计算高光
+                float3 halfDir &#x3D; normalize(viewDir + worldLightDir);
+                &#x2F;&#x2F; 计算NoH用于计算高光
+                float NoH &#x3D; dot(normal, halfDir);
+                &#x2F;&#x2F; 计算高光亮度值
+                float blinnPhone &#x3D; pow(max(0, NoH), _SpecPow * 128.0);
+                &#x2F;&#x2F; 计算高光色彩
+                float3 specularColor &#x3D; smoothstep(0.7 - _SpecSmooth &#x2F; 2, 0.7 + _SpecSmooth &#x2F; 2, blinnPhone)
+                                        * _SpecularColor * _SpecIntensity;
+
+                &#x2F;&#x2F;------------------------ 边缘光 ------------------------
+                &#x2F;&#x2F; 计算NoV用于计算边缘光
+                float NoV &#x3D; dot(i.worldNormal, viewDir);
+                &#x2F;&#x2F; 计算边缘光亮度值
+                float rim &#x3D; (1 - max(0, NoV)) * NoL;
+                &#x2F;&#x2F; 计算边缘光颜色
+                float3 rimColor &#x3D; smoothstep(_RimThreshold - _RimSmooth &#x2F; 2, _RimThreshold + _RimSmooth &#x2F; 2, rim) * _RimColor;
+
+                &#x2F;&#x2F;------------------------ 色阶 ------------------------
+                &#x2F;&#x2F; 通过亮度值计算线性ramp
+                float ramp &#x3D; linearstep(_RampStart, _RampStart + _RampSize, halfLambert);
+                float step &#x3D; ramp * _RampStep;  &#x2F;&#x2F; 使每个色阶大小为1, 方便计算
+                float gridStep &#x3D; floor(step);   &#x2F;&#x2F; 得到当前所处的色阶
+                float smoothStep &#x3D; smoothstep(gridStep, gridStep + _RampSmooth, step) + gridStep;
+                ramp &#x3D; smoothStep &#x2F; _RampStep;  &#x2F;&#x2F; 回到原来的空间
+                &#x2F;&#x2F; 得到最终的ramp色彩
+                float3 rampColor &#x3D; lerp(_DarkColor, _LightColor, ramp);
+                rampColor *&#x3D; col;
+                
+                &#x2F;&#x2F; 混合颜色
+                float3 finalColor &#x3D; saturate(rampColor + specularColor + rimColor);
+                return float4(finalColor,1);
+            &#125;
+            ENDCG
+        &#125;
+        
+        Pass
+        &#123;
+            Cull Front
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+
+            #include &quot;UnityCG.cginc&quot;
+
+            struct appdata
+            &#123;
+                float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
+                &#x2F;&#x2F; 法线
+                float3 normal : NORMAL;
+            &#125;;
+
+            struct v2f
+            &#123;
+                float2 uv : TEXCOORD0;
+                float4 vertex : SV_POSITION;
+            &#125;;
+
+            sampler2D _MainTex;
+            float4 _MainTex_ST;
+
+            &#x2F;&#x2F; 线条宽度
+            float _OutlineWidth;
+            &#x2F;&#x2F; 线条颜色
+            float4 _OutLineColor;
+
+            v2f vert (appdata v)
+            &#123;
+                v2f o;
+                float4 newVertex &#x3D; float4(v.vertex.xyz +  normalize(v.normal) * _OutlineWidth * 0.05,1);
+                o.vertex &#x3D; UnityObjectToClipPos(newVertex);
+                return o;
+            &#125;
+
+            fixed4 frag (v2f i) : SV_Target
+            &#123;
+                return _OutLineColor;
+            &#125;
+            ENDCG
+        &#125;
+    &#125;
+    fallback&quot;Diffuse&quot;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="Noise"><a href="#Noise" class="headerlink" title="Noise"></a>Noise</h2><p><strong>SkyBox</strong></p>
 <p>Unity中天空的概念是，相机在渲染场景之前绘制的一种背景类型，它可以给场景提供深度感，使场景看上去比实际大小要大得多。</p>
@@ -453,45 +1005,297 @@
 <h3 id="实战案例-极光"><a href="#实战案例-极光" class="headerlink" title="实战案例 - 极光"></a>实战案例 - 极光</h3><p><strong>模拟大气层</strong></p>
 <p><img src="https://i0.hdslb.com/bfs/album/046e585b0d5f54eb07aaf78ca66792e70147b486.png" alt="img"></p>
 <p>从0点开始向前发射一条射线，拿到射线的方向。极光一般都会产生在地球上空90-130千米处，所以接下来的本质其实是在模拟一个大气层</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 计算ray march</span><br><span class="line">// 每个像素发射射线</span><br><span class="line">float3 rayOriginal = 0;</span><br><span class="line">float3 totalDir = i.worldPos - rayOriginal;</span><br><span class="line">float3 rayDir = normalize(totalDir);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 计算ray march
+&#x2F;&#x2F; 每个像素发射射线
+float3 rayOriginal &#x3D; 0;
+float3 totalDir &#x3D; i.worldPos - rayOriginal;
+float3 rayDir &#x3D; normalize(totalDir);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://i0.hdslb.com/bfs/album/8ff8814d89f95e4cf0434f1419dfd660ee0620ab.png" alt="img"></p>
 <p>用倒数函数来求一下天空的曲率值，当y越接近于零的时侯，它的x越大，这个层也就越接近一个平面</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 拓展球面来计算march的起始点</span><br><span class="line">// rcp -&gt; reciprocal 求倒数</span><br><span class="line">// 天空曲率</span><br><span class="line">float skyCurvatureFactor = rcp(rayDir.y + _SkyCurvature);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 拓展球面来计算march的起始点
+&#x2F;&#x2F; rcp -&gt; reciprocal 求倒数
+&#x2F;&#x2F; 天空曲率
+float skyCurvatureFactor &#x3D; rcp(rayDir.y + _SkyCurvature);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://i0.hdslb.com/bfs/album/057ef9e25791f8989ec47de2ee770957fa3636e2.png" alt="img"></p>
 <p>沿射线的方向向外延伸，把刚刚求出来的天空曲率乘上，那为了使极光的重复度更可控，我们在最后乘上一个平铺系数，那至此大气层的最底面就设定好啦</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 无数条射线像外发射 就会形成一个球面 *天空曲率 就可以把它拍成一个球</span><br><span class="line">float3 basicRayPlane = rayDir * skyCurvatureFactor * _AurorasTiling ;</span><br><span class="line">// 从哪开始步进(大气层最底面)</span><br><span class="line">float3 rayMarchBegin = rayOriginal + basicRayPlane;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 无数条射线像外发射 就会形成一个球面 *天空曲率 就可以把它拍成一个球
+float3 basicRayPlane &#x3D; rayDir * skyCurvatureFactor * _AurorasTiling ;
+&#x2F;&#x2F; 从哪开始步进(大气层最底面)
+float3 rayMarchBegin &#x3D; rayOriginal + basicRayPlane;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>光线步进</strong></p>
 <p><img src="https://i0.hdslb.com/bfs/album/db94835dd317e3de7b46da65442c0dd6339cce7b.png" alt="img"></p>
 <p>把模拟好的大气层底面作为步进的起始位置，同样在这里通过倒数函数算一下步长，步数越多，步的Size就越小，既然需要对每一步的信息进行累积计算，加一个for循环，为了使初始的几次采样 贡献更大, 所以可以用二次函数来着重一下初始采样，根据这个总距离求出当前的步进距离，根据射线方向和距离乘上天空曲率算出步进后的采样坐标。增加一个黑白贴图来决定极光的形状。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 一步的大小</span><br><span class="line">float stepSize = rcp(_RayMarchStep);</span><br><span class="line">for (float i = 0; i &lt; _RayMarchStep; i += 1)</span><br><span class="line">&#123;</span><br><span class="line">     float curStep = stepSize * i;</span><br><span class="line">     // 初始的几次采样贡献更大, 我们用二次函数着重初始采样</span><br><span class="line">     curStep = curStep * curStep;</span><br><span class="line">     // 当前步进距离</span><br><span class="line">     float curDistance = curStep * _RayMarchDistance;</span><br><span class="line">     // 步进后的位置</span><br><span class="line">     float3 curPos = rayMarchBegin + rayDir * curDistance * skyCurvatureFactor;</span><br><span class="line">     float2 uv = float2(-curPos.x,curPos.z);</span><br><span class="line">     float curAuroras = tex2D(_MainTex, TRANSFORM_TEX(uv, _MainTex)).r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 一步的大小
+float stepSize &#x3D; rcp(_RayMarchStep);
+for (float i &#x3D; 0; i &lt; _RayMarchStep; i +&#x3D; 1)
+&#123;
+     float curStep &#x3D; stepSize * i;
+     &#x2F;&#x2F; 初始的几次采样贡献更大, 我们用二次函数着重初始采样
+     curStep &#x3D; curStep * curStep;
+     &#x2F;&#x2F; 当前步进距离
+     float curDistance &#x3D; curStep * _RayMarchDistance;
+     &#x2F;&#x2F; 步进后的位置
+     float3 curPos &#x3D; rayMarchBegin + rayDir * curDistance * skyCurvatureFactor;
+     float2 uv &#x3D; float2(-curPos.x,curPos.z);
+     float curAuroras &#x3D; tex2D(_MainTex, TRANSFORM_TEX(uv, _MainTex)).r;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>色彩渐变拖尾</strong></p>
 <p><img src="https://i0.hdslb.com/bfs/album/153df8842e58d75c3f09b68c1ce1d0dc0b260f4c.png" alt="img"></p>
 <p>首先在for循环内，拿设定的色彩做初相，由于sin的范围是-1到1，所以要先把色彩范围转换到-1到1之间，通过 i 计算出当前步进层的色彩，最后 * 0.5再加0.5就返回到了原本0-1的范围区间。取两步色彩的平均值，使当前步进层的颜色更接近于本色，最后把当前步进层的色彩累积上去使色彩混合，就可以看到最基础的极光拖尾渐变色啦</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 极光色彩累积计算</span><br><span class="line">// 由于sin的范围是-1到1，所以要先把颜色范围转换到-1到1之间，这通过i计算出当前步进层的色彩</span><br><span class="line"> // 最后 * 0.5再加0.5就返回到了原本的0-1的范围区间</span><br><span class="line"> float3 curColor = sin((_AurorasColor * 2 - 1) + i * 0.043) * 0.5 + 0.5;</span><br><span class="line">// 取两步色彩的平均值 使颜色更接近于本色 </span><br><span class="line">avgColor = (avgColor + curColor) / 2;</span><br><span class="line">                    </span><br><span class="line">// 混合颜色</span><br><span class="line">color += avgColor * curAuroras * stepSize;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 极光色彩累积计算
+&#x2F;&#x2F; 由于sin的范围是-1到1，所以要先把颜色范围转换到-1到1之间，这通过i计算出当前步进层的色彩
+ &#x2F;&#x2F; 最后 * 0.5再加0.5就返回到了原本的0-1的范围区间
+ float3 curColor &#x3D; sin((_AurorasColor * 2 - 1) + i * 0.043) * 0.5 + 0.5;
+&#x2F;&#x2F; 取两步色彩的平均值 使颜色更接近于本色 
+avgColor &#x3D; (avgColor + curColor) &#x2F; 2;
+                    
+&#x2F;&#x2F; 混合颜色
+color +&#x3D; avgColor * curAuroras * stepSize;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>最后为了使色彩更为自然，增加一个强度衰减就大功告成啦</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// for 内</span><br><span class="line">// 强度衰减</span><br><span class="line">curAuroras = curAuroras * saturate(1 - pow(curDistance, 1 - _AurorasAttenuation));</span><br><span class="line"> // for 外</span><br><span class="line">// 强度</span><br><span class="line">color *= _AurorasIntensity;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; for 内
+&#x2F;&#x2F; 强度衰减
+curAuroras &#x3D; curAuroras * saturate(1 - pow(curDistance, 1 - _AurorasAttenuation));
+ &#x2F;&#x2F; for 外
+&#x2F;&#x2F; 强度
+color *&#x3D; _AurorasIntensity;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>动态极光</strong></p>
 <p>为了使极光动起来，这里需要用神奇的噪声贴图来做个UV扰动，所谓的UV扰动，它的概念简单来说就是，给UV采样通过噪声做随机的偏移，首先把噪声贴图采出来，给它乘上一个时间维度和速度，就可以使噪声随着时间流逝动起来啦，既然是给原本的UV采样做随机偏移，所以这里把噪声偏移加上之后乘以一个系数就可以了~</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// for 内</span><br><span class="line">// 计算扰动uv</span><br><span class="line">float2 warp_vec = tex2D(_AurorasNoiseTex,TRANSFORM_TEX((uv * 2 + _Time.y * _AurorasSpeed),_AurorasNoiseTex));</span><br><span class="line"> // 采样当前的噪声强度</span><br><span class="line">float curNoise = tex2D(_MainTex, TRANSFORM_TEX((uv + warp_vec * 0.1), _MainTex)).r;</span><br><span class="line">// 混合颜色</span><br><span class="line">color += avgColor * curNoise * stepSize;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; for 内
+&#x2F;&#x2F; 计算扰动uv
+float2 warp_vec &#x3D; tex2D(_AurorasNoiseTex,TRANSFORM_TEX((uv * 2 + _Time.y * _AurorasSpeed),_AurorasNoiseTex));
+ &#x2F;&#x2F; 采样当前的噪声强度
+float curNoise &#x3D; tex2D(_MainTex, TRANSFORM_TEX((uv + warp_vec * 0.1), _MainTex)).r;
+&#x2F;&#x2F; 混合颜色
+color +&#x3D; avgColor * curNoise * stepSize;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="实战案例-星空"><a href="#实战案例-星空" class="headerlink" title="实战案例 - 星空"></a>实战案例 - 星空</h3><p>同样这里还是用神奇的噪声贴图来做璀璨的漫天繁星，其实直接采噪声贴图就可以有较为粗糙的星星了，</p>
 <p><img src="https://i0.hdslb.com/bfs/album/fd994705c2f4bf5b462e0110c3a1006d3b3e654e.png" alt="img"></p>
 <p>但这并不是我们想要的效果，太多太密集了，而且它不会随机一闪一闪亮晶晶，那这里可以做两代星星的循环迭代，既然要做星星的闪动效果，所以需要给它增加一个时间维度乘上星星的闪烁速度，通过Time来计算叠加区间的两层星星UV，由于取整了之后UV加不加的没什么意义，所以这里给它乘个0.3的魔法值，然后通过偏移好的UV去采样两层星星值就好啦</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const float starTime = _Time.y * _StarShinningSpeed;</span><br><span class="line"></span><br><span class="line">// 计算叠加区间的两层星星UV</span><br><span class="line">const float2 beginMove = floor(starTime) * 0.3;</span><br><span class="line">const float2 endMove = ceil(starTime) * 0.3;</span><br><span class="line">const float2 beginUV = i.uv + beginMove;</span><br><span class="line">const float2 endUV = i.uv + endMove;</span><br><span class="line"></span><br><span class="line">// 采样两层星星的值</span><br><span class="line">float beginNoise = tex2D(_StarNoiseTex, TRANSFORM_TEX(beginUV,_StarNoiseTex)).r;</span><br><span class="line">float endNoise = tex2D(_StarNoiseTex, TRANSFORM_TEX(endUV,_StarNoiseTex)).r;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">const float starTime &#x3D; _Time.y * _StarShinningSpeed;
+
+&#x2F;&#x2F; 计算叠加区间的两层星星UV
+const float2 beginMove &#x3D; floor(starTime) * 0.3;
+const float2 endMove &#x3D; ceil(starTime) * 0.3;
+const float2 beginUV &#x3D; i.uv + beginMove;
+const float2 endUV &#x3D; i.uv + endMove;
+
+&#x2F;&#x2F; 采样两层星星的值
+float beginNoise &#x3D; tex2D(_StarNoiseTex, TRANSFORM_TEX(beginUV,_StarNoiseTex)).r;
+float endNoise &#x3D; tex2D(_StarNoiseTex, TRANSFORM_TEX(endUV,_StarNoiseTex)).r;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>那为了使星星的密度变得更为可控，我们给它增加一个StarCount来调整，这一步做的就是 假设当这个StarCount是0.1的时候只显示 最亮的百分之十的星星，剩下比较暗的不做显示。最后根据这个Time去把两层星星的值混合一下就好啦~</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 减少星星</span><br><span class="line">                                         beginNoise = saturate(beginNoise - (1 - _StarCount)) / _StarCount;</span><br><span class="line">                                         endNoise = saturate(endNoise - (1 - _StarCount)) / _StarCount;</span><br><span class="line"></span><br><span class="line">                                         const float fracStarTime = frac(starTime);</span><br><span class="line">                                         // 混合两层星星值</span><br><span class="line">                                         starColor = saturate(beginNoise - fracStarTime) + saturate(endNoise - (1 - fracStarTime));</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 减少星星
+                                         beginNoise &#x3D; saturate(beginNoise - (1 - _StarCount)) &#x2F; _StarCount;
+                                         endNoise &#x3D; saturate(endNoise - (1 - _StarCount)) &#x2F; _StarCount;
+
+                                         const float fracStarTime &#x3D; frac(starTime);
+                                         &#x2F;&#x2F; 混合两层星星值
+                                         starColor &#x3D; saturate(beginNoise - fracStarTime) + saturate(endNoise - (1 - fracStarTime));<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>最后为了使天空交界更为自然，加个天际线混合就大功告成啦~</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 混合天际线</span><br><span class="line">color *= saturate(rayDir.y / _SkyLineSize + _SkyLineBasePow);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 混合天际线
+color *&#x3D; saturate(rayDir.y &#x2F; _SkyLineSize + _SkyLineBasePow);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h3 id="完整代码-1"><a href="#完整代码-1" class="headerlink" title="完整代码"></a>完整代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br></pre></td><td class="code"><pre><span class="line">Shader &quot;Custom/Auroras&quot;</span><br><span class="line">&#123;</span><br><span class="line">    Properties</span><br><span class="line">    &#123;</span><br><span class="line">        _MainTex (&quot;AurorasTexture&quot;, 2D) = &quot;white&quot; &#123;&#125;</span><br><span class="line">        _AurorasNoiseTex (&quot;AurorasNoise&quot;, 2D) = &quot;white&quot; &#123;&#125;</span><br><span class="line">        _StarNoiseTex (&quot;StarNoise&quot;, 2D) = &quot;white&quot; &#123;&#125;</span><br><span class="line">        _SkyColor (&quot;天空颜色 SkyColor&quot;, Color) = (0.4, 0.4, 0.4, 1)</span><br><span class="line">        _AurorasColor (&quot;极光颜色 AurorasColor&quot;, Color) = (0.4, 0.4, 0.4, 1)</span><br><span class="line">        _AurorasTiling(&quot;极光平铺 AurorasTiling&quot;, Range(0.1, 10)) = 0.4</span><br><span class="line">        _AurorasSpeed (&quot;极光变化速度 AurorasSpeed&quot;, Range(0.01, 1)) = 0.1</span><br><span class="line">        </span><br><span class="line">        _AurorasIntensity(&quot;极光强度 AurorasIntensity&quot;, Range(0.1, 20)) = 3</span><br><span class="line">        _AurorasAttenuation(&quot;极光衰减 AurorasAttenuation&quot;, Range(0, 0.99)) = 0.4</span><br><span class="line">        </span><br><span class="line">        _SkyCurvature (&quot;天空曲率 SkyCurvature&quot;, Range(0, 10)) = 0.4</span><br><span class="line">        _RayMarchDistance(&quot;步进距离 RayMarchDistance&quot;, Range(0.01, 1)) = 2.5</span><br><span class="line">        [IntRange] _RayMarchStep(&quot;步进步数 RayMarchStep&quot;, Range(1,128)) = 64</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        _SkyLineSize(&quot;天际线大小 SkyLineSize&quot;, Range(0, 1)) = 0.06</span><br><span class="line">        _SkyLineBasePow(&quot;天际线基础强度 SkyLineBasePow&quot;, Range(0, 1)) = 0.1</span><br><span class="line">        </span><br><span class="line">        _StarShinningSpeed (&quot;星星闪烁速度 StarShinningSpeed&quot;, Range(0, 1)) = 0.1</span><br><span class="line">        _StarCount(&quot;星星数量 StarCount&quot;, Range(0,1)) = 0.3</span><br><span class="line">    &#125;</span><br><span class="line">    SubShader</span><br><span class="line">    &#123;</span><br><span class="line">        Tags</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;RenderType&quot;=&quot;Opaque&quot;</span><br><span class="line">        &#125;</span><br><span class="line">        LOD 100</span><br><span class="line"></span><br><span class="line">        Pass</span><br><span class="line">        &#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line">            #pragma vertex vert</span><br><span class="line">            #pragma fragment frag</span><br><span class="line">            // make fog work</span><br><span class="line">            #pragma multi_compile_fog</span><br><span class="line"></span><br><span class="line">            #include &quot;UnityCG.cginc&quot;</span><br><span class="line"></span><br><span class="line">            struct appdata</span><br><span class="line">            &#123;</span><br><span class="line">                float4 vertex : POSITION;</span><br><span class="line">                float2 uv : TEXCOORD0;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            struct v2f</span><br><span class="line">            &#123;</span><br><span class="line">                float2 uv : TEXCOORD0;</span><br><span class="line">                float3 worldPos : TEXCOORD1;</span><br><span class="line">                float4 vertex : SV_POSITION;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            v2f vert (appdata v)</span><br><span class="line">            &#123;</span><br><span class="line">                v2f o;</span><br><span class="line">                o.vertex = UnityObjectToClipPos(v.vertex);</span><br><span class="line">                o.worldPos = mul(v.vertex, unity_ObjectToWorld);</span><br><span class="line">                o.uv = v.uv;</span><br><span class="line">                return o;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            float3 _AurorasColor;</span><br><span class="line">            float3 _SkyColor;</span><br><span class="line">            float _AurorasIntensity;</span><br><span class="line">            float _AurorasTiling;</span><br><span class="line">            float _AurorasSpeed;</span><br><span class="line">            float _AurorasAttenuation;</span><br><span class="line">            float _SkyCurvature;</span><br><span class="line">            float _RayMarchDistance;</span><br><span class="line">            float _RayMarchStep;</span><br><span class="line">            float _SkyLineSize;</span><br><span class="line">            float _SkyLineBasePow;</span><br><span class="line">            </span><br><span class="line">            float _StarShinningSpeed;</span><br><span class="line">            float _StarCount;</span><br><span class="line"></span><br><span class="line">            sampler2D _MainTex;</span><br><span class="line">            sampler2D _AurorasNoiseTex;</span><br><span class="line">            sampler2D _StarNoiseTex;</span><br><span class="line">            float4 _StarNoiseTex_ST;</span><br><span class="line">            float4 _AurorasNoiseTex_ST;</span><br><span class="line">            </span><br><span class="line">            float4 _MainTex_ST;</span><br><span class="line">            </span><br><span class="line"></span><br><span class="line">            fixed4 frag (v2f i) : SV_Target</span><br><span class="line">            &#123;</span><br><span class="line">                tex2D(_StarNoiseTex, TRANSFORM_TEX(i.uv,_StarNoiseTex)).r;</span><br><span class="line">                </span><br><span class="line">                // 星星</span><br><span class="line">                float starColor = 0;</span><br><span class="line">                </span><br><span class="line">                const float starTime = _Time.y * _StarShinningSpeed;</span><br><span class="line"></span><br><span class="line">                // 计算叠加区间的两层星星UV</span><br><span class="line">                const float2 beginMove = floor(starTime) * 0.3;</span><br><span class="line">                const float2 endMove = ceil(starTime) * 0.3;</span><br><span class="line">                const float2 beginUV = i.uv + beginMove;</span><br><span class="line">                const float2 endUV = i.uv + endMove;</span><br><span class="line">                </span><br><span class="line">                // 采样两层星星的值</span><br><span class="line">                float beginNoise = tex2D(_StarNoiseTex, TRANSFORM_TEX(beginUV,_StarNoiseTex)).r;</span><br><span class="line">                float endNoise = tex2D(_StarNoiseTex, TRANSFORM_TEX(endUV,_StarNoiseTex)).r;</span><br><span class="line"></span><br><span class="line">                // 减少星星</span><br><span class="line">                beginNoise = saturate(beginNoise - (1 - _StarCount)) / _StarCount;</span><br><span class="line">                endNoise = saturate(endNoise - (1 - _StarCount)) / _StarCount;</span><br><span class="line"></span><br><span class="line">                const float fracStarTime = frac(starTime);</span><br><span class="line">                // 混合两层星星值</span><br><span class="line">                starColor = saturate(beginNoise - fracStarTime) + saturate(endNoise - (1 - fracStarTime));</span><br><span class="line">                </span><br><span class="line">                </span><br><span class="line">                // 计算ray march信息</span><br><span class="line">                // 每个像素发射射线</span><br><span class="line">                float3 rayOriginal = 0;</span><br><span class="line">                float3 totalDir = i.worldPos - rayOriginal;</span><br><span class="line">                float3 rayDir = normalize(totalDir);</span><br><span class="line">                //clip(rayDir.y);</span><br><span class="line"></span><br><span class="line">                // 拓展球面来计算march的起始点</span><br><span class="line">                // reciprocal 求倒数</span><br><span class="line">                // 天空曲率</span><br><span class="line">                float skyCurvatureFactor = rcp(rayDir.y + _SkyCurvature);</span><br><span class="line">                // 本质为模拟地球大气</span><br><span class="line">                // 无数条射线像外发射 就会形成一个球面 *天空曲率 就可以把它拍成一个球</span><br><span class="line">                float3 basicRayPlane = rayDir * skyCurvatureFactor * _AurorasTiling ;</span><br><span class="line">                // 从哪开始步进</span><br><span class="line">                float3 rayMarchBegin = rayOriginal + basicRayPlane;</span><br><span class="line"></span><br><span class="line">                // ray march</span><br><span class="line">                float3 color = 0;</span><br><span class="line">                float3 avgColor = 0;</span><br><span class="line">                // 一步的大小</span><br><span class="line">                float stepSize = rcp(_RayMarchStep);</span><br><span class="line">                </span><br><span class="line">                for (float i = 0; i &lt; _RayMarchStep; i += 1)</span><br><span class="line">                &#123;</span><br><span class="line">                    float curStep = stepSize * i;</span><br><span class="line">                    // 初始的几次采样贡献更大, 我们用二次函数着重初始采样</span><br><span class="line">                    curStep = curStep * curStep;</span><br><span class="line">                    // 当前步进距离</span><br><span class="line">                    float curDistance = curStep * _RayMarchDistance;</span><br><span class="line">                    // 步进后的位置</span><br><span class="line">                    float3 curPos = rayMarchBegin + rayDir * curDistance * skyCurvatureFactor;</span><br><span class="line">                    float2 uv = float2(-curPos.x,curPos.z);</span><br><span class="line"></span><br><span class="line">                    // =====  极光动起来</span><br><span class="line">                    // 计算扰动uv</span><br><span class="line">          float2 warp_vec = </span><br><span class="line">                        tex2D(_AurorasNoiseTex,TRANSFORM_TEX((uv * 2 + _Time.y * _AurorasSpeed),_AurorasNoiseTex));</span><br><span class="line">                    // 采样当前的噪声强度</span><br><span class="line">                    float curNoise = tex2D(_MainTex, TRANSFORM_TEX((uv + warp_vec * 0.1), _MainTex)).r;</span><br><span class="line">                    //curNoise = tex2D(_MainTex, TRANSFORM_TEX(uv, _MainTex)).r;</span><br><span class="line">                    // =======================</span><br><span class="line">                    </span><br><span class="line">                    // 最后加强度衰减</span><br><span class="line">                    curNoise = curNoise * saturate(1 - pow(curDistance, 1 - _AurorasAttenuation));</span><br><span class="line">                    </span><br><span class="line">                    // 极光色彩累积计算</span><br><span class="line">                    // 由于sin的范围是-1到1，所以要先把颜色范围转换到-1到1之间，这通过i计算出当前步进层的色彩</span><br><span class="line">                    // 最后 * 0.5再加0.5就返回到了原本的0-1的范围区间</span><br><span class="line">                    float3 curColor = sin((_AurorasColor * 2 - 1) + i * 0.043) * 0.5 + 0.5;</span><br><span class="line">                    </span><br><span class="line">                    // 取两步色彩的平均值 使颜色更接近于本色 </span><br><span class="line">                    avgColor = (avgColor + curColor) / 2;</span><br><span class="line">                    </span><br><span class="line">                    // 混合颜色</span><br><span class="line">                    color += avgColor * curNoise * stepSize;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                // 强度</span><br><span class="line">                color *= _AurorasIntensity;</span><br><span class="line"></span><br><span class="line">                // 混合天际线</span><br><span class="line">                color *= saturate(rayDir.y / _SkyLineSize + _SkyLineBasePow);</span><br><span class="line"></span><br><span class="line">                // 天空色</span><br><span class="line">                color += _SkyColor;</span><br><span class="line"></span><br><span class="line">                // 星星</span><br><span class="line">                color = color + starColor * 0.9;</span><br><span class="line">                </span><br><span class="line">                return fixed4(color, 1);</span><br><span class="line">            &#125;</span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="完整代码-1"><a href="#完整代码-1" class="headerlink" title="完整代码"></a>完整代码</h3><pre class="line-numbers language-none"><code class="language-none">Shader &quot;Custom&#x2F;Auroras&quot;
+&#123;
+    Properties
+    &#123;
+        _MainTex (&quot;AurorasTexture&quot;, 2D) &#x3D; &quot;white&quot; &#123;&#125;
+        _AurorasNoiseTex (&quot;AurorasNoise&quot;, 2D) &#x3D; &quot;white&quot; &#123;&#125;
+        _StarNoiseTex (&quot;StarNoise&quot;, 2D) &#x3D; &quot;white&quot; &#123;&#125;
+        _SkyColor (&quot;天空颜色 SkyColor&quot;, Color) &#x3D; (0.4, 0.4, 0.4, 1)
+        _AurorasColor (&quot;极光颜色 AurorasColor&quot;, Color) &#x3D; (0.4, 0.4, 0.4, 1)
+        _AurorasTiling(&quot;极光平铺 AurorasTiling&quot;, Range(0.1, 10)) &#x3D; 0.4
+        _AurorasSpeed (&quot;极光变化速度 AurorasSpeed&quot;, Range(0.01, 1)) &#x3D; 0.1
+        
+        _AurorasIntensity(&quot;极光强度 AurorasIntensity&quot;, Range(0.1, 20)) &#x3D; 3
+        _AurorasAttenuation(&quot;极光衰减 AurorasAttenuation&quot;, Range(0, 0.99)) &#x3D; 0.4
+        
+        _SkyCurvature (&quot;天空曲率 SkyCurvature&quot;, Range(0, 10)) &#x3D; 0.4
+        _RayMarchDistance(&quot;步进距离 RayMarchDistance&quot;, Range(0.01, 1)) &#x3D; 2.5
+        [IntRange] _RayMarchStep(&quot;步进步数 RayMarchStep&quot;, Range(1,128)) &#x3D; 64
+        
+        
+        _SkyLineSize(&quot;天际线大小 SkyLineSize&quot;, Range(0, 1)) &#x3D; 0.06
+        _SkyLineBasePow(&quot;天际线基础强度 SkyLineBasePow&quot;, Range(0, 1)) &#x3D; 0.1
+        
+        _StarShinningSpeed (&quot;星星闪烁速度 StarShinningSpeed&quot;, Range(0, 1)) &#x3D; 0.1
+        _StarCount(&quot;星星数量 StarCount&quot;, Range(0,1)) &#x3D; 0.3
+    &#125;
+    SubShader
+    &#123;
+        Tags
+        &#123;
+            &quot;RenderType&quot;&#x3D;&quot;Opaque&quot;
+        &#125;
+        LOD 100
+
+        Pass
+        &#123;
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            &#x2F;&#x2F; make fog work
+            #pragma multi_compile_fog
+
+            #include &quot;UnityCG.cginc&quot;
+
+            struct appdata
+            &#123;
+                float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
+            &#125;;
+
+            struct v2f
+            &#123;
+                float2 uv : TEXCOORD0;
+                float3 worldPos : TEXCOORD1;
+                float4 vertex : SV_POSITION;
+            &#125;;
+
+            v2f vert (appdata v)
+            &#123;
+                v2f o;
+                o.vertex &#x3D; UnityObjectToClipPos(v.vertex);
+                o.worldPos &#x3D; mul(v.vertex, unity_ObjectToWorld);
+                o.uv &#x3D; v.uv;
+                return o;
+            &#125;
+
+            float3 _AurorasColor;
+            float3 _SkyColor;
+            float _AurorasIntensity;
+            float _AurorasTiling;
+            float _AurorasSpeed;
+            float _AurorasAttenuation;
+            float _SkyCurvature;
+            float _RayMarchDistance;
+            float _RayMarchStep;
+            float _SkyLineSize;
+            float _SkyLineBasePow;
+            
+            float _StarShinningSpeed;
+            float _StarCount;
+
+            sampler2D _MainTex;
+            sampler2D _AurorasNoiseTex;
+            sampler2D _StarNoiseTex;
+            float4 _StarNoiseTex_ST;
+            float4 _AurorasNoiseTex_ST;
+            
+            float4 _MainTex_ST;
+            
+
+            fixed4 frag (v2f i) : SV_Target
+            &#123;
+                tex2D(_StarNoiseTex, TRANSFORM_TEX(i.uv,_StarNoiseTex)).r;
+                
+                &#x2F;&#x2F; 星星
+                float starColor &#x3D; 0;
+                
+                const float starTime &#x3D; _Time.y * _StarShinningSpeed;
+
+                &#x2F;&#x2F; 计算叠加区间的两层星星UV
+                const float2 beginMove &#x3D; floor(starTime) * 0.3;
+                const float2 endMove &#x3D; ceil(starTime) * 0.3;
+                const float2 beginUV &#x3D; i.uv + beginMove;
+                const float2 endUV &#x3D; i.uv + endMove;
+                
+                &#x2F;&#x2F; 采样两层星星的值
+                float beginNoise &#x3D; tex2D(_StarNoiseTex, TRANSFORM_TEX(beginUV,_StarNoiseTex)).r;
+                float endNoise &#x3D; tex2D(_StarNoiseTex, TRANSFORM_TEX(endUV,_StarNoiseTex)).r;
+
+                &#x2F;&#x2F; 减少星星
+                beginNoise &#x3D; saturate(beginNoise - (1 - _StarCount)) &#x2F; _StarCount;
+                endNoise &#x3D; saturate(endNoise - (1 - _StarCount)) &#x2F; _StarCount;
+
+                const float fracStarTime &#x3D; frac(starTime);
+                &#x2F;&#x2F; 混合两层星星值
+                starColor &#x3D; saturate(beginNoise - fracStarTime) + saturate(endNoise - (1 - fracStarTime));
+                
+                
+                &#x2F;&#x2F; 计算ray march信息
+                &#x2F;&#x2F; 每个像素发射射线
+                float3 rayOriginal &#x3D; 0;
+                float3 totalDir &#x3D; i.worldPos - rayOriginal;
+                float3 rayDir &#x3D; normalize(totalDir);
+                &#x2F;&#x2F;clip(rayDir.y);
+
+                &#x2F;&#x2F; 拓展球面来计算march的起始点
+                &#x2F;&#x2F; reciprocal 求倒数
+                &#x2F;&#x2F; 天空曲率
+                float skyCurvatureFactor &#x3D; rcp(rayDir.y + _SkyCurvature);
+                &#x2F;&#x2F; 本质为模拟地球大气
+                &#x2F;&#x2F; 无数条射线像外发射 就会形成一个球面 *天空曲率 就可以把它拍成一个球
+                float3 basicRayPlane &#x3D; rayDir * skyCurvatureFactor * _AurorasTiling ;
+                &#x2F;&#x2F; 从哪开始步进
+                float3 rayMarchBegin &#x3D; rayOriginal + basicRayPlane;
+
+                &#x2F;&#x2F; ray march
+                float3 color &#x3D; 0;
+                float3 avgColor &#x3D; 0;
+                &#x2F;&#x2F; 一步的大小
+                float stepSize &#x3D; rcp(_RayMarchStep);
+                
+                for (float i &#x3D; 0; i &lt; _RayMarchStep; i +&#x3D; 1)
+                &#123;
+                    float curStep &#x3D; stepSize * i;
+                    &#x2F;&#x2F; 初始的几次采样贡献更大, 我们用二次函数着重初始采样
+                    curStep &#x3D; curStep * curStep;
+                    &#x2F;&#x2F; 当前步进距离
+                    float curDistance &#x3D; curStep * _RayMarchDistance;
+                    &#x2F;&#x2F; 步进后的位置
+                    float3 curPos &#x3D; rayMarchBegin + rayDir * curDistance * skyCurvatureFactor;
+                    float2 uv &#x3D; float2(-curPos.x,curPos.z);
+
+                    &#x2F;&#x2F; &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;  极光动起来
+                    &#x2F;&#x2F; 计算扰动uv
+          float2 warp_vec &#x3D; 
+                        tex2D(_AurorasNoiseTex,TRANSFORM_TEX((uv * 2 + _Time.y * _AurorasSpeed),_AurorasNoiseTex));
+                    &#x2F;&#x2F; 采样当前的噪声强度
+                    float curNoise &#x3D; tex2D(_MainTex, TRANSFORM_TEX((uv + warp_vec * 0.1), _MainTex)).r;
+                    &#x2F;&#x2F;curNoise &#x3D; tex2D(_MainTex, TRANSFORM_TEX(uv, _MainTex)).r;
+                    &#x2F;&#x2F; &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+                    
+                    &#x2F;&#x2F; 最后加强度衰减
+                    curNoise &#x3D; curNoise * saturate(1 - pow(curDistance, 1 - _AurorasAttenuation));
+                    
+                    &#x2F;&#x2F; 极光色彩累积计算
+                    &#x2F;&#x2F; 由于sin的范围是-1到1，所以要先把颜色范围转换到-1到1之间，这通过i计算出当前步进层的色彩
+                    &#x2F;&#x2F; 最后 * 0.5再加0.5就返回到了原本的0-1的范围区间
+                    float3 curColor &#x3D; sin((_AurorasColor * 2 - 1) + i * 0.043) * 0.5 + 0.5;
+                    
+                    &#x2F;&#x2F; 取两步色彩的平均值 使颜色更接近于本色 
+                    avgColor &#x3D; (avgColor + curColor) &#x2F; 2;
+                    
+                    &#x2F;&#x2F; 混合颜色
+                    color +&#x3D; avgColor * curNoise * stepSize;
+                &#125;
+                
+                &#x2F;&#x2F; 强度
+                color *&#x3D; _AurorasIntensity;
+
+                &#x2F;&#x2F; 混合天际线
+                color *&#x3D; saturate(rayDir.y &#x2F; _SkyLineSize + _SkyLineBasePow);
+
+                &#x2F;&#x2F; 天空色
+                color +&#x3D; _SkyColor;
+
+                &#x2F;&#x2F; 星星
+                color &#x3D; color + starColor * 0.9;
+                
+                return fixed4(color, 1);
+            &#125;
+            ENDCG
+        &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="PBR"><a href="#PBR" class="headerlink" title="PBR"></a>PBR</h2><h3 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h3><p><strong>PBR</strong>是 <strong>Physically Based Rendering</strong>的简称，也就是图形渲染中的真实感渲染，简单理解就是基于物理的渲染技术，但它只是对现实世界物理的一种近似，并非完全的物理渲染，与之前学习的NPR属于完全不同的两种渲染理念，PBR是以基于<strong>微平面理论</strong>，<strong>能量守恒</strong>，以及物理的<strong>BRDF</strong>为核心的渲染理念。</p>
 <p><strong>微平面理论</strong></p>
@@ -617,10 +1421,22 @@
 <p>细心的小伙伴可能发现之前做的轮廓线不见了，通过官方的文档 <a target="_blank" rel="noopener" href="https://docs.unity3d.com/cn/Packages/com.unity.render-pipelines.universal@12.1/manual/urp-shaders/urp-shaderlab-pass-tags.html">URP ShaderLab Pass 标签 | Universal RP | 12.1.1 (unity3d.com)</a> 可以看到，由于在URP里新增了特定的Pass tag，需要给Pass添加特定的Tag LightMode才可以进行多pass渲染</p>
 <p>但其实URP 本身的设计思想并不鼓励在shader里写多pass，而是利用 Render feature 实现各种功能，那既然轮廓线只用到了两个pass，所以就简单的给pass加一下tag就好啦，</p>
 <p>正常的渲染就用UniversalForward即可，</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">              Pass</span><br><span class="line">&#123;	</span><br><span class="line">                  Tags</span><br><span class="line">                  &#123;</span><br><span class="line">                         &quot;LightMode&quot; = &quot;UniversalForward&quot;</span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">              Pass
+&#123;	
+                  Tags
+                  &#123;
+                         &quot;LightMode&quot; &#x3D; &quot;UniversalForward&quot;
+                  &#125;
+              &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>像如描边这种需要在渲染对象时绘制额外的 Pass，这里就可以选择SRPDefaultUnlit</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">              Pass</span><br><span class="line">&#123;	</span><br><span class="line">                  Tags</span><br><span class="line">                  &#123;</span><br><span class="line">                         &quot;LightMode&quot; = &quot;SRPDefaultUnlit&quot;</span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">              Pass
+&#123;	
+                  Tags
+                  &#123;
+                         &quot;LightMode&quot; &#x3D; &quot;SRPDefaultUnlit&quot;
+                  &#125;
+              &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="实战案例-简单URP水面效果"><a href="#实战案例-简单URP水面效果" class="headerlink" title="实战案例 - 简单URP水面效果"></a>实战案例 - 简单URP水面效果</h3><p>URP除了对管线的升级外，ShaderLab也从原来的CG升级到了HLSL，虽说有向前兼容，原来的CG也不是不能用，但在升级管线之后，Unity SRP 使用的都是HLSL 语言，继续使用CG容易出现许多不知所以的问题。而且URP在ShaderLibrary里面还提供了许多好用的API库</p>
 <p><img src="https://i0.hdslb.com/bfs/album/282c260b16b773ff03add7e336091865c1229758.png" alt="img"></p>
@@ -629,10 +1445,11 @@
 <p>把渲染管线标记为URP，由于是水面效果，水是透明的，所以渲染类型也要改成透明，同样把它的渲染队列也标注为透明，最后给它加个透明度混合即可。</p>
 <p><img src="https://i0.hdslb.com/bfs/album/5db0df180c98359620e8311df767ad20794aabf7.png" alt="img"></p>
 <p>通常来说水深不同水面的颜色也就不同，因为水分子会吸收通过它的  光的能量，所以这里给它添加两个属性，一个深水色，一个浅水色</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_ShallowWater (&quot;shallowColor&quot;, Color) = (1.0, 1.0, 1.0, 1.0)</span><br><span class="line">_DeepWater (&quot;DeepColor&quot;, Color) = (1.0, 1.0, 1.0, 1.0)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">_ShallowWater (&quot;shallowColor&quot;, Color) &#x3D; (1.0, 1.0, 1.0, 1.0)
+_DeepWater (&quot;DeepColor&quot;, Color) &#x3D; (1.0, 1.0, 1.0, 1.0)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>那如何得知水的深浅呢？这里则需要通过拿到场景的深度信息来计算水面的深度，在以往这是一个比较麻烦的步骤，而现在Unity给我们提供了许多好用的函数库，其中有一个就是深度相关的，这里我们直接给它include进来，把之前的CG库替换掉，</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;Packages/com.unity.render-pipelines.universal/ShaderLibrary/DeclareDepthTexture.hlsl&quot;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">#include &quot;Packages&#x2F;com.unity.render-pipelines.universal&#x2F;ShaderLibrary&#x2F;DeclareDepthTexture.hlsl&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>看到下面的代码报错不要慌，这里fixed给它改成half就可以啦，由于fixed精度过于低，所以hlsl干脆给它丢掉了，当然想要更高的精度也可以使用float。</p>
 <p><img src="https://i0.hdslb.com/bfs/album/d67706c2ad78677006d4be31197c26dcdf05e3c5.png" alt="img"></p>
@@ -643,24 +1460,139 @@
 <p>搜索关键字，跳转着看看一般就可以找到了，你会发现所有的顶点位置信息都合并到了这一个结构体里啦，</p>
 <p><img src="https://i0.hdslb.com/bfs/album/c62072ef61e310e465d590b053fe9b3721d315d8.png" alt="img"></p>
 <p> 声明并且通过get给它初始化一下，这样我们的数据就全都拿好啦，是不是比之前的要方便许多呢，把之前报错的API删掉就可以啦，</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VertexPositionInputs positionInputs = GetVertexPositionInputs(v.positionOS);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">VertexPositionInputs positionInputs &#x3D; GetVertexPositionInputs(v.positionOS);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>那深度纹理是全屏纹理，它和屏幕的尺寸相同。而我们希望在当前像素相同的位置对深度进行采样。所以，这里需要要把顶点在屏幕空间位置算好，</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">v2f vert(a2v v)</span><br><span class="line">&#123;</span><br><span class="line">    v2f o;</span><br><span class="line">    VertexPositionInputs positionInputs = GetVertexPositionInputs(v.positionOS);</span><br><span class="line">    o.positionCS = positionInputs.positionCS;</span><br><span class="line">    o.screenPosition = ComputeScreenPos(positionInputs.positionCS);</span><br><span class="line">    return o;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">v2f vert(a2v v)
+&#123;
+    v2f o;
+    VertexPositionInputs positionInputs &#x3D; GetVertexPositionInputs(v.positionOS);
+    o.positionCS &#x3D; positionInputs.positionCS;
+    o.screenPosition &#x3D; ComputeScreenPos(positionInputs.positionCS);
+    return o;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>通过引入的库函数来获取屏幕深度，然后把这个深度转换到视图空间。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">half4 frag(v2f i) : SV_Target</span><br><span class="line">&#123;</span><br><span class="line">    // 通过深度纹理的采样 计算屏幕深度</span><br><span class="line">    float sceneRawDepth = SampleSceneDepth(i.screenPosition.xy / i.screenPosition.w);</span><br><span class="line">    // 深度纹理的采样结果转换到视图空间下的深度值</span><br><span class="line">    float sceneEyeDepth = LinearEyeDepth(sceneRawDepth, _ZBufferParams);</span><br><span class="line">    return col;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">half4 frag(v2f i) : SV_Target
+&#123;
+    &#x2F;&#x2F; 通过深度纹理的采样 计算屏幕深度
+    float sceneRawDepth &#x3D; SampleSceneDepth(i.screenPosition.xy &#x2F; i.screenPosition.w);
+    &#x2F;&#x2F; 深度纹理的采样结果转换到视图空间下的深度值
+    float sceneEyeDepth &#x3D; LinearEyeDepth(sceneRawDepth, _ZBufferParams);
+    return col;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>由于关心的是这个深度值相对于水面有多深，所以需要把视图深度,减去模型顶点的深度，得到最终水的深度，然后把刚刚的  深浅水颜色 根据水的深度做个lerp，就可以啦</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 最终得到水的深度</span><br><span class="line">float waterDepth = sceneEyeDepth - i.screenPosition.w; </span><br><span class="line">// 拿到水的颜色</span><br><span class="line">float3 waterColor = lerp(_ShallowWater, _DeepWater, waterDepth);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 最终得到水的深度
+float waterDepth &#x3D; sceneEyeDepth - i.screenPosition.w; 
+&#x2F;&#x2F; 拿到水的颜色
+float3 waterColor &#x3D; lerp(_ShallowWater, _DeepWater, waterDepth);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>为了使水多少有点流动感，这里通过noise给它做个简单的漂浮扰动效果，为了让它有流动效果所以给它加个时间和速度进行采样，</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">float surfaceNoiseSample = tex2D(_SurfaceNoise, i.noiseUV + _Time.y * _MoveSpeed * 0.1).r;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">float surfaceNoiseSample &#x3D; tex2D(_SurfaceNoise, i.noiseUV + _Time.y * _MoveSpeed * 0.1).r;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>然后根据深度加一圈浮沫，和刚刚的波动混合一下，最后把水的颜色和浮沫的颜色叠加一下，把透明度公开出来，就大功告成啦</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 浮沫</span><br><span class="line">float foam = saturate(waterDepth / _FoamDistance);</span><br><span class="line">float surfaceNoise = smoothstep(0, foam, surfaceNoiseSample) ;</span><br><span class="line">// 混合水面透明度</span><br><span class="line">float4 col = float4(waterColor + surfaceNoise * _FoamColor, _WaterAlpha) ;</span><br><span class="line">return col;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 浮沫
+float foam &#x3D; saturate(waterDepth &#x2F; _FoamDistance);
+float surfaceNoise &#x3D; smoothstep(0, foam, surfaceNoiseSample) ;
+&#x2F;&#x2F; 混合水面透明度
+float4 col &#x3D; float4(waterColor + surfaceNoise * _FoamColor, _WaterAlpha) ;
+return col;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="完整代码-2"><a href="#完整代码-2" class="headerlink" title="完整代码"></a>完整代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line">Shader &quot;URP/Water&quot;</span><br><span class="line">&#123;</span><br><span class="line">    Properties</span><br><span class="line">    &#123;</span><br><span class="line">        _ShallowWater (&quot;shallowColor&quot;, Color) = (1.0, 1.0, 1.0, 1.0)</span><br><span class="line">        _DeepWater (&quot;DeepColor&quot;, Color) = (1.0, 1.0, 1.0, 1.0)</span><br><span class="line">        _WaterAlpha(&quot;WaterAlpha&quot;,Range(0,1)) = 0.5</span><br><span class="line">        </span><br><span class="line">        _SurfaceNoise(&quot;Surface Noise&quot;, 2D) = &quot;white&quot; &#123;&#125;</span><br><span class="line">        _MoveSpeed(&quot;MoveSpeed&quot;,Range(0,1)) = 0.5</span><br><span class="line">        </span><br><span class="line">        _FoamDistance(&quot;Foam Distance&quot;,Range(0,10)) = 0.4</span><br><span class="line">        _FoamColor(&quot;FoamColor&quot;, Color) = (1.0, 1.0, 1.0, 1.0)</span><br><span class="line">    &#125;</span><br><span class="line">    SubShader</span><br><span class="line">    &#123;</span><br><span class="line">        Tags</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;RenderPipeline&quot;=&quot;UniversalPipeline&quot;</span><br><span class="line">            &quot;RenderType&quot;=&quot;Transparent&quot;</span><br><span class="line">            &quot;Queue&quot;=&quot;Transparent&quot;</span><br><span class="line">        &#125;</span><br><span class="line">        Pass</span><br><span class="line">        &#123;</span><br><span class="line">            Blend SrcAlpha OneMinusSrcAlpha</span><br><span class="line"></span><br><span class="line">            HLSLPROGRAM</span><br><span class="line">            #pragma vertex vert</span><br><span class="line">            #pragma fragment frag</span><br><span class="line">            </span><br><span class="line">            #include &quot;Packages/com.unity.render-pipelines.universal/ShaderLibrary/DeclareDepthTexture.hlsl&quot;</span><br><span class="line">            </span><br><span class="line">            float4 _ShallowWater;</span><br><span class="line">            float4 _DeepWater;</span><br><span class="line">            float _WaterAlpha;</span><br><span class="line"></span><br><span class="line">            sampler2D _SurfaceNoise;</span><br><span class="line">            float4 _SurfaceNoise_ST;</span><br><span class="line">            float _MoveSpeed;</span><br><span class="line">            </span><br><span class="line">            float _FoamDistance;</span><br><span class="line">            float4 _FoamColor;</span><br><span class="line"></span><br><span class="line">            // 顶点着色器的输入</span><br><span class="line">            struct a2v</span><br><span class="line">            &#123;</span><br><span class="line">                float3 positionOS : POSITION;</span><br><span class="line">                float4 uv : TEXCOORD0;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            // 顶点着色器的输出</span><br><span class="line">            struct v2f</span><br><span class="line">            &#123;</span><br><span class="line">                float4 positionCS : SV_POSITION;</span><br><span class="line">                float4 screenPosition : TEXCOORD0;</span><br><span class="line">                float2 noiseUV : TEXCOORD1;</span><br><span class="line">                float2 distortUV : TEXCOORD2;</span><br><span class="line">            &#125;;</span><br><span class="line">            </span><br><span class="line">            v2f vert(a2v v)</span><br><span class="line">            &#123;</span><br><span class="line">                v2f o;</span><br><span class="line">                VertexPositionInputs positionInputs = GetVertexPositionInputs(v.positionOS);</span><br><span class="line">                o.positionCS = positionInputs.positionCS;</span><br><span class="line">                o.noiseUV = TRANSFORM_TEX(v.uv, _SurfaceNoise);</span><br><span class="line">                o.screenPosition = ComputeScreenPos(positionInputs.positionCS);</span><br><span class="line">                return o;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            half4 frag(v2f i) : SV_Target</span><br><span class="line">            &#123;</span><br><span class="line">                // 通过深度纹理的采样 计算屏幕深度</span><br><span class="line">                float sceneRawDepth = SampleSceneDepth(i.screenPosition.xy / i.screenPosition.w);</span><br><span class="line">                // 深度纹理的采样结果转换到视图空间下的深度值</span><br><span class="line">                float sceneEyeDepth = LinearEyeDepth(sceneRawDepth, _ZBufferParams);</span><br><span class="line">                // 因为关心的是这个深度值相对于我们的水面有多深，所以需要把视图深度,减去模型顶点的深度</span><br><span class="line">                // 最终得到水的深度</span><br><span class="line">                float waterDepth = sceneEyeDepth - i.screenPosition.w; </span><br><span class="line">                // 拿到水的颜色</span><br><span class="line">                float3 waterColor = lerp(_ShallowWater, _DeepWater, waterDepth);</span><br><span class="line">                </span><br><span class="line">                float surfaceNoiseSample = tex2D(_SurfaceNoise, i.noiseUV + _Time.y * _MoveSpeed * 0.1).r;</span><br><span class="line">                </span><br><span class="line">                // 浮沫</span><br><span class="line">                float foam = saturate(waterDepth / _FoamDistance);</span><br><span class="line">                float surfaceNoise = smoothstep(0, foam, surfaceNoiseSample) ;</span><br><span class="line">                // 混合水面透明度</span><br><span class="line">                float4 col = float4(waterColor + surfaceNoise * _FoamColor, _WaterAlpha) ;</span><br><span class="line">                return col;</span><br><span class="line">            &#125;</span><br><span class="line">            ENDHLSL</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="完整代码-2"><a href="#完整代码-2" class="headerlink" title="完整代码"></a>完整代码</h3><pre class="line-numbers language-none"><code class="language-none">Shader &quot;URP&#x2F;Water&quot;
+&#123;
+    Properties
+    &#123;
+        _ShallowWater (&quot;shallowColor&quot;, Color) &#x3D; (1.0, 1.0, 1.0, 1.0)
+        _DeepWater (&quot;DeepColor&quot;, Color) &#x3D; (1.0, 1.0, 1.0, 1.0)
+        _WaterAlpha(&quot;WaterAlpha&quot;,Range(0,1)) &#x3D; 0.5
+        
+        _SurfaceNoise(&quot;Surface Noise&quot;, 2D) &#x3D; &quot;white&quot; &#123;&#125;
+        _MoveSpeed(&quot;MoveSpeed&quot;,Range(0,1)) &#x3D; 0.5
+        
+        _FoamDistance(&quot;Foam Distance&quot;,Range(0,10)) &#x3D; 0.4
+        _FoamColor(&quot;FoamColor&quot;, Color) &#x3D; (1.0, 1.0, 1.0, 1.0)
+    &#125;
+    SubShader
+    &#123;
+        Tags
+        &#123;
+            &quot;RenderPipeline&quot;&#x3D;&quot;UniversalPipeline&quot;
+            &quot;RenderType&quot;&#x3D;&quot;Transparent&quot;
+            &quot;Queue&quot;&#x3D;&quot;Transparent&quot;
+        &#125;
+        Pass
+        &#123;
+            Blend SrcAlpha OneMinusSrcAlpha
+
+            HLSLPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            
+            #include &quot;Packages&#x2F;com.unity.render-pipelines.universal&#x2F;ShaderLibrary&#x2F;DeclareDepthTexture.hlsl&quot;
+            
+            float4 _ShallowWater;
+            float4 _DeepWater;
+            float _WaterAlpha;
+
+            sampler2D _SurfaceNoise;
+            float4 _SurfaceNoise_ST;
+            float _MoveSpeed;
+            
+            float _FoamDistance;
+            float4 _FoamColor;
+
+            &#x2F;&#x2F; 顶点着色器的输入
+            struct a2v
+            &#123;
+                float3 positionOS : POSITION;
+                float4 uv : TEXCOORD0;
+            &#125;;
+
+            &#x2F;&#x2F; 顶点着色器的输出
+            struct v2f
+            &#123;
+                float4 positionCS : SV_POSITION;
+                float4 screenPosition : TEXCOORD0;
+                float2 noiseUV : TEXCOORD1;
+                float2 distortUV : TEXCOORD2;
+            &#125;;
+            
+            v2f vert(a2v v)
+            &#123;
+                v2f o;
+                VertexPositionInputs positionInputs &#x3D; GetVertexPositionInputs(v.positionOS);
+                o.positionCS &#x3D; positionInputs.positionCS;
+                o.noiseUV &#x3D; TRANSFORM_TEX(v.uv, _SurfaceNoise);
+                o.screenPosition &#x3D; ComputeScreenPos(positionInputs.positionCS);
+                return o;
+            &#125;
+            
+            half4 frag(v2f i) : SV_Target
+            &#123;
+                &#x2F;&#x2F; 通过深度纹理的采样 计算屏幕深度
+                float sceneRawDepth &#x3D; SampleSceneDepth(i.screenPosition.xy &#x2F; i.screenPosition.w);
+                &#x2F;&#x2F; 深度纹理的采样结果转换到视图空间下的深度值
+                float sceneEyeDepth &#x3D; LinearEyeDepth(sceneRawDepth, _ZBufferParams);
+                &#x2F;&#x2F; 因为关心的是这个深度值相对于我们的水面有多深，所以需要把视图深度,减去模型顶点的深度
+                &#x2F;&#x2F; 最终得到水的深度
+                float waterDepth &#x3D; sceneEyeDepth - i.screenPosition.w; 
+                &#x2F;&#x2F; 拿到水的颜色
+                float3 waterColor &#x3D; lerp(_ShallowWater, _DeepWater, waterDepth);
+                
+                float surfaceNoiseSample &#x3D; tex2D(_SurfaceNoise, i.noiseUV + _Time.y * _MoveSpeed * 0.1).r;
+                
+                &#x2F;&#x2F; 浮沫
+                float foam &#x3D; saturate(waterDepth &#x2F; _FoamDistance);
+                float surfaceNoise &#x3D; smoothstep(0, foam, surfaceNoiseSample) ;
+                &#x2F;&#x2F; 混合水面透明度
+                float4 col &#x3D; float4(waterColor + surfaceNoise * _FoamColor, _WaterAlpha) ;
+                return col;
+            &#125;
+            ENDHLSL
+        &#125;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="ShaderGraph"><a href="#ShaderGraph" class="headerlink" title="ShaderGraph"></a>ShaderGraph</h2><p><img src="https://i0.hdslb.com/bfs/album/2e8bb8b98238aa36539fb0ca43f3c6be92670aaf.png" alt="image-20220915202358287"></p>
 

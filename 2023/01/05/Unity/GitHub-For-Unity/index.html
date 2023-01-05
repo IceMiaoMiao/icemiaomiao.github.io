@@ -63,7 +63,7 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 <body>
   <div id="container">
     <div id="particles-js"></div>
@@ -266,7 +266,8 @@
 <h2 id="一些问题"><a href="#一些问题" class="headerlink" title="一些问题"></a>一些问题</h2><p>遇到问题最多的是push的时候</p>
 <h4 id="报错Failed-to-connect-to-github-com-port-443-Timed-out"><a href="#报错Failed-to-connect-to-github-com-port-443-Timed-out" class="headerlink" title="报错Failed to connect to github.com port 443: Timed out"></a>报错Failed to connect to github.com port 443: Timed out</h4><p>这个可能时网络或者代理的错误，我也试了很多办法。</p>
 <h5 id="1-关闭项目代理"><a href="#1-关闭项目代理" class="headerlink" title="1.关闭项目代理"></a>1.关闭项目代理</h5><p>进入项目的本地仓库目录下，右键Git Bash Here进入控制台，分别执行以下两个命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">git config --global --unset http.proxy
+git config --global --unset https.proxy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h5 id="2-修改hosts文件"><a href="#2-修改hosts文件" class="headerlink" title="2.修改hosts文件"></a>2.修改hosts文件</h5><p>进入C:\Windows\System32\drivers\etc目录下</p>
 <p><img src="https://i0.hdslb.com/bfs/album/b9c7261b56d1bf6d7236fc479458e968f9a7dab7.png" alt="image-20220623142531542"></p>
@@ -281,11 +282,16 @@
 <p>我这里用steam++解决了这个问题。</p>
 <h4 id="git-SSL-certificate-problem-unable-to-get-local-issuer-certificate"><a href="#git-SSL-certificate-problem-unable-to-get-local-issuer-certificate" class="headerlink" title="git SSL certificate problem: unable to get local issuer certificate"></a>git SSL certificate problem: unable to get local issuer certificate</h4><p>这是由于当你通过HTTPS访问Git远程仓库的时候，如果服务器上的SSL证书未经过第三方机构认证，git就会报错。原因是因为未知的没有签署过的证书意味着可能存在很大的风险</p>
 <p>进入当前仓库的目录，打开git bash here，输入命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git config http.sslverify false</span><br><span class="line">//这是对于当前仓库而言的 </span><br><span class="line">git config --global http.sslverify false</span><br><span class="line">//这个是针对当前系统用户</span><br><span class="line">git config --system http.sslverify false</span><br><span class="line">//这个是对于全局系统所有用户</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">git config http.sslverify false
+&#x2F;&#x2F;这是对于当前仓库而言的 
+git config --global http.sslverify false
+&#x2F;&#x2F;这个是针对当前系统用户
+git config --system http.sslverify false
+&#x2F;&#x2F;这个是对于全局系统所有用户<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>这些便是我在使用github-for-unity的时候遇到的一些问题，总的来说，这是一个很方便的工具，值得试试！</p>
 <p>如果你在使用这个插件的过程中遇到了其他问题，可以与我联系</p>
-<p>邮箱:<a href="mailto:&#x67;&#x75;&#x6f;&#50;&#x33;&#49;&#x38;&#56;&#x40;&#113;&#x71;&#x2e;&#x63;&#111;&#109;">&#x67;&#x75;&#x6f;&#50;&#x33;&#49;&#x38;&#56;&#x40;&#113;&#x71;&#x2e;&#x63;&#111;&#109;</a></p>
+<p>邮箱:<a href="mailto:&#103;&#x75;&#x6f;&#50;&#51;&#49;&#x38;&#x38;&#64;&#113;&#113;&#x2e;&#99;&#x6f;&#x6d;">&#103;&#x75;&#x6f;&#50;&#51;&#49;&#x38;&#x38;&#64;&#113;&#113;&#x2e;&#99;&#x6f;&#x6d;</a></p>
 <p>或者去bilibili私信我：<a target="_blank" rel="noopener" href="https://space.bilibili.com/487294924?spm_id_from=333.1007.0.0">https://space.bilibili.com/487294924?spm_id_from=333.1007.0.0</a></p>
 <p>感谢你能够看到这里，我们下次再见啦！</p>
 

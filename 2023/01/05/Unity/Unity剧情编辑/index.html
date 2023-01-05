@@ -67,7 +67,7 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 <body>
   <div id="container">
     <div id="particles-js"></div>
@@ -281,7 +281,33 @@
 <p><img src="https://i0.hdslb.com/bfs/album/bcc0e09018551779782b9c6222e526729b88c7ea.png" alt="image-20220719200909750"></p>
 <p>然后在剧情控制这里设置变量。</p>
 <p>给动画控制器加个脚本：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">using System.Collections;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using Fungus;</span><br><span class="line">using UnityEngine;</span><br><span class="line">using UnityEngine.Playables;</span><br><span class="line">using UnityEngine.Timeline;</span><br><span class="line">public class Controller : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    public PlayableDirector animationController;</span><br><span class="line">    public TimelineAsset[] timelines;</span><br><span class="line">    public string[] timelineNames;</span><br><span class="line">    public Flowchart flowchart;</span><br><span class="line">    </span><br><span class="line">    void Update()</span><br><span class="line">    &#123;</span><br><span class="line">        for (int i = 0; i &lt; timelines.Length; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (flowchart.GetBooleanVariable(timelineNames[i]))</span><br><span class="line">            &#123;</span><br><span class="line">                animationController.Play(timelines[i]);</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">            flowchart.SetBooleanVariable(timelineNames[i],false);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">using System.Collections;
+using System.Collections.Generic;
+using Fungus;
+using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
+public class Controller : MonoBehaviour
+&#123;
+    public PlayableDirector animationController;
+    public TimelineAsset[] timelines;
+    public string[] timelineNames;
+    public Flowchart flowchart;
+    
+    void Update()
+    &#123;
+        for (int i &#x3D; 0; i &lt; timelines.Length; i++)
+        &#123;
+            if (flowchart.GetBooleanVariable(timelineNames[i]))
+            &#123;
+                animationController.Play(timelines[i]);
+                
+            &#125;
+            flowchart.SetBooleanVariable(timelineNames[i],false);
+        &#125;
+    &#125;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
       
