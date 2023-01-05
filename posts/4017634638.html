@@ -14,7 +14,7 @@
   <meta name="description" content="Unity MMD指南">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Unity MMD指南">
-<meta property="og:url" content="https://icemiaomiao.github.io/2023/01/05/Unity/Unity%20MMD%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:url" content="https://icemiaomiao.github.io/posts/4017634638.html">
 <meta property="og:site_name" content="Yang&#39;s Blog">
 <meta property="og:description" content="Unity MMD指南">
 <meta property="og:locale" content="zh_CN">
@@ -59,7 +59,9 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 <body>
   <div id="container">
     <div id="particles-js"></div>
@@ -184,7 +186,7 @@
       <div class="body-wrap"><article id="post-Unity/Unity MMD指南" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2023/01/05/Unity/Unity%20MMD%E6%8C%87%E5%8D%97/" class="article-date">
+      <a href="/posts/4017634638.html" class="article-date">
   	<time datetime="2023-01-04T16:23:39.000Z" itemprop="datePublished">2023-01-05</time>
 </a>
     </div>
@@ -260,37 +262,37 @@
 <p><img src="https://i0.hdslb.com/bfs/album/98a4a81c2ed378d65789e956734c47fdc81b3911.png" alt="image-20220712170540471"></p>
 <p>然后右边简单调一下效果。</p>
 <p>我简单给一个Shader：</p>
-<pre class="line-numbers language-none"><code class="language-none">Shader &quot;Toon&#x2F;Basic&#x2F;MultiSteps&quot;
-&#123;
+<pre class="line-numbers language-none"><code class="language-none">Shader "Toon/Basic/MultiSteps"
+{
     Properties
-    &#123;
-        &#x2F;&#x2F; Colors
-        _Color (&quot;Color&quot;, Color) &#x3D; (1, 1, 1, 1)
-        _HColor (&quot;Highlight Color&quot;, Color) &#x3D; (0.8, 0.8, 0.8, 1.0)
-        _SColor (&quot;Shadow Color&quot;, Color) &#x3D; (0.2, 0.2, 0.2, 1.0)
+    {
+        // Colors
+        _Color ("Color", Color) = (1, 1, 1, 1)
+        _HColor ("Highlight Color", Color) = (0.8, 0.8, 0.8, 1.0)
+        _SColor ("Shadow Color", Color) = (0.2, 0.2, 0.2, 1.0)
         
-        &#x2F;&#x2F; texture
-        _MainTex (&quot;Main Texture&quot;, 2D) &#x3D; &quot;white&quot; &#123; &#125;
+        // texture
+        _MainTex ("Main Texture", 2D) = "white" { }
         
-        &#x2F;&#x2F; ramp
-        _ToonSteps (&quot;Steps of Toon&quot;, range(1, 9)) &#x3D; 2
-        _RampThreshold (&quot;Ramp Threshold&quot;, Range(0.1, 1)) &#x3D; 0.5
-        _RampSmooth (&quot;Ramp Smooth&quot;, Range(0, 1)) &#x3D; 0.1
+        // ramp
+        _ToonSteps ("Steps of Toon", range(1, 9)) = 2
+        _RampThreshold ("Ramp Threshold", Range(0.1, 1)) = 0.5
+        _RampSmooth ("Ramp Smooth", Range(0, 1)) = 0.1
         
-        &#x2F;&#x2F; specular
-        _SpecColor (&quot;Specular Color&quot;, Color) &#x3D; (0.5, 0.5, 0.5, 1)
-        _SpecSmooth (&quot;Specular Smooth&quot;, Range(0, 1)) &#x3D; 0.1
-        _Shininess (&quot;Shininess&quot;, Range(0.001, 10)) &#x3D; 0.2
+        // specular
+        _SpecColor ("Specular Color", Color) = (0.5, 0.5, 0.5, 1)
+        _SpecSmooth ("Specular Smooth", Range(0, 1)) = 0.1
+        _Shininess ("Shininess", Range(0.001, 10)) = 0.2
         
-        &#x2F;&#x2F; rim light
-        _RimColor (&quot;Rim Color&quot;, Color) &#x3D; (0.8, 0.8, 0.8, 0.6)
-        _RimThreshold (&quot;Rim Threshold&quot;, Range(0, 1)) &#x3D; 0.5
-        _RimSmooth (&quot;Rim Smooth&quot;, Range(0, 1)) &#x3D; 0.1
-    &#125;
+        // rim light
+        _RimColor ("Rim Color", Color) = (0.8, 0.8, 0.8, 0.6)
+        _RimThreshold ("Rim Threshold", Range(0, 1)) = 0.5
+        _RimSmooth ("Rim Smooth", Range(0, 1)) = 0.1
+    }
     
     SubShader
-    &#123;
-        Tags &#123; &quot;RenderType&quot; &#x3D; &quot;Opaque&quot; &#125;
+    {
+        Tags { "RenderType" = "Opaque" }
         
         CGPROGRAM
         
@@ -315,83 +317,83 @@
         float _RimSmooth;
         
         struct Input
-        &#123;
+        {
             float2 uv_MainTex;
             float3 viewDir;
-        &#125;;
+        };
         
         float linearstep(float min, float max, float t)
-        &#123;
-            return saturate((t - min) &#x2F; (max - min));
-        &#125;
+        {
+            return saturate((t - min) / (max - min));
+        }
         
         inline fixed4 LightingToon(SurfaceOutput s, half3 lightDir, half3 viewDir, half atten)
-        &#123;
-            half3 normalDir &#x3D; normalize(s.Normal);
-            half3 halfDir &#x3D; normalize(lightDir + viewDir);
+        {
+            half3 normalDir = normalize(s.Normal);
+            half3 halfDir = normalize(lightDir + viewDir);
             
-            float ndl &#x3D; max(0, dot(normalDir, lightDir));
-            float ndh &#x3D; max(0, dot(normalDir, halfDir));
-            float ndv &#x3D; max(0, dot(normalDir, viewDir));
+            float ndl = max(0, dot(normalDir, lightDir));
+            float ndh = max(0, dot(normalDir, halfDir));
+            float ndv = max(0, dot(normalDir, viewDir));
             
-            &#x2F;&#x2F; multi steps
-            float diff &#x3D; smoothstep(_RampThreshold - ndl, _RampThreshold + ndl, ndl);
-            float interval &#x3D; 1 &#x2F; _ToonSteps;
-            &#x2F;&#x2F; float ramp &#x3D; floor(diff * _ToonSteps) &#x2F; _ToonSteps;
-            float level &#x3D; round(diff * _ToonSteps) &#x2F; _ToonSteps;
+            // multi steps
+            float diff = smoothstep(_RampThreshold - ndl, _RampThreshold + ndl, ndl);
+            float interval = 1 / _ToonSteps;
+            // float ramp = floor(diff * _ToonSteps) / _ToonSteps;
+            float level = round(diff * _ToonSteps) / _ToonSteps;
             float ramp ;
-            if (_RampSmooth &#x3D;&#x3D; 1)
-            &#123;
-                ramp &#x3D; interval * linearstep(level - _RampSmooth * interval * 0.5, level + _RampSmooth * interval * 0.5, diff) + level - interval;
-            &#125;
+            if (_RampSmooth == 1)
+            {
+                ramp = interval * linearstep(level - _RampSmooth * interval * 0.5, level + _RampSmooth * interval * 0.5, diff) + level - interval;
+            }
             else
-            &#123;
-                ramp &#x3D; interval * smoothstep(level - _RampSmooth * interval * 0.5, level + _RampSmooth * interval * 0.5, diff) + level - interval;
-            &#125;
-            ramp &#x3D; max(0, ramp);
-            ramp *&#x3D; atten;
+            {
+                ramp = interval * smoothstep(level - _RampSmooth * interval * 0.5, level + _RampSmooth * interval * 0.5, diff) + level - interval;
+            }
+            ramp = max(0, ramp);
+            ramp *= atten;
             
-            _SColor &#x3D; lerp(_HColor, _SColor, _SColor.a);
-            float3 rampColor &#x3D; lerp(_SColor.rgb, _HColor.rgb, ramp);
+            _SColor = lerp(_HColor, _SColor, _SColor.a);
+            float3 rampColor = lerp(_SColor.rgb, _HColor.rgb, ramp);
             
-            &#x2F;&#x2F; specular
-            float spec &#x3D; pow(ndh, s.Specular * 128.0) * s.Gloss;
-            spec *&#x3D; atten;
-            spec &#x3D; smoothstep(0.5 - _SpecSmooth * 0.5, 0.5 + _SpecSmooth * 0.5, spec);
+            // specular
+            float spec = pow(ndh, s.Specular * 128.0) * s.Gloss;
+            spec *= atten;
+            spec = smoothstep(0.5 - _SpecSmooth * 0.5, 0.5 + _SpecSmooth * 0.5, spec);
             
-            &#x2F;&#x2F; rim
-            float rim &#x3D; (1.0 - ndv) * ndl;
-            rim *&#x3D; atten;
-            rim &#x3D; smoothstep(_RimThreshold - _RimSmooth * 0.5, _RimThreshold + _RimSmooth * 0.5, rim);
+            // rim
+            float rim = (1.0 - ndv) * ndl;
+            rim *= atten;
+            rim = smoothstep(_RimThreshold - _RimSmooth * 0.5, _RimThreshold + _RimSmooth * 0.5, rim);
             
-            fixed3 lightColor &#x3D; _LightColor0.rgb;
+            fixed3 lightColor = _LightColor0.rgb;
             
             fixed4 color;
-            fixed3 diffuse &#x3D; s.Albedo * lightColor * rampColor;
-            fixed3 specular &#x3D; _SpecColor.rgb * lightColor * spec;
-            fixed3 rimColor &#x3D; _RimColor.rgb * lightColor * _RimColor.a * rim;
+            fixed3 diffuse = s.Albedo * lightColor * rampColor;
+            fixed3 specular = _SpecColor.rgb * lightColor * spec;
+            fixed3 rimColor = _RimColor.rgb * lightColor * _RimColor.a * rim;
             
-            color.rgb &#x3D; diffuse + specular + rimColor;
-            color.a &#x3D; s.Alpha;
+            color.rgb = diffuse + specular + rimColor;
+            color.a = s.Alpha;
             return color;
-        &#125;
+        }
         
         void surf(Input IN, inout SurfaceOutput o)
-        &#123;
-            fixed4 mainTex &#x3D; tex2D(_MainTex, IN.uv_MainTex);
-            o.Albedo &#x3D; mainTex.rgb * _Color.rgb;
+        {
+            fixed4 mainTex = tex2D(_MainTex, IN.uv_MainTex);
+            o.Albedo = mainTex.rgb * _Color.rgb;
             
-            o.Alpha &#x3D; mainTex.a * _Color.a;
+            o.Alpha = mainTex.a * _Color.a;
             
-            o.Specular &#x3D; _Shininess;
-            o.Gloss &#x3D; mainTex.a;
-        &#125;
+            o.Specular = _Shininess;
+            o.Gloss = mainTex.a;
+        }
         
         ENDCG
         
-    &#125;
-    FallBack &quot;Diffuse&quot;
-&#125;
+    }
+    FallBack "Diffuse"
+}
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>或者用这个卡通渲染的Shader：<a target="_blank" rel="noopener" href="https://github.com/Sorumi/UnityToonShader">https://github.com/Sorumi/UnityToonShader</a></p>
@@ -417,7 +419,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2023/01/05/Unity/Unity%20%E7%BD%91%E6%A0%BC%E7%B1%BB%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/posts/4205746043.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">&lt;</strong>
       <div class="article-nav-title">
         
@@ -427,7 +429,7 @@
     </a>
   
   
-    <a href="/2023/01/05/Unity/GitHub-For-Unity/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/posts/54156.html" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">GitHub-For-Unity</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
