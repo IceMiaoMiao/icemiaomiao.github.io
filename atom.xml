@@ -6,7 +6,7 @@
   <link href="https://icemiaomiao.github.io/atom.xml" rel="self"/>
   
   <link href="https://icemiaomiao.github.io/"/>
-  <updated>2023-03-08T13:57:47.611Z</updated>
+  <updated>2023-03-09T01:32:00.614Z</updated>
   <id>https://icemiaomiao.github.io/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数字人技术文档</title>
+    <link href="https://icemiaomiao.github.io/posts/13.html"/>
+    <id>https://icemiaomiao.github.io/posts/13.html</id>
+    <published>2025-04-04T16:23:38.000Z</published>
+    <updated>2023-03-09T01:32:00.614Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;技术文档&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="MetaHuman" scheme="https://icemiaomiao.github.io/tags/MetaHuman/"/>
+    
+  </entry>
   
   <entry>
     <title>作品展示</title>
@@ -132,19 +149,6 @@
     
     
     <category term="Unity" scheme="https://icemiaomiao.github.io/tags/Unity/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数字人技术文档</title>
-    <link href="https://icemiaomiao.github.io/posts/2336286033.html"/>
-    <id>https://icemiaomiao.github.io/posts/2336286033.html</id>
-    <published>2023-03-08T13:41:03.000Z</published>
-    <updated>2023-03-08T13:42:26.023Z</updated>
-    
-    
-    
-    
     
   </entry>
   

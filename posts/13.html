@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="referrer" content="no-referrer">
+
+  
+  <title>数字人技术文档 | Yang&#39;s Blog</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="技术文档">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数字人技术文档">
+<meta property="og:url" content="https://icemiaomiao.github.io/posts/13.html">
+<meta property="og:site_name" content="Yang&#39;s Blog">
+<meta property="og:description" content="技术文档">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/08/1018656862164d2990c65012da3ceab4">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/08/43b4887795054f36b0429ef0e0bd19fe">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/08/314a14067f51458cb1d6d12d65471b39">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/08/e21648872f1b4e46804595059d35f57a">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/08/c51632ed0b984756aee3bceda6c3fadd">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/08/78755b7f0da94185948fdde8bc19eac5">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/08/973ef0ae32ee4d3a82c9c8bbf0c1cc1d">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/08/ac6cfba76a03461f98ed7ae2e4737a49">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/08/c3a7d23c6d424e0c87a1c93896d940fa">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/08/3fe065cfc3e949ac89f461797bc6d753">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/1f7b9d2693f44f86b68e8f1bf9797b78">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/489b00ebbad94412bbd4b471d4fe35c9">
+<meta property="og:image" content="file:///C:/Users/guo23/AppData/Local/Temp/msohtmlclip1/01/clip_image026.gif">
+<meta property="og:image" content="file:///C:/Users/guo23/AppData/Local/Temp/msohtmlclip1/01/clip_image028.gif">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/b41be7c0ce8542a7bbf2803743d1ffe6">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/a1bcfc0acbc748b0b79b530b0dd1644d">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/521f7dfebfeb4557b0e663c38b1959aa">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/150825c95e6640ce9c3b9c49ba417dca">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/516d63ca941148b2897c4356fdee4746">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/29762817abed426c8d4cb4683deefd8d">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/20a4ce759fe847a29835e1e0a0fb32c0">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/10cafc28856846bca4ff0204c170953b">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/2f501f3f5a034aee928cc40b2876e7cb">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/2ad1086574134b30b51a841d8da3ad0e">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/017b44f779164dfbabaa6ebd5f2e1848">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/10317fcbbdde4ee7b13acdffe3b83108">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/89c82c2399b748a0b40886135ac79029">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/83d389538d084a1ab27681984dc8e01b">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/4a28140239ec4801b3f83f714dad2e1f">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/bebc90a29d024a67b845be767d236faa">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/8d10f189c625483c950d6c657367ef27">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/a8bdd61dc97f40b99186e186b1ebb2ff">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/b2830b4ef564433292c70ff96cdbd448">
+<meta property="og:image" content="file:///C:/Users/guo23/AppData/Local/Temp/msohtmlclip1/01/clip_image072.gif">
+<meta property="og:image" content="file:///C:/Users/guo23/AppData/Local/Temp/msohtmlclip1/01/clip_image002.gif">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/4606d37f0ea743bda34b992c8e42a46c">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/12dd99d603e94fd882c120d799c6971c">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/9c7743e2abbc4665b95c6454bd30bb1f">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/453ec58d203146d8a3f9083d737eaa59">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/a65063c324814f90bb94d4aeab2db949">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/4cbdb3d7924e4362ba9b7dd68f6c23eb">
+<meta property="og:image" content="file:///C:/Users/guo23/AppData/Local/Temp/msohtmlclip1/01/clip_image092.gif">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/05845ec153444d53bfdac3d3bb61637b">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/e8e90ad5bd06468fa9709c72362c4524">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/e3d2c3d176a24bcd955d46a238874a12">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/9b023c88da494815845183efb0f3e5a2">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/be1780c4b25146ae94d1e5d7084720b7">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/d089509b4582418cb0834c1ef1426d9d">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/224b8228a4654082b26f4b9eae2400a2">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/aa229040c234455192e3b91d98636df5">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/aa229040c234455192e3b91d98636df5">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/1da9549c340b4f08bb6bc30e6c709e06">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/52d150873abb49798323a10f9f3fef79">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/9f7cef203e7c428b94acacbd7fcfc8bd">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/0269ecead6c64dbab9a9584456e14c87">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/b5b54ec56179479ab97806ecdf38618a">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/ad40d7930c714d71a3b6a8af501f4e4e">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/b50e2cbf8b4c4603a99aec0f735c8661">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/f97704a2fb234a4d983150536321d5c7">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/79cb21e4f0f1476f8a3a4917a254e92b">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/301cfdc88dcd4f89895db72977e31008">
+<meta property="og:image" content="file:///C:/Users/guo23/AppData/Local/Temp/msohtmlclip1/01/clip_image132.jpg">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/4dab5cbc9de545e895b970fe09fcd46a">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/cd4485ddd5bc400f9886fbb013381110">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/ee6bf6ec3df14aaebfececc665660a03">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/1b83669ba37348c298b1e785bafa6ad3">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/c881f8015502446b9d863a5fe924b9c6">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/e89c211bfc96424c9aa23ffc018b5cb4">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/1beff2e166444db2aede4a58a48a7f4c">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/3606a488f8734ce2add5a0389842e530">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/123f574f825f4b25a7d2990cf59b3e55">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/c0a7c1aeb9f443a0a78b531ee4cef015">
+<meta property="og:image" content="file:///C:/Users/guo23/AppData/Local/Temp/msohtmlclip1/01/clip_image155.gif">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/dd2e519641f2461fa62e5ef1ca1ef5e3">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/0e05ff2864a34d0e9827a71310b3a7f5">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/368607a8e7b745189fa5f88e18e4a3ab">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/63bdf6f7ac8b4c178047bf67f708e163">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/d8a63175d5144bb38bd0b4fe7a33eaf4">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/1c5058cd45b343cca43b6c6a8235fa04">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/1c5058cd45b343cca43b6c6a8235fa04">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/36c2cf8f79da4bd18abc4e0d4c08e178">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/17bb8d8ebc5144b4adafeb70d4558736">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/58a4dc9d8b614a30aea86b9b42f4dea5">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/ee6705ee68e6416c97445399ef49affc">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/07db7b6af8504e9da537ae34f0ebe073">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/54e769a4d80c400fb484982c412df608">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/bf9ff2dbccf84316a8724e46f06f092c">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/0c631d95b90548fab3039be52d7b2a0e">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/63b5168a3c1b4ce1bcae3c2a88e1bf85">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/f37a8acb0c774e12b671577129bd4fe0">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/84e3407f51924426bbaf9d21ea419104">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/4d60217d731d4050ad97cb74621c195d">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/eec043b16c634cf18b88dfa18a63b5c4">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/5fad970ded934a5a88daaa9866bd4108">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/049a372922264fb5bfd91f24c4607291">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/e3a16596051645fe8361282f9ac4d489">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/955638e2f1ad410dae548350980f8f45">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/955638e2f1ad410dae548350980f8f45">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/72bbc32759314068b624a16564894bb0">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/a0c10432f00849d2aeb68e91a540395e">
+<meta property="og:image" content="file:///C:/Users/guo23/AppData/Local/Temp/msohtmlclip1/01/clip_image209.gif">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/8c228f3b15204b3cbad69ff36aaf3452">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/68c9804b45f14de98c3e1c22884f69f9">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/d5bed15e4969465fb4ce338abd2c9473">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/8ff74a90b9e445e0b7abb0f14c5b319c">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/ed77195e35da44cc878dceb498ce7d19">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/480764bc7d2e4494a05e76c3a0df7621">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/886e86ff763047529669305c16678cad">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/b2ec34d604494c6da9d657678fba872b">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/65e9ca80e5f445deac5515bc6904c6f4">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/c6fd4aecb0c244d88d49465e48ee753c">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/15577b76be3f4eedaa6eb9a324eaee1c">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/5ec966fe472b4b658841fe28e27fa18a">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/bc6fd007fc164735a8a06044365643b9">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/03dd2e3063734ae0a5c1757898aa7e92">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/bab54b00c4e5405d9a54a2b0bf742e6d">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/acd8d14d596f48c1965fbe91fdc119e6">
+<meta property="og:image" content="file:///C:/Users/guo23/AppData/Local/Temp/msohtmlclip1/01/clip_image245.gif">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/5214b6913ff54e40b903bed67c1e21cd">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/b3504c28c76e4a4e85fec52dafa442d4">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/0eb8815d91da46b4acb540f6c10d9433">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/9bcc4b90356f4606a14b5d1622e9c33b">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/6cc480bc625a4450ad8af4429bb93218">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/03/09/26e448c4f24046359f29a04122cfc8b7">
+<meta property="article:published_time" content="2025-04-04T16:23:38.000Z">
+<meta property="article:modified_time" content="2023-03-09T01:32:00.614Z">
+<meta property="article:author" content="Guo Yangyang">
+<meta property="article:tag" content="MetaHuman">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.vika.cn/space/2023/03/08/1018656862164d2990c65012da3ceab4">
+  
+    <link rel="alternative" href="/atom.xml" title="Yang&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">Guo Yangyang</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Lists</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/IceMiaoMiao?tab=repositories" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="https://space.bilibili.com/487294924" title="weibo">weibo</a>
+					        
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Blender/" style="font-size: 13.33px;">Blender</a> <a href="/tags/Explore/" style="font-size: 13.33px;">Explore</a> <a href="/tags/Introduction/" style="font-size: 10px;">Introduction</a> <a href="/tags/MetaHuman/" style="font-size: 10px;">MetaHuman</a> <a href="/tags/Skills/" style="font-size: 16.67px;">Skills</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/Unity/" style="font-size: 20px;">Unity</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer in Beijing, China. You could contact me by email:guo23188@qq.com or iceingmiao@gmail.com</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/avatar.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Lists</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/IceMiaoMiao?tab=repositories" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="https://space.bilibili.com/487294924" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-数字人技术文档" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/posts/13.html" class="article-date">
+  	<time datetime="2025-04-04T16:23:38.000Z" itemprop="datePublished">2025-04-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数字人技术文档
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MetaHuman/" rel="tag">MetaHuman</a></li></ul>
+	</div>
+
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>技术文档</strong></p>
+<span id="more"></span>
+<p><strong>人物</strong><br><strong>人物建模</strong></p>
+<ol>
+<li><p><strong>3Dmax/Maya</strong>建低模</p>
+</li>
+<li><p><strong>3Dmax/maya</strong>建中模，给低模丰富细节，增加结构和面数。</p>
+</li>
+<li><p>将调整好的中模放入 ZBrush 里面，进行高模的雕刻和细节的制作<br><img src="https://s1.vika.cn/space/2023/03/08/1018656862164d2990c65012da3ceab4" alt="image.png"></p>
+</li>
+<li><p>将做好的高模拓扑成低模</p>
+</li>
+</ol>
+<p>上一步我们做出来的高模的面数可能高达数百万甚至上亿个面，这样的模型是无法导入游戏引擎的，所以我们必须将其拓扑出一个低模，以用于导入游戏引擎，这时我们需要一个拓扑软件，你可以使用<strong>TopoGun</strong>这样的专门拓扑的软件，也可以使用maya或者ZBrush 自带的自动拓扑功能，但性质都是相同的——产生低模。</p>
+<ol start="5">
+<li><p>UV 拆分</p>
+</li>
+<li><p>烘焙</p>
+</li>
+</ol>
+<p>烘焙的过程就是将高模上的细节信息映射到低模上，这里所谓的细节，就是法线贴图（带有凹凸信息），颜色贴图，金属度贴图，粗糙度等贴图。烘焙是在SP或者在八猴（toolbag）里面生成并导出得到带有高模细节的贴图</p>
+<p>7.&nbsp;SP（substance painter）上材质贴图</p>
+<p>在SP里将烘焙出来的各种贴图贴在低模上，制作材质，调整各种材质的参数，增加贴图的脏迹，磨损，刮痕等细节，呈现出更逼真的效果。<br><img src="https://s1.vika.cn/space/2023/03/08/43b4887795054f36b0429ef0e0bd19fe" alt="image.png"></p>
+<p><strong>人物扫描</strong></p>
+<p>1.<strong>模型扫描</strong>。</p>
+<p>通常借助光学扫描仪或由单反相机组成的360度的摄影包围盒，对扫描对象进行全方位的扫描，从而获得原始的模型数据。<br><img src="https://s1.vika.cn/space/2023/03/08/314a14067f51458cb1d6d12d65471b39" alt="image.png"></p>
+<ol start="2">
+<li><strong>模型调整</strong>。</li>
+</ol>
+<p>由扫描阶段获取的初始模型通常有瑕疵，无法直接投入渲染。需要美术人员利用3D建模工具（如Maya、3DMax等）进行调整、优化、重新拓扑，最终调整成合适的可用模型。<br><img src="https://s1.vika.cn/space/2023/03/08/e21648872f1b4e46804595059d35f57a" alt="image.png"></p>
+<p><em>左：扫描的初始模型；中：调整后的中间模型；右：优化了细节的可用模型。</em></p>
+<p>3.&nbsp;<strong>制作贴图</strong>。</p>
+<p>在此阶段，用建模软件或材质制作软件（如Substance）采纳高精度模型烘焙或制作出漫反射、法线、粗糙度、AO、散射、高光等等贴图，为最后的渲染做准备。这些贴图的原始尺寸通常都非常大，4K、8K甚至16K，目的是高精度还原虚拟人类的细节。</p>
+<p>4.&nbsp;<strong>导入引擎</strong>。</p>
+<p>在此阶段，将之前制作的模型和贴图导入到渲染引擎（如UE4、Unity等），加入光照、材质、场景等元素，结合角色的综合性PBR渲染技术，获得最终成像。<br><img src="https://s1.vika.cn/space/2023/03/08/c51632ed0b984756aee3bceda6c3fadd" alt="image.png"></p>
+<p><em>《__Siren__》虚拟角色的细节，与数码相机摄制的照片如出一辙</em></p>
+<p><strong>人物渲染</strong></p>
+<p>皮肤渲染技术经过数十年的发展，由最初的单张贴图+伦勃朗的渲染方式到近期的基于物理的SSSSS（屏幕空间次表面散射）。由此衍生出的皮肤渲染技术层出不穷，其中最最基础也最具代表性的是次表面散射（SSS）。</p>
+<p>在虚拟角色渲染中，皮肤的渲染尤为关键。因为皮肤是人们每天亲眼目睹的非常熟悉的东西，如果稍微渲染不好或细节处理不足，便会陷入<strong>恐怖谷（Uncanny Valley</strong>）**理论。</p>
+<p><strong>皮肤渲染</strong><br><strong>1.皮肤构成和生物原理</strong><br>人类皮肤的物理构成非常复杂，其表层和内部都由非常复杂的构成物质，剖面图如下：<br><img src="https://s1.vika.cn/space/2023/03/08/78755b7f0da94185948fdde8bc19eac5" alt="image.png"></p>
+<p>•&nbsp;绒毛（hair shaft）。附着于皮肤表面的细小的毛。</p>
+<p>•&nbsp;油脂（oil）。皮肤表层有一层薄薄的油脂覆盖，是皮肤高光的主要贡献者。</p>
+<p>•&nbsp;表皮（epidermis）。油脂层下是表皮覆盖，是造成次表面散射的物质之一。</p>
+<p>•&nbsp;真皮（dermis）。表皮下面是真正的皮肤组织，也是造成次表面散射的物质之一。</p>
+<p>•&nbsp;毛囊（hair follicle）。绒毛的皮下组织和根基。</p>
+<p>•&nbsp;静脉（vein）。呈深蓝色的血管。</p>
+<p>•&nbsp;动脉（artery）。呈暗红色的血管。</p>
+<p>•&nbsp;脂肪组织（fatty tissue）。脂肪组织也是造成次表面散射的次要贡献物质。</p>
+<p>•&nbsp;其它：皮肤表面的纹理、皱纹、毛孔、雀斑、痘痘、黑痣、疤痕、油脂粒等等细节。</p>
+<p><strong>2. 皮肤建模：</strong></p>
+<p>皮肤表面油脂层主要贡献了皮肤光照的反射部分（约6%的光线被反射），而油脂层下面的表皮层和真皮层则主要贡献了的次表面散射部分（约94%的光线被散射）。</p>
+<p>虽然皮肤构成非常复杂，但图形渲染界的先贤者们利用简化的思维将皮肤建模成若干层。<br><img src="https://s1.vika.cn/space/2023/03/08/973ef0ae32ee4d3a82c9c8bbf0c1cc1d" alt="image.png"></p>
+<p>•&nbsp;表面油脂层（Thin Oily Layer）：模拟皮肤的高光反射。</p>
+<p>•&nbsp;表皮层（Epidermis）：模拟次表面散射的贡献层。</p>
+<p>•&nbsp;真皮层（Dermis）：模拟次表面散射的贡献层。</p>
+<p>以上展示的是BRDF建模方式，只在皮肤表面反射光线，但实际上在三层建模中，会考虑更多细节，例如表皮层和真皮层的次表面散射（BSSRDF），见下图中间部分BSSRDF：<br><img src="https://s1.vika.cn/space/2023/03/08/ac6cfba76a03461f98ed7ae2e4737a49" alt="image.png"></p>
+<p><strong>3.皮肤渲染流程</strong></p>
+<p>皮肤渲染涉及的高级技术有：</p>
+<p>•线性空间光照工作流。</p>
+<p>•基于物理的光照（PBR）。</p>
+<p>•大量后处理。</p>
+<p>•1~5个实时光照和1个预计算光照探头。</p>
+<p>皮肤渲染的过程可以直接抽象成以下步骤：</p>
+<p><strong>皮肤反射</strong></p>
+<p>直接反射部分采用Cook-Torrance的BRDF，公式：<br><img src="https://s1.vika.cn/space/2023/03/08/c3a7d23c6d424e0c87a1c93896d940fa" alt="image.png"></p>
+<p>UE的皮肤渲染采用<strong>双镜叶高光（<strong><strong>Dual Lobe Specular</strong></strong>）</strong>。双镜叶高光度为两个独立的高光镜叶提供粗糙度值，二者组合后形成最终结果。当二者组合后，会为皮肤提供非常出色的亚像素微频效果，呈现出一种自然面貌。<br><img src="https://s1.vika.cn/space/2023/03/08/3fe065cfc3e949ac89f461797bc6d753" alt="image.png"></p>
+<p>其中UE默认的混合公式是：</p>
+<p>Lobe1⋅0.85 + Lobe2⋅0.15</p>
+<p>&nbsp;下图显示了UE4混合的过程和最终成像。<br><img src="https://s1.vika.cn/space/2023/03/09/1f7b9d2693f44f86b68e8f1bf9797b78" alt="image.png"></p>
+<p><em>左：较柔和的高光层__Lobe1__；</em> <em>中：较强烈的高光层__Lobe2__；</em> <em>右：最终混合成像</em></p>
+<p><strong>皮肤毛孔</strong></p>
+<p>皮肤毛孔内部构造非常复杂，会造成反射（高光和漫反射）、阴影、遮挡、次表面散射等效应。<br><img src="https://s1.vika.cn/space/2023/03/09/489b00ebbad94412bbd4b471d4fe35c9" alt="image.png"></p>
+<p><em>人类毛孔放大图，内部构造异常复杂，由此产生非常复杂的光照信息</em></p>
+<p>在渲染毛孔细节时，需注意很多细节，否则会渲染结果陷入恐怖谷理论。</p>
+<p>理论上，接近物理真实的渲染，毛孔的渲染公式如下：</p>
+<p><img src="file:///C:/Users/guo23/AppData/Local/Temp/msohtmlclip1/01/clip_image026.gif"></p>
+<p>其中：</p>
+<p>•cavitycavity是凹陷度。</p>
+<p>•Specular(gloss)Specular(gloss)表明高光项。</p>
+<p>•Fresnel(reflectance)Fresnel(reflectance)是与视觉角度相关的反射。</p>
+<p>然而，这种物理真实，使得凹陷太明显，视觉不美观，让人不适。</p>
+<p>因此，我们可摒弃完全物理真实的原理，采用近似法：<br>$$<br>Specular(gloss)<em>Fresnel(reflectance</em>cavity)<br>$$<br><img src="file:///C:/Users/guo23/AppData/Local/Temp/msohtmlclip1/01/clip_image028.gif"><br><img src="https://s1.vika.cn/space/2023/03/09/b41be7c0ce8542a7bbf2803743d1ffe6" alt="image.png"></p>
+<p>UE4采用漫反射+粗糙度+高光度+散射+法线等贴图结合的方式，以高精度还原皮肤细节。<br><img src="https://s1.vika.cn/space/2023/03/09/a1bcfc0acbc748b0b79b530b0dd1644d" alt="image.png"><br>从左到右：漫反射、粗糙度、高光度、散射、法线贴图_</p>
+<p><strong>全局光照</strong></p>
+<p>皮肤的全局光照是基于图像的光照（IBL）+改进的AO结合的结果。<br><img src="https://s1.vika.cn/space/2023/03/09/521f7dfebfeb4557b0e663c38b1959aa" alt="image.png"></p>
+<p><em>叠加了全局光照，但无__AO__的画面</em></p>
+<p>AO部分是屏幕空间环境光遮蔽（SSAO），其中AO贴图混合了Bleed Color（皮肤通常取红色）。<br><img src="https://s1.vika.cn/space/2023/03/09/150825c95e6640ce9c3b9c49ba417dca" alt="image.png"></p>
+<p><em>增加了红色__Bleed Color__的__AO__，使得皮肤渲染更加贴切，皮肤暗处的亮度和颜色更真实美观。</em></p>
+<p><strong>次表面散射</strong></p>
+<p>次表面散射（Subsurface scattering）是模拟皮肤、玉石、牛奶等半透光性物质的一种物理渲染技术。<br><img src="https://s1.vika.cn/space/2023/03/09/516d63ca941148b2897c4356fdee4746" alt="image.png"></p>
+<p>它与普通BRDF的区别在于，同一条入射光进入半透光性物质后，会在内部经过多次散射，最终在入射点附近散射出若干条光线。</p>
+<p>由于R、G、B在物质内扩散的曲线不一样，由此产生了与入射光不一样的颜色。</p>
+<p><img src="https://s1.vika.cn/space/2023/03/09/29762817abed426c8d4cb4683deefd8d" alt="image.png"></p>
+<p><em>红色光由于穿透力更强，更容易在皮肤组织穿透，形成红色光。</em></p>
+<p><strong>BSSRDF</strong></p>
+<p>BSSRDF是基于次表面散射的一种光照模型，充分考虑了入射光在物质内部经过若干次散射后重新反射出来的光。<br><img src="https://s1.vika.cn/space/2023/03/09/20a4ce759fe847a29835e1e0a0fb32c0" alt="image.png"></p>
+<p><em>左：__BRDF__；右：__BSSRDF__，考虑了输入光在物质内散射后重新射出的若干条光</em></p>
+<p><img src="https://s1.vika.cn/space/2023/03/09/10cafc28856846bca4ff0204c170953b" alt="image.png"></p>
+<p>上图描述了BRDF、BTDF、BSSRDF之间的关系：</p>
+<p>•<strong>BRDF</strong>：双向反射分布函数，用于表述在介质入射点的反射光照模型。</p>
+<p>•<strong>BTDF</strong>：双向透射分布函数，用于描述光线透过介质后的光照模型。</p>
+<p>•<strong>BSSRDF</strong>：双向次表面反射分布函数，用于描述入射光在介质内部的光照模型。</p>
+<p>￮BSDF = BRDF + BTDF。</p>
+<p>￮BSSRDF是BSDF的升级版。</p>
+<p>下面两图展示了使用BRDF和BSSRDF的皮肤渲染结果：<br><img src="https://s1.vika.cn/space/2023/03/09/2f501f3f5a034aee928cc40b2876e7cb" alt="image.png"><br><img src="https://s1.vika.cn/space/2023/03/09/2ad1086574134b30b51a841d8da3ad0e" alt="image.png"></p>
+<p>回顾一下BRDF的方程，它是一次反射光照的计算是在光线交点的法线半球上的球面积分：<br><img src="https://s1.vika.cn/space/2023/03/09/017b44f779164dfbabaa6ebd5f2e1848" alt="image.png"></p>
+<p>对于BSSRDF来说，每一次反射在物体表面上每一个位置都要做一次半球面积分，是一个嵌套积分：<br><img src="https://s1.vika.cn/space/2023/03/09/10317fcbbdde4ee7b13acdffe3b83108" alt="image.png"></p>
+<p>S(po,ωo,pi,ωi)项表明了次表面散射的计算过程，具体公式：<br><img src="https://s1.vika.cn/space/2023/03/09/89c82c2399b748a0b40886135ac79029" alt="image.png"></p>
+<p>其中：<br><img src="https://s1.vika.cn/space/2023/03/09/83d389538d084a1ab27681984dc8e01b" alt="image.png"></p>
+<p>表明BSSRDF的定义是出射光的辐射度和入射通量的比值。</p>
+<p>•Ft是菲涅尔透射效应。</p>
+<p>•Rd（||pi−po||）是扩散反射（Diffuse reflectance），与入射点和出射点的距离相关。<br><img src="https://s1.vika.cn/space/2023/03/09/4a28140239ec4801b3f83f714dad2e1f" alt="image.png"></p>
+<p>DD是漫反射常量：<br><img src="https://s1.vika.cn/space/2023/03/09/bebc90a29d024a67b845be767d236faa" alt="image.png"></p>
+<p>由此可见，S项的计算过程比较复杂，对于实时渲染，是几乎不可能完成的。由此可采用近似法求解：<br>$$<br>S(po<em>wo</em>pi<em>wi)=(1-fr(coso))S_p(po</em>pi)S_w(wi)<br>$$<br>其中</p>
+<p>• Fr(cosθo)Fr(cos⁡θo)是菲涅尔反射项。</p>
+<p>•&nbsp;Sp(po,pi)是点p处的次表面散射函数。它可以进一步简化：<br><img src="https://s1.vika.cn/space/2023/03/09/8d10f189c625483c950d6c657367ef27" alt="image.png"></p>
+<p>•也就是说点p处的次表面系数只由入射点pi和出射点po相关。</p>
+<p>•Sr跟介质的很多属性有关，可用公式表达及简化：<br><img src="https://s1.vika.cn/space/2023/03/09/a8bdd61dc97f40b99186e186b1ebb2ff" alt="image.png"></p>
+<p>简化后的Sr只跟ρ和r有关，每种材料的ρ和r可组成一个BSSRDF表。<br><img src="https://s1.vika.cn/space/2023/03/09/b2830b4ef564433292c70ff96cdbd448" alt="image.png"></p>
+<p><em>上图展示了__ρ=0.2ρ=0.2__和__r=0.5r=0.5__的索引表。</em><br><img src="file:///C:/Users/guo23/AppData/Local/Temp/msohtmlclip1/01/clip_image072.gif"><br><img src="file:///C:/Users/guo23/AppData/Local/Temp/msohtmlclip1/01/clip_image002.gif"></p>
+<p>其中cc是一个嵌套的半球面积分：</p>
+<p><strong>次表面散射的空间模糊</strong></p>
+<p>次表面散射本质上是采样周边像素进行加权计算，类似特殊的高斯模糊。也就是说，次表面散射的计算可以分为两个部分：</p>
+<p>（1）先对每个像素进行一般的漫反射计算。</p>
+<p>（2）再根据某种特殊的函数R(r)R(r)和（1）中的漫反射结果，加权计算周围若干个像素对当前像素的次表面散射贡献。</p>
+<p>上述（2）中提到的R(r)R(r)就是次表面散射的<strong>扩散剖面（Diffusion Profile）。它是一个次表面散射的光线密度分布，是各向同性的函数，也就是说一个像素受周边像素的光照影响的比例只和两个像素间的距离有关</strong>。</p>
+<p>实际上所有材质都存在次表面散射现象，区别只在于其密度分布函数R(r)R(r)的集中程度，如果该函数的绝大部分能量都集中在入射点附近（r=0），就表示附近像素对当前像素的光照贡献不明显，可以忽略，则在渲染时我们就<strong>用漫反射代替</strong>，如果该函数分布比较均匀，附近像素对当前像素的光照贡献明显，<strong>则需要单独计算次表面散射</strong>。</p>
+<p>利用扩散剖面技术模拟的次表面散射，为了得到更柔和的皮肤质感，需要对画面进行若干次不同参数的高斯模糊。从模糊空间划分，有两种方法：</p>
+<p>•<strong>纹理空间模糊</strong>（Texture Space Blur）。利用皮肤中散射的局部特性，通过使用纹理坐标作为渲染坐标展开3D网格，在2D纹理中有效地对其进行模拟。</p>
+<p>•<strong>屏幕空间模糊</strong>（Screen Space Blur）。跟纹理空间不同的是，它在屏幕空间进行模糊，也被称为屏幕空间次表面散射（Screen Space SubSurface Scattering，SSSSS）。<br><img src="https://s1.vika.cn/space/2023/03/09/4606d37f0ea743bda34b992c8e42a46c" alt="image.png"></p>
+<p><em>纹理空间和屏幕空间进行__0, 3, 5__次高斯模糊的结果</em><br><img src="https://s1.vika.cn/space/2023/03/09/12dd99d603e94fd882c120d799c6971c" alt="image.png"></p>
+<p><em>屏幕空间的次表面散射渲染过程</em></p>
+<p><strong>可分离的次表面散射（Separable Subsurface Scattering）</strong></p>
+<p>次表面散射的模糊存在卷积分离（Separable Convolution）的优化方法，具体是将横向坐标U和纵向坐标V分开卷积，再做合成：<br><img src="https://s1.vika.cn/space/2023/03/09/9c7743e2abbc4665b95c6454bd30bb1f" alt="image.png"><br>由此产生了<strong>可分离的次表面散射</strong>（Separable Subsurface Scattering，也叫SSSS或4S），这也是UE目前采用的人类皮肤渲染方法。它将RdRd做了简化：</p>
+<p>该论文还提到，为了给实时渲染加速，还需要预积分分离的卷积核（Pre-integrated Separable Kernel）：<br>利用<strong>奇异值分解</strong>（Singular Value Decomposition，SVD）的方法将其分解为一个行向量和一个列向量<strong>，</strong>并且保证了分解后的表示方法基本没有能量损失。下图展示了它的计算过程：<br><img src="https://s1.vika.cn/space/2023/03/09/453ec58d203146d8a3f9083d737eaa59" alt="image.png"></p>
+<p><strong>UE底层实现</strong></p>
+<p>感谢拥有充分分享精神的EPIC公司！UE的开源使我们可以一窥引擎内部的实现，不再是黑盒操作，也使我们有机会学习图形渲染的知识，使得我们对UE引擎渲染原理的研究成为可能。</p>
+<p>皮肤渲染的方法很多，UE使用的是可分离的次表面散射（Separable Subsurface Scattering，也叫SSSS或4S）。最先由暴雪的<strong>Jorge</strong>等人，在GDC2013的演讲<a href="https://link.zhihu.com/?target=http://www.iryoku.com/images/posts/next-generation-life/Next-Generation-Character-Rendering-Teaser.pptx">《Next-Generation Character Rendering》</a>中首次展示了SSSS的渲染图，并在2015年通过论文正式提出了<a href="https://link.zhihu.com/?target=http://iryoku.com/separable-sss">Separable Subsurface Scattering</a>。其通过水平和垂直卷积2个Pass来近似，效率更进一步提升，这是目前游戏里采用的主流技术。</p>
+<p>UE源码中，与SSSS相关的主要文件：</p>
+<p>•\Engine\Shaders\Private\SeparableSSS.ush：</p>
+<p>SSSS的shader主要实现。</p>
+<p>•\Engine\Shaders\Private\PostProcessSubsurface.usf：</p>
+<p>后处理阶段为SeparableSSS.ush提供数据和工具接口的实现。</p>
+<p>•\Engine\Shaders\Private\SubsurfaceProfileCommon.ush：</p>
+<p>定义了SSSS的常量和配置。</p>
+<p>•\Engine\Source\Runtime\Engine\Private\Rendering\SeparableSSS.cpp：</p>
+<p>实现CPU版本的扩散剖面、高斯模糊及透射剖面等逻辑，可用于离线计算。</p>
+<p>•\Engine\Source\Runtime\Engine\Private\Rendering\SubsurfaceProfile.cpp：</p>
+<p>SSS Profile的管理，纹理的创建，及与SSSS交互的处理。</p>
+<p><strong>皮肤材质解析</strong></p>
+<p>以Mike的皮肤材质作为例子。皮肤材质主要是M_Head。<br><img src="https://s1.vika.cn/space/2023/03/09/a65063c324814f90bb94d4aeab2db949" alt="image.png"></p>
+<p>它的启用了次表面散射的着色模型，此外，还开启了与骨骼动作和静态光一起使用标记，如下：<br><img src="https://s1.vika.cn/space/2023/03/09/4cbdb3d7924e4362ba9b7dd68f6c23eb" alt="image.png"></p>
+<p><img src="file:///C:/Users/guo23/AppData/Local/Temp/msohtmlclip1/01/clip_image092.gif"></p>
+<p><strong>1.基础色（Base Color）</strong><br><img src="https://s1.vika.cn/space/2023/03/09/05845ec153444d53bfdac3d3bb61637b" alt="image.png"></p>
+<p>对于基础色，是由4张漫反射贴图（下图）作为输入，通过MF_AnimatedMapsMike输出混合的结果，再除以由一张次表面散射遮罩图（T_head_sss_ao_mask）控制的系数，最终输入到Base Color引脚。</p>
+<p>其中MF_AnimatedMapsMike是一个通用的材质函数，内部控制着不同动作下的贴图混合权重，而混合不同动作参数的是m_headMask_01、m_headMask_02、m_headMask_03三个材质函数：<br><img src="https://s1.vika.cn/space/2023/03/09/e8e90ad5bd06468fa9709c72362c4524" alt="image.png"></p>
+<p>而m_headMask_01、m_headMask_02、m_headMask_03三个材质函数又分别控制了一组面部Blend Shape动作，其中以m_headMask_01为研究对象：<br><img src="https://s1.vika.cn/space/2023/03/09/e3d2c3d176a24bcd955d46a238874a12" alt="image.png"></p>
+<p>由上图可见，m_headMask_01有5张贴图（head_wm1_msk_01 ~ head_wm1_msk_04，head_wm13_msk_03），利用它们的共19个通道（head_wm1_msk_04的alpha通道没用上）提供了19组blend shape遮罩，然后它们与对应的参数相作用。</p>
+<p>此外，m_headMask_02有3张贴图控制了10个Blend Shape动作；m_headMask_03有3张贴图控制了12个Blend Shape动作。</p>
+<p>至于遮罩数据和blend shape参数如何计算，还得进入fn_maskDelta_xx一探究竟，下面以fn_maskDelta_01为例：<br><img src="https://s1.vika.cn/space/2023/03/09/9b023c88da494815845183efb0f3e5a2" alt="image.png"></p>
+<p><strong>2.高光（Specular）</strong><br><img src="https://s1.vika.cn/space/2023/03/09/be1780c4b25146ae94d1e5d7084720b7" alt="image.png"></p>
+<p>高光度主要由Mike_head_cavity_map_001的R通道提供，通过Power和Lerp调整强度和范围后，再经过Fresnel菲涅尔节点增强角色边缘的高光反射（下图）。<br><img src="https://s1.vika.cn/space/2023/03/09/d089509b4582418cb0834c1ef1426d9d" alt="image.png"></p>
+<p>上述结果经过T_head_sss_ao_mask贴图的Alpha通道控制高光度和BaseSpecularValue调整后，最终输出到Specular引脚。（下图）<br><img src="https://s1.vika.cn/space/2023/03/09/224b8228a4654082b26f4b9eae2400a2" alt="image.png"></p>
+<p>其中鼻子区域的高光度通过贴图T_RGB_roughness_02的R通道在原始值和0.8之间做插值。</p>
+<p><strong>3.粗糙度（Roughness）</strong></p>
+<p>粗糙度的计算比较复杂，要分几个部分来分析。</p>
+<p><strong>动作混合的粗糙度</strong><br><img src="https://s1.vika.cn/space/2023/03/09/aa229040c234455192e3b91d98636df5" alt="image.png"></p>
+<p>这部分跟基础色类似，通过4张不同动作状态的粗糙度贴图（Toksvig_mesoNormal，Toksvig_mesoNormal1，Toksvig_mesoNormal2，Toksvig_mesoNormal3）混合成初始粗糙度值。</p>
+<p><strong>基于微表面的粗糙度</strong><br><img src="https://s1.vika.cn/space/2023/03/09/aa229040c234455192e3b91d98636df5"></p>
+<p>如上图，由Toksvig_mesoNormal的G通道加上基础粗糙度BaseRoughness，再进入材质函数MF_RoughnessRegionMult处理后输出结果。</p>
+<p>其中，MF_RoughnessRegionMult的内部计算如下：<br><img src="https://s1.vika.cn/space/2023/03/09/1da9549c340b4f08bb6bc30e6c709e06" alt="image.png"></p>
+<p>简而言之，就是通过3张mask贴图（head_skin_mask4，T_siren_head_roughmask_02，T_siren_head_roughmask_01）的10个通道分别控制10个部位的粗糙度，并且每个部位的粗糙度提供了参数调节，使得每个部位在[1.0,mask][1.0,mask]之间插值。</p>
+<p><strong>粗糙度调整和边缘粗糙度</strong><br><img src="https://s1.vika.cn/space/2023/03/09/52d150873abb49798323a10f9f3fef79" alt="image.png"><br>上图所示，RoughnessVariation通过Mike_T_specular_neutral的R通道，在Rough0和Rough1之间做插值；EdgeRoughness则通过Fresnel节点加强了角色视角边缘的粗糙度；然后将它们和前俩小节的结果分别做相乘和相加。</p>
+<p><strong>微表面细节加强</strong><br><img src="https://s1.vika.cn/space/2023/03/09/9f7cef203e7c428b94acacbd7fcfc8bd" alt="image.png"></p>
+<p>如上图，将纹理坐标做偏移后，采用微表面细节贴图skin_h，接着加强对比度，并将值控制在[0.85,1.0][0.85,1.0]之间，最后与上一小节的结果相乘，输出到粗糙度引脚。</p>
+<p>其中微表面细节贴图skin_h见下：<br><img src="https://s1.vika.cn/space/2023/03/09/0269ecead6c64dbab9a9584456e14c87" alt="image.png"></p>
+<p><strong>次表面散射（<strong><strong>Opacity</strong></strong>）</strong></p>
+<p>首先需要说明，当材质着色模型是Subsurface Profile时，材质引脚Opacity的作用不再是控制物体的透明度，而变成了控制次表面散射的系数。<br><img src="https://s1.vika.cn/space/2023/03/09/b5b54ec56179479ab97806ecdf38618a" alt="image.png"></p>
+<p>由贴图T_head_sss_ao_mask的G通道（下图）提供主要的次表面散射数据，将它们限定在[ThinScatter,ThickScatter]之间。<br><img src="https://s1.vika.cn/space/2023/03/09/ad40d7930c714d71a3b6a8af501f4e4e" alt="image.png"></p>
+<p><em>次表面散射遮罩图。可见耳朵、鼻子最强，鼻子、嘴巴次之。</em></p>
+<p>另外，通过贴图T_RGB_roughness_02的B、A通道分别控制上眼睑（UpperLidScatter）和眼皮（LidScatter）部位的次表面散射系数。</p>
+<p><strong>法线（Normal）</strong><br><img src="https://s1.vika.cn/space/2023/03/09/b50e2cbf8b4c4603a99aec0f735c8661"></p>
+<p>与漫反射、粗糙度类似，法线的主要提供者也是由4张图控制。</p>
+<p>此外，还提供了微观法线，以增加镜头很近时的皮肤细节。<br><img src="https://s1.vika.cn/space/2023/03/09/f97704a2fb234a4d983150536321d5c7" alt="image.png"></p>
+<p>主法线和微观法线分别经过NormalStrength和MicroNormalStrength缩放后（注意，法线的z通道数据不变），再通过材质节点BlendAngleCorrectedNormals将它们叠加起来，最后规范化输入到法线引脚。（见下图）<br><img src="https://s1.vika.cn/space/2023/03/09/79cb21e4f0f1476f8a3a4917a254e92b" alt="image.png"></p>
+<p>不妨进入材质节点BlendAngleCorrectedNormals分析法线的混合过程：</p>
+<p><img src="https://s1.vika.cn/space/2023/03/09/301cfdc88dcd4f89895db72977e31008" alt="image.png"></p>
+<p>从材质节点上看，计算过程并不算复杂，将它转成函数：</p>
+<pre class="line-numbers language-Plain" data-language="Plain"><div class="caption"><span>Text</span></div><code class="language-Plain">Vector3 BlendAngleCorrectedNormals(Vector3 BaseNormal, Vector3 AdditionalNormal)  
+{  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BaseNormal.b += 1.0;  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AdditionalNormal.rg *= -1.0;  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float dot = Dot(BaseNormal, AdditionalNormal);  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vector3 result = BaseNormal * dot - AdditionalNormal * BaseNormal.b;  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return result;  
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p>另外，<a target="_blank" rel="noopener" href="http://www.jackcaron.com/techart/2014/11/14/ue4-normal-blending">Normal Map Blending in Unreal Engine 4</a>一文提出了一种更简单的混合方法：</p>
+<p><img src="file:///C:/Users/guo23/AppData/Local/Temp/msohtmlclip1/01/clip_image132.jpg"><br><img src="https://s1.vika.cn/space/2023/03/09/4dab5cbc9de545e895b970fe09fcd46a" alt="image.png"></p>
+<p>将两个法线的XY相加、Z相乘即得到混合的结果。</p>
+<p><strong>环境光遮蔽（<strong><strong>Ambient Occlusion</strong></strong>）</strong><br><img src="https://s1.vika.cn/space/2023/03/09/cd4485ddd5bc400f9886fbb013381110" alt="image.png"></p>
+<p>AO控制非常简单，直接用贴图T_head_sss_ao_mask的R通道输入到AO引脚。其中T_head_sss_ao_mask的R通道如下：<br><img src="https://s1.vika.cn/space/2023/03/09/ee6bf6ec3df14aaebfececc665660a03" alt="image.png"></p>
+<p>可见，五官内部、下颚、脖子、头发都屏蔽了较多的环境光。</p>
+<p><strong>皮肤贴图制作</strong></p>
+<p>前面可以看到，皮肤渲染涉及的贴图非常多，多达几十张。<br><img src="https://s1.vika.cn/space/2023/03/09/1b83669ba37348c298b1e785bafa6ad3" alt="image.png"></p>
+<p>它们的制作来源通常有以下几种：</p>
+<p>•扫描出的超高清贴图。例如漫反射、高光、SSS、粗糙度、法线等等。</p>
+<p>•转置贴图。比如粗糙度、副法线、微观法线等。<br><img src="https://s1.vika.cn/space/2023/03/09/c881f8015502446b9d863a5fe924b9c6" alt="image.png"></p>
+<p>•&nbsp;<em>粗糙度贴图由法线贴图转置而成。</em></p>
+<p>•&nbsp;遮罩图。这类图非常多，标识了身体的各个区域，以便精准控制它们的各类属性。来源有：</p>
+<p>￮&nbsp;PS等软件制作。此法最传统，也最容易理解。</p>
+<p>￮&nbsp;插件生成。利用Blend Shape、骨骼等的权重信息，自动生成遮罩图。<br><img src="https://s1.vika.cn/space/2023/03/09/e89c211bfc96424c9aa23ffc018b5cb4" alt="image.png"></p>
+<p><em>Blend Shape__记录了顶点的权重，可以将它们对应的__UV__区域生成遮罩图。</em></p>
+<p><strong>骨骼绑定</strong></p>
+<p><strong>控制骨骼</strong></p>
+<p>骨骼绑定是以类似于人类的骨骼逻辑经行设计的，以下有控制骨骼的两种方法：</p>
+<p><strong>正向运动学（FK）：</strong></p>
+<p>正向运动学是指采用一个机器人的运动方程，以从该关节参数指定的值计算所述端部执行器的位置。使用正向运动学，可以直接变换关节和设置关节关键帧，对于创建详细的弧线移动非常有用，但对于目标导向的移动不是非常直观。它可以轻松设定手臂关节处旋转的动画，而不能设置伸手去拿某样东西的动画。举例来说，如果要运用正向运动学来拿一支笔，就需要先控制大臂，再控制手肘，最后控制手掌。如果有些姿势需要微调，正向运动学的效果会更快。</p>
+<p><strong>正向运动基本原理：</strong></p>
+<p>引入一个父子级的概念。两个对象链接到一起后，子对象相对于父对象保持自己的位置、旋转和缩放变换。这些变换从父对象的轴到子对象的轴进行测量。</p>
+<p>例如，考虑下图中的两个长方体。较大的长方体是较小长方体的父对象。轴和长方体之间的链接表明了链接是如何工作的。链接从父对象的轴延伸并连接到子对象的轴。可以将子对象的轴视为父对象和子对象之间的关节。<br><img src="https://s1.vika.cn/space/2023/03/09/1beff2e166444db2aede4a58a48a7f4c" alt="image.png"></p>
+<p>父对象和子对象通过他们的轴点链接到一起&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</p>
+<p><img src="https://s1.vika.cn/space/2023/03/09/3606a488f8734ce2add5a0389842e530" alt="image.png"></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 旋转父对象将影响子对象的位置和方向<br><img src="https://s1.vika.cn/space/2023/03/09/123f574f825f4b25a7d2990cf59b3e55" alt="image.png"></p>
+<p>旋转子对象不影响父对象</p>
+<p>链接作为一个单向的管道将父对象的变换传输到子对象。如果移动、旋转或缩放父对象，子对象将以相同的量移动、旋转或缩放。由于层次是单向的，移动、旋转或缩放子对象不会影响父对象，应用到子对象的变换同时也继承了其父对象的变换。</p>
+<p><strong>反向运动学（IK）：</strong></p>
+<p>反向运动学反映的是一种由手部带到肩部的运动形式，在这个运动中，运动以手部这个自由端为起始，当手部进行运动时会自然的带动固定端肩部的运动。对于这种运动简单的定义就是运动以自由端为起始，回退到固定端。也可以解释为由一个目标点去确定目标的运动，最后确定整个物体的运动。这种操作方式比较直观，只需要确定自由端关节的运动，其他关节的运动有系统自动生成，相比FK的操作，操作比较简洁。</p>
+<p>使用反向运动学，可以变换IK控制柄并设置其关键帧以控制骨架动画。IK控制柄绘制为其IK链起始关节和末关节之间的一条直线。我们可以通过IK去设置手去取某样东西的动画，但不能设定各个关节的特定运动。例如要想运用IK去取眼前的笔，则需要控制手移动到这支笔附近，而手臂关节具体的运动则不能控制。</p>
+<p><strong>反向运动学基本原理：</strong></p>
+<p>反向运动学是以子骨骼的位置和变换反推父骨骼的位置和变换，即给定n个骨骼及n-1个关节形成关节链，已知末端关节和首端关节的位置求出中间关节的位置。数值型方法是先试错再逐步修正得到近似解的方法，主要有循环坐标下降法和雅可比矩阵法。</p>
+<p><strong>循环坐标下降法：</strong></p>
+<p>坐标下降法属于一种非梯度优化的方法，它在每步迭代中沿一个坐标的方向进行线性搜索（线性搜索是不需要求导数的），通过循环使用不同的坐标方法来达到目标函数的局部极小值。</p>
+<p>假设目标函数是求解<br>$$<br>f(x)<br>$$<br>的极小值，其中<br>$$<br>x=(x_1,x_2…,x_n)<br>$$<br>是一个n维的向量，我们从初始点<br>$$<br>x^0<br>$$<br>开始对k进行循环：<br><img src="https://s1.vika.cn/space/2023/03/09/c0a7c1aeb9f443a0a78b531ee4cef015" alt="image.png"></p>
+<p>相当于每次迭代都只是更新x的一个维度，即把该维度当做变量，剩下的n-1个维度当作常量,通过最小化 f（x）来找到该维度对应的新的值。坐标下降法就是通过迭代地构造序列<br>$$<br>x^0,x^1,x^2…<br>$$<br><img src="file:///C:/Users/guo23/AppData/Local/Temp/msohtmlclip1/01/clip_image155.gif"></p>
+<p>来求解问题，即最终点收敛到期望的局部极小值点。通过上述操作，显然有：<br><img src="https://s1.vika.cn/space/2023/03/09/dd2e519641f2461fa62e5ef1ca1ef5e3" alt="image.png"></p>
+<p>梯度下降是利用目标函数的导数来确定搜索方向的，该梯度方向可能不与任何坐标轴平行。而坐标轴下降法法是利用当前坐标方向进行搜索，不需要求目标函数的导数，只按照某一坐标方向进行搜索最小值。</p>
+<p>循环坐标下降法是一种可行的方法，它由关节链的末端出发，层层向上递推旋转到目标位置，而且层层迭代以确保准确性。</p>
+<p><strong>雅可比矩阵法：</strong></p>
+<p>雅可比矩阵法描述了整个关节链，每一个矩阵的列表示了每个关节的末端变化。</p>
+<p>设有一个关于时间t的函数f（t），那么它的时间导数为f’（t），在时间t0处的函数值是f(t0)，当时间t在t0基础上发生一个微小的变化dt，那么有df=f’(t)<em>dt。令f’(t)为一个标量J0，则有df=J0</em>dt。</p>
+<p>若设f(t)是一个向量常数，如下：<br><img src="https://s1.vika.cn/space/2023/03/09/0e05ff2864a34d0e9827a71310b3a7f5" alt="image.png"></p>
+<p>&nbsp;那么上述式子可以表示成微分形式：<br><img src="https://s1.vika.cn/space/2023/03/09/368607a8e7b745189fa5f88e18e4a3ab" alt="image.png"></p>
+<p>并且<br><img src="https://s1.vika.cn/space/2023/03/09/63bdf6f7ac8b4c178047bf67f708e163" alt="image.png"></p>
+<p>同时，自变量也是一个m维的向量<br><img src="https://s1.vika.cn/space/2023/03/09/d8a63175d5144bb38bd0b4fe7a33eaf4" alt="image.png"></p>
+<p>那么这个时候微分表达式就变成了<br><img src="https://s1.vika.cn/space/2023/03/09/1c5058cd45b343cca43b6c6a8235fa04" alt="image.png"></p>
+<p>同时有<br><img src="https://s1.vika.cn/space/2023/03/09/1c5058cd45b343cca43b6c6a8235fa04"></p>
+<p>那么 df=J0. dt，这里 J0是一个 n.m 的向量。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 综上，不管自变量和函数值是标量还是向量，他们之间微小量的变化总是存在一种固定的联系，那就是</p>
+<p>$$<br>d_f=J_0.d_x<br>$$<br>其中dx表自变量的一个微小变化，df代表函数值的微小变化。联系两者的一个纽带就是所谓雅可比矩阵J0，其实就是函数向量对自变量向量的偏导数矩阵。</p>
+<p>雅可比矩阵对于机器人的意义在于找出每个关节的微小变化如何影响上一个关节位置和姿态的微小变化，求解过程较为复杂，一般用于高级IK解算器。</p>
+<p><strong>骨骼动画</strong></p>
+<p>骨骼动画制作流程：</p>
+<p>1.&nbsp;骨骼与标准姿势（T-pose）的绑定与蒙皮（binding, skinning）</p>
+<p>2.&nbsp;动画师操作骨骼，制作关键帧（keyframe）</p>
+<p>3.&nbsp;关键帧之间的插值形成整个动画</p>
+<p>绑定与蒙皮：对于标准姿势，创建一套骨骼用来对应 mesh 上的顶点。这个对应做好了，才可以完成驱动操作。</p>
+<p>关键帧：这是制作动画的常用方法，通过指定关键的动作来表示动画</p>
+<p>插值：对于非关键帧的动画，通过插值来生成。</p>
+<p>总结就是：在关键帧编辑骨骼姿态，在非关键帧插值骨骼姿态，在所有帧上进行蒙皮。</p>
+<p><strong>插值</strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 插值的目的是平滑连续，插值的问题可以抽象成：给定f(0)=p0，f(1)=p1，求f(t),0&lt;t&lt;1。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 最简单的插值是线性插值，即f(t)=tp0+(1-t)p1</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 如果要求更高的平滑性，则可以再取端点的若干导数值。如Hermite Curve插值，其插值公式是</p>
+<p>f(t)=h00(t)p0+h10(t)m0+h01(t)p1+h11(t)m1</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 其中p0,p1是端点值，m0,m1是端点导数值。四个参数如下计算：<br><img src="https://s1.vika.cn/space/2023/03/09/36c2cf8f79da4bd18abc4e0d4c08e178" alt="image.png"></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 确定关键帧的骨骼姿态后，如果动作幅度小，可以直接插值关节坐标。但如果动作幅度过大，不同关节运动速度不同，可能插值出不自然的效果。</p>
+<p><strong>蒙皮权重</strong></p>
+<p>权重是在有多个目标物体时通过调整框可以调整数值来指定某个约束物体对被约束物体的影响程度，这里的数值就是在加权运算中的加权系数。封套就是骨骼带动皮肤的套子，蒙皮后每根选择的骨骼都会有一个封套，封套里面的点受到此骨骼封套的影响。<br><img src="https://s1.vika.cn/space/2023/03/09/17bb8d8ebc5144b4adafeb70d4558736" alt="image.png"></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 下图joint意思就是关节，清楚地显示出了上下级的父子关系，上节节点会控制下节节点，这就是为什么某些关节明明没有控制某个区域去能影响该部分的运动，因为他控制的子节点对其造成了影响，而子节点的影响正是由它传过去的。<br>   <img src="https://s1.vika.cn/space/2023/03/09/58a4dc9d8b614a30aea86b9b42f4dea5" alt="image.png"><br>可以看到关节控制的位置变成了白色（其实平常关节藏在皮肤里所以不方便直接调整，于是人们才会使用控制器控制关节，而关节如何控制模型就是通过蒙皮实现的了，也就是影响模型的面，而影响的大小就是通过权重实现的，也就是每个面受影响的程度，所以需要刷权重）白色代表1，黑色代表0，控制得越多影响越大，权重越接近一，颜色越白。<br><img src="https://s1.vika.cn/space/2023/03/09/ee6705ee68e6416c97445399ef49affc" alt="image.png"></p>
+<p><strong>表情制作</strong></p>
+<p><strong>面部动捕</strong><br><img src="https://s1.vika.cn/space/2023/03/09/07db7b6af8504e9da537ae34f0ebe073" alt="image.png"></p>
+<p>基于标记点的面部动作捕捉系统较为常见，标记点数量不定，由配套使用的设备及系统决定。面部标记数量最多可能达到 350 个，需要与高分辨率相机等设备配合使用。</p>
+<p>设备通常为头戴式。这些设备可与姿态捕捉系统配合使用，演员的表演过程连贯不受影响。依拍摄场景、实现方式不同，有时也会改由他人辅助手持拍摄。</p>
+<p><strong>提高表情捕捉精度</strong></p>
+<p>长期以来高精度实时表情捕捉一直没有理想算法，CubicMotion为数字人siren定制的算法需要大量时间做人工对齐，在实际生产中很难使用，苹果的Arkit简单易用但是由于天花板比较低，仅有52个变形体，导致表情丰富度较低。近日，FACEGOOD发表了一篇论文“High-Quality&nbsp; Real Time Facial Capture Based on Single&nbsp; Camera”实现了单目摄像头高精度实时表情捕捉，论文实验结果来看，他们团队基于离线动画数据训练了一个神经网络用于驱动完整的Metahuman绑定，也就是直接驱动600+个变形体，是Arkit的十倍有余，实时表情捕捉的效果跟离线效果相近，实现了高精度捕捉。</p>
+<p>他们提出了一个实时的基于视频的高精度实时表情捕捉框架蒸馏面部捕网络(Distill&nbsp; Facial Capture Network,&nbsp; DFCN)。我们的DFCN基于卷积神经网络利用大量视频数据来训练模型，最终产生高质量的连续的blendshape的权值输出。DFCN是自动的，因此可以大幅减少人工干预。我们在眼睛和嘴唇等挑战性大的部位展现了绝佳的仿真推理效果，尤其在语速较快的场合、在人脸微表情重建有很好的实现，我们实验结果证明，舌头可以随着嘴型同步运动，在面向不同绑定系统上也做到了很好的适配性。</p>
+<p>纵观表情捕捉算法的发展史，面部表情捕捉技术主要分为关键点(landmark)驱动、点云(point cloud)驱动、声音驱动、基于图像和3D摄像头的。基于3D摄像头的缺点是:计算时间长，设备昂贵，没有捕捉眼球的表现。同样，各种声音驱动方法也没有分析眼球运动。但我们采用的蒸馏面部捕网络(Distill Facial Capture Network, DFCN)涉及眼球的表现。很多其他算法是基于模型的，而我们是基于图像的。在回归算法中引入知识蒸馏，提高了小网络的表达能力。</p>
+<p><strong>问题公式化</strong></p>
+<p>使用红外摄像机对抗光照影响。</p>
+<p>这个公式展现了3d面部网F由blendshapes的权重的线性组合生成，B = [b0, b1,…,bn]，所有权重之和为1，并且单个权重也位于0到1之间。e是表情协方差,e = [e0,e1,…en]。<br><img src="https://s1.vika.cn/space/2023/03/09/54e769a4d80c400fb484982c412df608" alt="image.png"></p>
+<p>我们采用的blendshape模型是苹果公司提出的ArKit，其中包含52个动作单元(即，n = 52)，模拟面部肌肉群的联合激活效应。我们的DFCN可以用这个公式表示：<br><img src="https://s1.vika.cn/space/2023/03/09/bf9ff2dbccf84316a8724e46f06f092c" alt="image.png"><br>其中，I表示输入的图像，S表示2d面部形状，由所有2d landmarks sk组成。e是表情协方差。</p>
+<p><strong>蒸馏面部捕网络(Distill Facial Capture Network, DFCN)</strong></p>
+<p>在本节中，直接根据普通图像获取对应的blendshape和2d landmark的权重，我们提出了DFCN算法，该算法能够抵抗外界不同光照和抖动的影响。并使用一个端到端的方法获取blendshape权重。并且提出了一个混合滤波器来对抗帧与帧之间的不连续性。我们使用了基于一组blendshape meshes的动态表情模型(Dynamic Expression Model, DEM)</p>
+<p><img src="https://s1.vika.cn/space/2023/03/09/0c631d95b90548fab3039be52d7b2a0e" alt="image.png"></p>
+<p>图1 展示了我们的框架，包括模型训练和推理两个阶段。可以大量节省劳动密集型生产级流程中的人工干预。</p>
+<p><strong>数据训练</strong></p>
+<p><strong>训练参数</strong></p>
+<p>我们使用Adam[Kingma and Ba, 2014]优化算法对教师网络进行400个epoches的训练。在第一个训练阶段，学习速率alpha以几何级数递增，然后递减。在最后60个epoches，使用平滑曲线将学习率降至零，同时将Adam β1参数从0.9降至0.5。ramp-up消除了网络不开始学习的隐患，ramp-down确保网络收敛到局部最小值。Minibatch size设置为1024，每个epoch随机处理所有训练帧。<br><img src="https://s1.vika.cn/space/2023/03/09/63b5168a3c1b4ce1bcae3c2a88e1bf85" alt="image.png"><br>三行图片分别展示了原始表情，标了红色2d landmark点的表情，和被驱动的metahuman的表情</p>
+<p>第一行展示了一个女孩的六种表情。分别是：翘嘴，闭上右眼，撅起嘴，闭上嘴，生气，闭上左眼。第二行图像是对应的标了红色2d landmark点的表情。可以看出，这些landmark在嘴唇、眼睛、鼻子、眉毛附近都准确地标记出来，几乎没有偏差。并且该跟踪是实时的，几乎没有时间延迟。第三行是驱动的数字人的六种表情。相比第一行，发现metahuman完全还原了人的表情，而且表情也非常精致,栩栩如生。特别是，闭眼时的眼睛和嘟嘴时的嘴唇幅度几乎一样。</p>
+<p>我们提出了自适应回归蒸馏(ARD)框架，设计的Loss函数如下：<br><img src="https://s1.vika.cn/space/2023/03/09/f37a8acb0c774e12b671577129bd4fe0" alt="image.png"><br>公式2</p>
+<p>公式(3)表示：当数据点是一个异常值时，让学生从老师网络的输出值学习，而不是异常值。相反，如果不是异常点，就让学生学习真实的数据，而不是老师的“半对半错”的数据。这里，v大于1，表示当学生目前学得还不够好时，给一个更大的损失，促进学生的学习。另外，m为除了异常值外的数据集，µ为判断点是否为噪声的超参数，b为衡量教师和学生之间的表现差距，由研究者自行设定。此外，需要对几处矢量求欧几里得范数的平方。</p>
+<p><strong>实验结果</strong><br>以下是自适应回归蒸馏(ARD)框架的算法伪码：<br><img src="https://s1.vika.cn/space/2023/03/09/84e3407f51924426bbaf9d21ea419104" alt="image.png"></p>
+<p><img src="https://s1.vika.cn/space/2023/03/09/4d60217d731d4050ad97cb74621c195d" alt="image.png"></p>
+<p>混合滤波器对blendshape权重的滤波效果对比</p>
+<p><img src="https://s1.vika.cn/space/2023/03/09/eec043b16c634cf18b88dfa18a63b5c4" alt="image.png"></p>
+<p>混合滤波器对landmark点的滤波效果对比</p>
+<p>图5和图6分别展示了我们的混合滤波器对blendshape权重和landmark点的滤波效果。可以看到，混合滤波器可以有效地消除抖动，且几乎没有时间延迟。对最高值和最低值也几乎没有峰值损失。<br><img src="https://s1.vika.cn/space/2023/03/09/5fad970ded934a5a88daaa9866bd4108" alt="image.png"><br>三种CPU上的处理时间</p>
+<p><strong>动作生成</strong></p>
+<p><strong>动画</strong><br>1.&nbsp;导入动捕的动作数据，进行艺术化的调整与修改。</p>
+<ol start="2">
+<li>动作数据的修正和调整（可以用 maya）</li>
+</ol>
+<p><strong>动捕</strong></p>
+<p>得益于中国传媒大学在艺术领域的优势，我校在动捕、乐器演奏、舞蹈方面有全面且成熟的经验，也在这些领域的交叉融合进行了较多的探索。使得我们团队在乐器演奏的动捕、数字人制作成为可能。</p>
+<p>我们使用前沿、专业的动捕设备，借助我们学校的动捕棚，广泛邀请我校深耕于乐器演奏、舞蹈方面的同学和老师们参与动作的创作。<br><img src="https://s1.vika.cn/space/2023/03/09/049a372922264fb5bfd91f24c4607291" alt="image.png"></p>
+<p><strong>动捕流程</strong><br><img src="https://s1.vika.cn/space/2023/03/09/e3a16596051645fe8361282f9ac4d489" alt="image.png"></p>
+<p>着手准备工作时，游戏内动作因为要考虑到动作融合/切换的问题，却是动作捕捉环节里最容易出错的地方，因为它需要在我们动作设计之初，找到符合逻辑的融合点。为了避免错误的发生，我们可以用惯性捕捉设备，把程序拆解好的逻辑动作点，提前进行一遍动作预演，不用精修，直接把导出来的数据往引擎里面放，进行一遍验证。这样做的好处是：</p>
+<p>①一旦发现错了，我们直接改了逻辑错误；</p>
+<p>②虽然美术由于表演功底或者身体原因演不出自己想要的效果，但这些视频数据可以给演员，在现场讲戏，作为一个实体性的参考，让演员好快速适应。<br><img src="https://s1.vika.cn/space/2023/03/09/955638e2f1ad410dae548350980f8f45" alt="image.png"></p>
+<p>另外，动作拆分该怎么拆合适，是不是必须拆成像开发逻辑这样详细？</p>
+<p>显然不是，其实动作捕捉拆分动作的原则是尽量方便现场捕捉，同时又能完全包含程序给到的动作逻辑表。</p>
+<p>这张是引擎里体现出来的引擎思路，那么具体在场地捕捉的时候，我们应该捕成几条呢？其实最好的答案就是拍成一条，我们在后期精修动画的时候，再把程序所需要的逻辑动作拆开，这样动作能够无缝衔接。但演员可能一次演不完，或者场地不够长，等因素的影响，我们有拆成两条，再多就显得散了。拆得越散，越会影响现场捕捉的效率。</p>
+<p><strong>处理数据</strong><br><img src="https://s1.vika.cn/space/2023/03/09/955638e2f1ad410dae548350980f8f45"><br>为了提高效率，我们对动捕得到的数据进行标准化的处理，规定了文件名称、动作名称、帧数等方面的标准。</p>
+<p><strong>手势</strong></p>
+<p>对于手部动作的超精度还原是我们同其他动捕公司以及实验室有显著区别的方面。我们致力于还原大师们演奏乐器时手部的神态与动作，只有这样，才能深入还原音乐艺术的魅力。</p>
+<p>我们采用了尖端的手部动捕设备，与我校在乐器演奏方面有丰富经验的同学及老师们深入合作，获取最原始的动作数据，辅以我们对数据的处理与改造，进行更为艺术化的表达。<br><img src="https://s1.vika.cn/space/2023/03/09/72bbc32759314068b624a16564894bb0" alt="image.png"></p>
+<p>就视觉效果和动画而言，手指运动捕捉技术可以用于几乎任何拥有某种手和手指的 CG&nbsp; 角色。许多精细的动作表演如果是通过传统的关键帧动画方法制作那绝对是一件既费时又费力的“大工程“，但是如果使用动作捕捉技术，就可以轻松地让他们露出真实生动的表情，流畅得握住物品，甚至做更精细的事情，比如演奏乐器等。</p>
+<p>为了深入研究手指运动捕捉的世界，特别是在视觉效果和动画方面的应用，该领域的四家领先公司——<strong>StretchSense</strong>、<strong>Manus</strong>、<strong>Xsens</strong>和<strong>Rokoko</strong>给出了他们最新的专门用于手指运动捕捉的手套产品以及他们对行业的发展状况。</p>
+<p><strong>现阶段的手部动捕</strong></p>
+<p>对于视觉效果和动画从业者来说，<strong>使用专业的手套是进行手指运动捕捉的最主要方法</strong>，原因是使用“可穿戴”的身体和面部捕捉硬件往往更加适合现阶段大部分工作室的VFX和动画生产流程。</p>
+<p>除此之外也有其他的手指运动捕捉解决方案，包括光学手部跟踪、基于计算机视觉的设备以及神经信号跟踪设备（后者的一个例子是 Facebook Reality Labs 的基于手腕的输入设备，仍然是一个研究项目）。<br><img src="https://s1.vika.cn/space/2023/03/09/a0c10432f00849d2aeb68e91a540395e" alt="image.png"></p>
+<p><img src="file:///C:/Users/guo23/AppData/Local/Temp/msohtmlclip1/01/clip_image209.gif"></p>
+<p><strong>手部动捕的问题</strong></p>
+<p>对手指进行运动捕捉是十分困难的。首先是因为我们的<strong>手指运动的灵巧性</strong>，我们可以快速做出一系列微妙又复杂的动作。其次是当我们的手指覆盖到其他手指时，或者当我们将手放在背后时，可能发生因为<strong>自我遮挡或其他物品遮挡</strong>导致的取样点检测不到而发生“漂移”的错误。</p>
+<p>另外随着时间的推移，”漂移“导致<strong>手指的跟踪位置会发生微小的变化</strong>，这些细小错误累计也会严重影响动画的流畅性。这些都是使手指动作捕捉变得困难的原因，也是为什么有几家公司试图解决它以实现最准确的手指运动捕捉。<br><img src="https://s1.vika.cn/space/2023/03/09/8c228f3b15204b3cbad69ff36aaf3452" alt="image.png"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Manus旗下的PrimeX 手指运动捕捉手套</p>
+<p>另一个挑战是<strong>身体运动捕捉领域的创新已经持续多年，而手指运动捕捉相对较新。</strong>“我们在进行手部动作捕捉时，期望获得与身体运动捕捉相当的质量，”</p>
+<p>这也是为什么为手指动画制作关键帧如此困难，以及为什么需要专门的手指运动捕捉解决方案对动画师来说是至关重要的。</p>
+<p><strong>技术性难题</strong></p>
+<p>Manus自己的Prime X手套和Manus的Xsens手套中使用的<strong>手指跟踪技术依赖于弯曲传感器和惯性测量单元</strong> **(IMU)**<strong>，并包括触觉功能。</strong>与此同时，2020&nbsp; 年开始提供Smartgloves 的Rokoko也依赖于IMU传感器，类似于其Smartsuit Pro动作捕捉套装。涉足手指运动捕捉迫使团队重新考虑他们过去在身体运动捕捉中使用的许多逻辑。</p>
+<p>制作StretchSense MoCap&nbsp; Pro的团队建议，诸如IMU和光学标记之类的解决方案可能并不总是为动作捕捉的动画表演提供所需的精度，至少它们本身不能。StretchSense&nbsp; 手套有些独特之处在于它们<strong>结合了拉伸传感器（本质上是电容式橡皮筋）</strong>，而手套的<strong>手指跟踪利用了与机器学习元素相结合的姿势检测系统。</strong></p>
+<p><strong>相关产品介绍</strong><br><img src="https://s1.vika.cn/space/2023/03/09/68c9804b45f14de98c3e1c22884f69f9" alt="image.png"><br>StretchSence利用拉伸传感器技术开发的手指运动捕捉手套</p>
+<p><img src="https://s1.vika.cn/space/2023/03/09/d5bed15e4969465fb4ce338abd2c9473" alt="image.png"><br>一套完整的Rokoko Smartgloves设备</p>
+<p><img src="https://s1.vika.cn/space/2023/03/09/8ff74a90b9e445e0b7abb0f14c5b319c" alt="image.png"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Manus旗下PrimeⅡ 手指运动捕捉手套设计细节图<br><img src="https://s1.vika.cn/space/2023/03/09/ed77195e35da44cc878dceb498ce7d19" alt="image.png"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StretchScene的MoCap Pro手套</p>
+<p><strong>解决穿模</strong></p>
+<p>不得不说，穿模问题也是我们当前阶段必须要考虑的问题之一。</p>
+<p>首先要明确是出现穿模以及不自然问题的根本原因是<strong>虚拟人背后的扮演者并不会在互动时真的和对方扮演者发生身体接触</strong>，所以最终动作就很容易不自然。<br><img src="https://s1.vika.cn/space/2023/03/09/480764bc7d2e4494a05e76c3a0df7621" alt="image.png"></p>
+<p>虽然通过简单的物理模拟可以解决这个问题，但是会导致动作延迟。东京工业大学便提出<strong>先通过物理模拟来计算动作产生时对方虚拟人可能受到的力，然后给虚拟人自动生成、<strong><strong>“</strong></strong>脑补<strong><strong>”</strong></strong>出相应动作，再结合前馈控制来减少跟踪延迟。</strong></p>
+<p><img src="https://s1.vika.cn/space/2023/03/09/886e86ff763047529669305c16678cad"><br>整个系统在Unity上开发完成，由<strong>两个物理模拟模块</strong>组成，一个是主模拟，另一个是计算跟踪扭矩（tracking torque）的模拟。</p>
+<p>简单来说就是<strong>一个负责计算需要产生的扭矩，另一个（也就是主仿真模块）负责让虚拟人执行相应的身体摆动幅度。</strong></p>
+<p>这样一来，就能在背后的扮演者并未真正接触的情况下，实现虚拟人之间无延迟的互动，并产生合理的身体反应。除此之外，该方法还能自动生成让虚拟人恢复到原始姿势的动作。</p>
+<p><strong>乐器</strong></p>
+<p><strong>乐器演奏</strong></p>
+<p>乐器种类繁多，对于每一种乐器的深度还原对于我们来说也是一个挑战。</p>
+<p>我们准备从一些入门乐器开始，探索相关乐器数字化制作经验，并逐步拓展到更多乐器种类。</p>
+<p><img src="https://s1.vika.cn/space/2023/03/09/b2ec34d604494c6da9d657678fba872b" alt="image.png"></p>
+<p><strong>木管组：长笛，双簧管，单簧管，巴松管</strong></p>
+<p><img src="https://s1.vika.cn/space/2023/03/09/65e9ca80e5f445deac5515bc6904c6f4" alt="image.png"></p>
+<p><strong>木管乐器</strong>声音往往比较温柔，轻巧。外表一般是金色或者银白色，拿起来一般还是比较轻便的。</p>
+<p>木管往往也是非常不错的独奏乐器，各种木管乐器一般都会在管弦作品中有一些独奏solo的机会。而且各个乐器往往都极具特色：</p>
+<p><strong>长笛</strong>的声音自带悠扬的田园气息，一瞬间就仿佛让人置身于世外桃源的感觉，富有自然气息。长笛还有个兄弟是短笛，短笛的声音比本就音域非常高的长笛更高，当然对人耳朵的杀伤力也很大，因为音实在是非常的尖锐。</p>
+<p><strong>双簧管</strong>的声音悠长而哀怨，是一种非常非常让人着迷的声音。相比更多的是温柔，愉快色彩的长笛，更有一种幽怨，凄美的感觉。双簧管的solo部分（在我印象中）是木管乐器中最多的，而且一旦出场就是非常惊艳的感觉。双簧管也有一个好兄弟英国管，二者声音比较类似，英国管稍微低沉一点。</p>
+<p><strong>单簧管（又称黑管）</strong>的声音也比前面两兄弟要稍微低沉点的感觉，具体很难描述，更有一种扁的感觉，但同样是偏向于温柔的暖暖的感觉。但虽然说音色低沉，但其音域可一点都不窄，在每个音域段都能有不同的音色。</p>
+<p><strong>巴松管（又称大管）</strong>自然就是负责木管部分的低音啦。独奏机会比较少，但少了它又绝对不行。低音的乐器一般都有这种特点。</p>
+<p>&nbsp;<strong>铜管组：圆号（在这个谱例中有两个），小号</strong><br><img src="https://s1.vika.cn/space/2023/03/09/c6fd4aecb0c244d88d49465e48ee753c" alt="image.png"></p>
+<p>铜管乐器一般在乐团中非常显眼，往往体型庞大，而且是黄金色外表。</p>
+<p>铜管的声音往往是特别响亮，特别激烈的（当然，除了一个异端：圆号）</p>
+<p>一般来说，铜管声音非常非常大，如果在乐团你坐在小号这种铜管乐器附近，可能耳朵要吃不消了。</p>
+<p>铜管本身在浪漫主义前期和古典主义时期没有太多的存在感，但在浪漫主义时期中后期，铜管急速发展，可以看到乐谱简直大半个版面都是铜管乐器。庞大的铜管组能够造成无比震撼的，震耳欲聋的效果。</p>
+<p>圆号的地位颇高，但它的声音其实在铜管中又有一些格格不入的感觉。圆号虽然是铜管，但它却是木管五重奏（即四个上面所说的木管+圆号）的一部分。相比其他铜管声音比较尖锐暴躁，圆号的声音是非常温柔的，而且有一种雄浑，柔中带刚的气势。一般管弦作品中有圆号齐奏的地方都会非常震撼，有一种史诗般的波澜壮阔感。</p>
+<p>小号的声音尖锐响亮，想必大家也不会对小号的声音陌生。一只小号的声音就足以响彻整个音乐厅。小号因为存在感太强，声音过于锐利，实际solo独奏的机会并不算太多，但只要有，自然就是能被所有人记住的经典片段。小号往往在乐曲中营造一种激烈的战斗感，给管弦乐曲增加活力。</p>
+<p>除此之外，还会一些小号的变种，例如长号，大号等。其声音就是小号在不同音域上的化身，这些一般在浪漫主义中后期才出现得比较多。</p>
+<p><strong>打击乐器：定音鼓等</strong><br><img src="https://s1.vika.cn/space/2023/03/09/15577b76be3f4eedaa6eb9a324eaee1c" alt="image.png"></p>
+<p>打击乐器有很多种，定音鼓，钹，钢片琴，三角铁，钟，牛铃等等等等，尤其是到浪漫主义后期，打击乐器数量激增，例如著名的马勒第六交响曲的大锤子，也算是一种打击乐。</p>
+<p>当然，其中最重要的最经久不衰的，自然就是定音鼓。</p>
+<p>定音鼓（图中的timpani）其实简单来看，可以认为就是带音高的鼓，一般来说定音鼓的音高很少起直接作用，而且理论上是不可能有独奏机会的（当然也会有定音鼓协奏曲这种东西），所以就把它看成鼓就行了。任何一个乐团，没有鼓怎么行呢？</p>
+<p><strong>弦乐组：第一小提琴，第二小提琴，中提琴，大提琴，低音提琴</strong><br><img src="https://s1.vika.cn/space/2023/03/09/5ec966fe472b4b658841fe28e27fa18a" alt="image.png"></p>
+<p>弦乐组毫无疑问管弦乐团的绝对核心，几乎主导了管弦乐曲的发展与进行。例如在看总谱时，有一二十种乐器看不过来怎么办？答案就是看弦乐组，看小提琴就对啦！</p>
+<p>从小到大（也是从高音到低音）：</p>
+<p>小提琴：众所皆知，管弦乐团的绝对核心。小提琴是非常出色的独奏乐器，当然需要伴奏，无伴奏的小提琴独奏还是略显单薄。最重要的是，小提琴是非常乃至最出色的合奏乐器，可以说是管弦乐队的基石。一个管弦乐团，基本上都是有20-30个小提琴手。首席小提琴手也是一个乐团除了指挥的第二人。</p>
+<p>中提琴：管弦乐团的欢乐源泉（雾），一堆关于中提琴的黑梗。虽然黑得多，但中提琴的地位毋庸置疑。中提琴顾名思义，音域比小提琴低，比大提琴高，但其有些不上不下的音域反而成为被黑的理由（逃</p>
+<p>大提琴：很多人觉得大提琴只能演奏低音，但其实我想说的是大提琴的高音（虽然并不是很高）反而更有魅力好吗！大提琴奏鸣曲数量也比中提琴奏鸣曲要多不少（又黑中提</p>
+<p>低音提琴：默默无闻的低音机器，有的时候看似阿卡林，没有的时候瞬间就能发现不对劲。很多作曲家偷懒，大提琴和低音提琴可能共一个乐谱，早期的管弦作品甚至不要低音提琴。</p>
+<p>一般的弦乐组组成：第一小提琴组15+，第二小提琴组12+，中提琴组<del>10，大提琴组</del>8，低音提琴组~6，当然这些都是根据乐团和具体乐队来。</p>
+<p><strong>钢琴：</strong><br><img src="https://s1.vika.cn/space/2023/03/09/bc6fd007fc164735a8a06044365643b9" alt="image.png"></p>
+<p>钢琴：众所皆知，钢琴有乐器之王的美誉。 一台钢琴等于一支乐队可不是浪得虚名。但要注意，管弦乐团是没有钢琴的。钢琴是最强的独奏乐器，钢琴独奏作品数不胜数，而且地位极其重要。钢琴当然也是最强的伴奏乐器。</p>
+<p><strong>乐谱驱动动作</strong></p>
+<p>前段时间鹿鸣叫好又叫座的直播吸引了众多网友共襄盛举，一时间万人空巷，来看这场直播。这场直播也让我们看到了数字人技术全新的技术以及未来无限的可能性。</p>
+<p>&nbsp;<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1jf4y1o78M?share_source=copy_web&amp;vd_source=a575d24748d9d944eda0ed7e2d17a5b5">【直播录像】鹿鸣直播，一起来玩吧~</a></p>
+<p>这场直播让我们见识到了一个全新的技术——语音驱动动作。这在数字人领域毫无疑问是个令人兴奋的新技术。这种方法通过AI手段很大程度上减轻了工作量，提高了数字人领域的制作效率和效果，毫无疑问这种技术会使数字人相关制作更加简单，标准化，工业化，流程化。<br>目前已经有成熟的语音驱动面部表情的解决方案：<br><strong>Audio2Mesh</strong><br><strong>2017</strong> <strong>英伟达</strong> <strong>Audio2Face</strong><br>Paper: [Audio-Driven Facial Animation by Joint End-to-End Learning of Pose and Emotion](<a target="_blank" rel="noopener" href="https://research.nvidia.com/sites/default/files/publications/karras2017siggraph-paper_0.pdf">https://research.nvidia.com/sites/default/files/publications/karras2017siggraph-paper_0.pdf</a><br>2017 Nvidia提出的语音驱动人脸3DMesh，目前被使用在<a target="_blank" rel="noopener" href="https://www.nvidia.cn/omniverse/apps/audio2face/">Omniverse Audio2Face</a> 应用程序中。</p>
+<p>该文提出了一种端到端的卷积网络，从输入的音频直接推断人脸表情变化对应的顶点位置的偏移量。为了解决声音驱动过程中，情绪变化对表情驱动效果的影响，网络自动从数据集中学习情绪状态潜变量。推理阶段，可将情绪潜变量作为用户输入控制参数，从而输出不同情绪下的说话表情。</p>
+<p><strong>CVPR 2019</strong> <strong>马普所</strong> <strong>VOCA</strong><br>Paper：<a target="_blank" rel="noopener" href="https://ps.is.tuebingen.mpg.de/uploads_file/attachment/attachment/510/paper_final.pdf">Capture, Learning, and Synthesis of 3D Speaking Styles</a><br>Project：<a target="_blank" rel="noopener" href="https://voca.is.tue.mpg.de/">https://voca.is.tue.mpg.de/</a><br>GitHub：<a target="_blank" rel="noopener" href="https://github.com/TimoBolkart/voca">https://github.com/TimoBolkart/voca</a></p>
+<p><img src="https://s1.vika.cn/space/2023/03/09/03dd2e3063734ae0a5c1757898aa7e92" alt="image.png"></p>
+<p>德国马普所提出语音驱动的逼真3D Mesh人脸动画框架VOCA (Voice Operated Character Animation) 。</p>
+<p>输入：音频、具体人物目标模板。输出：60fps 3D mesh。语音特征提取：采用 DeepSpeech 模型。编码网络：加入了身份信息，拼接 one-hot 向量到语音特征上。解码网络：最后的 fc 层，输出5023x3个顶点的偏移量，加上模板平均脸，得到说话的表情脸。</p>
+<p><strong>CVPR 2021 Facebook MeshTalk</strong></p>
+<p>paper: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2104.08223">MeshTalk: 3D Face Animation from Speech using Cross-Modality Disentanglement</a></p>
+<p>github: <a target="_blank" rel="noopener" href="https://github.com/facebookresearch/meshtalk">https://github.com/facebookresearch/meshtalk</a></p>
+<p>任务：输入一段音频和一个中性的3D人脸mesh，产生一段带嘴形和眼部运动的3D人脸动画。<br><img src="https://s1.vika.cn/space/2023/03/09/bab54b00c4e5405d9a54a2b0bf742e6d" alt="image.png"></p>
+<p><strong>CVPR 2022</strong> <strong>香港大学</strong> <strong>Faceformer</strong></p>
+<p>Paper: <a href="https://link.zhihu.com/?target=https://arxiv.org/pdf/2112.05329.pdf">FaceFormer: Speech-Driven 3D Facial Animation with Transformers</a></p>
+<p>Project: <a href="https://link.zhihu.com/?target=https://evelynfan.github.io/audio2face/">https://evelynfan.github.io/audio2face/</a></p>
+<p>Github: <a href="https://link.zhihu.com/?target=https://github.com/EvelynFan/FaceFormer">https://github.com/EvelynFan/FaceFormer</a></p>
+<p>任务：输入一段音频和一个中性的3D人脸mesh，产生一段带嘴形运动的3D人脸动画。</p>
+<p>驱动模型方法和Meshtalk比较相似，都使用自回归的思想。</p>
+<p><img src="https://s1.vika.cn/space/2023/03/09/acd8d14d596f48c1965fbe91fdc119e6" alt="image.png"><br><strong>Audio2ExpressionCoefficient</strong><br><strong>2022 FaceGood Audio2Face</strong><br>Voice2Face是<a href="https://link.zhihu.com/?target=http://www.facegood.cc/">FACEGOOD</a>（量子动力）在2022年年初，开源的一项关于语音驱动三维人脸的项目。<br>Github: <a href="https://link.zhihu.com/?target=https://github.com/FACEGOOD/Voice2Face">https://github.com/FACEGOOD/Voice2Face</a><br>•语音对话交互系统pipeline<br>下图展示的pipeline是FACEGOOD 开发了一套数字人实时语音对话交互系统。FACEGOOD主要完成Voice2Face部分，其他的ASR、TTS由<a href="https://link.zhihu.com/?target=https://help.tgenie.cn/%23/ba_platform">思必驰智能机器人</a>完成。语音驱动模型模型输出116维的blenshape系数，需要经过映射转换成，ARKIT的52维的系数。</p>
+<p><img src="file:///C:/Users/guo23/AppData/Local/Temp/msohtmlclip1/01/clip_image245.gif"><br><img src="https://s1.vika.cn/space/2023/03/09/5214b6913ff54e40b903bed67c1e21cd" alt="image.png"></p>
+<pre><code>            •语音驱动模型Voice2Face
+</code></pre>
+<p>Voice2Face的语音驱动网络，应该是在参考<a href="https://link.zhihu.com/?target=https://research.nvidia.com/sites/default/files/publications/karras2017siggraph-paper_0.pdf">NVIDIA的论文</a>的基础上设计的，不同的是输出Blendshape系数，而不是Mesh顶点的偏移信息。<br><img src="https://s1.vika.cn/space/2023/03/09/b3504c28c76e4a4e85fec52dafa442d4" alt="image.png"></p>
+<p>voice2face<br> <img src="https://s1.vika.cn/space/2023/03/09/0eb8815d91da46b4acb540f6c10d9433" alt="image.png"><br>网络结构</p>
+<p><strong>效果设想</strong></p>
+<p><img src="https://s1.vika.cn/space/2023/03/09/9bcc4b90356f4606a14b5d1622e9c33b" alt="image.png"></p>
+<p>超现实风格数字人<br><img src="https://s1.vika.cn/space/2023/03/09/6cc480bc625a4450ad8af4429bb93218" alt="image.png"><br><img src="https://s1.vika.cn/space/2023/03/09/26e448c4f24046359f29a04122cfc8b7" alt="image.png"><br>二次元风格数字人</p>
+<p><strong>参考资料</strong></p>
+<p><a target="_blank" rel="noopener" href="http://iryoku.com/separable-sss/">Separable Subsurface Scattering</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.iryoku.com/translucency/">Next-Generation-Character-Rendering (ACM Transactions on Graphics, Vol. 29(5), SIGGRAPH Asia 2010)</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/42433792">《GPU Gems 3》：真实感皮肤渲染技术总结</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/27014447">角色渲染技术——皮肤</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/34819703">虚幻引擎在GDC教你做人</a></p>
+<p><a target="_blank" rel="noopener" href="https://gameinstitute.qq.com/community/detail/117567">细致到毛孔 ! 深度揭秘超真实皮肤的实时渲染技术（上篇）</a></p>
+<p><a target="_blank" rel="noopener" href="https://gameinstitute.qq.com/community/detail/117568">细致到毛孔 ! 深度揭秘超真实皮肤的实时渲染技术（下篇）</a></p>
+<p><a target="_blank" rel="noopener" href="https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf">A Practical Model for Subsurface Light Transport</a></p>
+<p><a target="_blank" rel="noopener" href="https://benedikt-bitterli.me/bachelor-thesis.pdf">BSSRDF Explorer: A Rendering Framework for the BSSRDF</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.unrealengine.com/5.0/zh-CN/engine-feature-examples-for-unreal-engine/">引擎功能示例</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.fxguide.com/fxfeatured/real-time-mike/">Real Time Mike !</a></p>
+<p><a target="_blank" rel="noopener" href="http://iryoku.com/separable-sss/downloads/Separable-Subsurface-Scattering.pdf">Separable Subsurface Scattering</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/157147699">【UE4】人物角色MorphTarget(Blendshape) 面部表情制作方案</a></p>
+<p><a target="_blank" rel="noopener" href="https://new.qq.com/rain/a/20220409A09ODB00">动作捕捉技术如何赋予“虚拟角色”灵魂？</a></p>
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2111.07556.pdf">HIGH-QUALITY REAL TIME FACIAL CAPTURE BASED ON SINGLE CAMERA</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/436866934">FACEGOOD 发表论文大幅提升实时表情捕捉精度</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/hitgavin/article/details/107504032">机器人正运动学——雅可比矩阵</a></p>
+<p><a target="_blank" rel="noopener" href="https://wenku.baidu.com/view/9a2ff1e5d6bbfd0a79563c1ec5da50e2534dd15e.html">正向运动学与反向运动学</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/f980511/article/details/123460210">正向运动学（FK）</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37320980/article/details/80697038">maya骨骼绑定——蒙皮中的权重问题</a></p>
+<p><a target="_blank" rel="noopener" href="https://research.nvidia.com/sites/default/files/publications/karras2017siggraph-paper_0.pdf">Audio-Driven Facial Animation by Joint End-to-End Learning of Pose and Emotion</a></p>
+<p><a target="_blank" rel="noopener" href="https://ps.is.mpg.de/uploads_file/attachment/attachment/510/paper_final.pdf">Capture, Learning, and Synthesis of 3D Speaking Styles</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/posts/12.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">作品展示</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2023 Guo Yangyang
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
