@@ -6,7 +6,7 @@
   <link href="https://icemiaomiao.github.io/atom.xml" rel="self"/>
   
   <link href="https://icemiaomiao.github.io/"/>
-  <updated>2023-03-09T01:32:00.614Z</updated>
+  <updated>2023-06-10T14:01:57.959Z</updated>
   <id>https://icemiaomiao.github.io/</id>
   
   <author>
@@ -17,28 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>数字人技术文档</title>
-    <link href="https://icemiaomiao.github.io/posts/13.html"/>
-    <id>https://icemiaomiao.github.io/posts/13.html</id>
-    <published>2025-04-04T16:23:38.000Z</published>
-    <updated>2023-03-09T01:32:00.614Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;技术文档&lt;/strong&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="MetaHuman" scheme="https://icemiaomiao.github.io/tags/MetaHuman/"/>
-    
-  </entry>
-  
-  <entry>
     <title>作品展示</title>
-    <link href="https://icemiaomiao.github.io/posts/12.html"/>
-    <id>https://icemiaomiao.github.io/posts/12.html</id>
+    <link href="https://icemiaomiao.github.io/posts/1.html"/>
+    <id>https://icemiaomiao.github.io/posts/1.html</id>
     <published>2025-03-04T16:23:38.000Z</published>
-    <updated>2023-03-09T01:35:14.606Z</updated>
+    <updated>2023-06-10T14:01:57.959Z</updated>
     
     
     <summary type="html">&lt;p&gt;个人作品展示&lt;/p&gt;</summary>
@@ -47,6 +30,23 @@
     
     
     <category term="Work collection" scheme="https://icemiaomiao.github.io/tags/Work-collection/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Introduction About me</title>
+    <link href="https://icemiaomiao.github.io/posts/2.html"/>
+    <id>https://icemiaomiao.github.io/posts/2.html</id>
+    <published>2025-02-04T16:19:03.000Z</published>
+    <updated>2023-06-10T14:03:01.065Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Introduction About me&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Introduction" scheme="https://icemiaomiao.github.io/tags/Introduction/"/>
     
   </entry>
   
@@ -64,23 +64,6 @@
     
     
     <category term="Unity" scheme="https://icemiaomiao.github.io/tags/Unity/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Introduction About me</title>
-    <link href="https://icemiaomiao.github.io/posts/2155046657.html"/>
-    <id>https://icemiaomiao.github.io/posts/2155046657.html</id>
-    <published>2025-01-04T16:19:03.000Z</published>
-    <updated>2023-01-15T10:12:01.696Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Introduction About me&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="Introduction" scheme="https://icemiaomiao.github.io/tags/Introduction/"/>
     
   </entry>
   
@@ -153,6 +136,23 @@
   </entry>
   
   <entry>
+    <title>数字人技术文档</title>
+    <link href="https://icemiaomiao.github.io/posts/13.html"/>
+    <id>https://icemiaomiao.github.io/posts/13.html</id>
+    <published>2023-03-04T16:23:38.000Z</published>
+    <updated>2023-06-10T13:25:46.999Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;技术文档&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="MetaHuman" scheme="https://icemiaomiao.github.io/tags/MetaHuman/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Unity gitignore</title>
     <link href="https://icemiaomiao.github.io/posts/441996008.html"/>
     <id>https://icemiaomiao.github.io/posts/441996008.html</id>
@@ -188,10 +188,10 @@
   
   <entry>
     <title>Blender 入门</title>
-    <link href="https://icemiaomiao.github.io/posts/1.html"/>
-    <id>https://icemiaomiao.github.io/posts/1.html</id>
+    <link href="https://icemiaomiao.github.io/posts/12.html"/>
+    <id>https://icemiaomiao.github.io/posts/12.html</id>
     <published>2023-01-05T08:53:00.000Z</published>
-    <updated>2023-01-05T08:57:26.402Z</updated>
+    <updated>2023-06-10T14:01:54.104Z</updated>
     
     
     <summary type="html">&lt;p&gt;Blender 入门&lt;/p&gt;</summary>
@@ -205,10 +205,10 @@
   
   <entry>
     <title>Blender MMD</title>
-    <link href="https://icemiaomiao.github.io/posts/2.html"/>
-    <id>https://icemiaomiao.github.io/posts/2.html</id>
+    <link href="https://icemiaomiao.github.io/posts/15.html"/>
+    <id>https://icemiaomiao.github.io/posts/15.html</id>
     <published>2023-01-05T08:52:00.000Z</published>
-    <updated>2023-01-05T08:53:41.506Z</updated>
+    <updated>2023-06-10T14:02:04.103Z</updated>
     
     
       
@@ -403,23 +403,6 @@
     
     
     <summary type="html">Obsidian使用方法</summary>
-    
-    
-    
-    
-    <category term="Skills" scheme="https://icemiaomiao.github.io/tags/Skills/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SketchFab网站</title>
-    <link href="https://icemiaomiao.github.io/posts/4.html"/>
-    <id>https://icemiaomiao.github.io/posts/4.html</id>
-    <published>2023-01-04T08:51:00.000Z</published>
-    <updated>2023-01-05T08:52:10.073Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;Sketchfab白嫖&quot;&gt;&lt;a href=&quot;#Sketchfab白嫖&quot; class=&quot;headerlink&quot; title=&quot;Sketchfab白嫖&quot;&gt;&lt;/a&gt;Sketchfab白嫖&lt;/h1&gt;</summary>
     
     
     
